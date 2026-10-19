@@ -72,3 +72,66 @@ def test_independent_fact_arithmetic_catches_wrong_amount(monkeypatch):
     assert result['status'] == 'failed'
     assert len(result['checks']) == 3
     assert all(c['expected_amount'] == '50.0' and not c['fields']['amount'] for c in result['checks'])
+
+
+def test_factual_score_requires_visible_source_fact_and_tracks_denominators():
+    case = {'id': 'ru-real', 'question': 'Покажи договоры',
+            'request': {'intent': 'search', 'language': 'ru'},
+            'facts': [{'path': 'result.n_selected', 'value': 2,
+                       'source': 'independent SQL count', 'answer_text': 'N = 2'}]}
+    response = {'request': {'intent': 'search', 'language': 'ru'},
+                'result': {'n_selected': 2, 'id': 'report'}, 'answer': 'N = 2'}
+    good = acceptance.score_factual_case(case, response)
+    assert good['exact'] and good['fact_correct'] == 1
+    hidden = acceptance.score_factual_case(case, {**response, 'answer': 'No number shown'})
+    assert not hidden['exact'] and hidden['fact_correct'] == 0
+    failed = acceptance.score_factual_case(case, error='TimeoutError')
+    totals = acceptance.summarize_factual([good, hidden, failed])
+    assert totals['overall']['cases'] == 3
+    assert totals['overall']['fact_total'] == 3
+    assert totals['overall']['fact_correct'] == 1
+    assert totals['overall']['failures'] == 1
+    assert totals['by_language']['ru']['fact_total'] == 3
+    forbidden = acceptance.score_factual_case({**case, 'answer_forbids': ['выдуманный БИН 123456789012']},
+                                              {**response, 'answer': 'N = 2; выдуманный БИН 123456789012'})
+    assert not forbidden['exact'] and forbidden['forbidden_correct'] == 0
+
+
+def test_factual_run_on_frozen_database_keeps_errors_in_denominator(tmp_path, monkeypatch):
+    from app import analytics, db
+    cases = [dict(id='ru-1', question='один', request={'intent': 'search', 'language': 'ru'},
+                  facts=[dict(path='result.n_selected', value=2, source='independent raw count',
+                              answer_text='N = 2')]),
+             dict(id='ru-2', question='два', request={'intent': 'search', 'language': 'ru'},
+                  facts=[dict(path='result.n_selected', value=2, source='independent raw count',
+                              answer_text='N = 2')])]
+    source = tmp_path / 'facts.json'
+    source.write_text(json.dumps(cases, ensure_ascii=False), encoding='utf-8')
+    engine = db.make_engine('sqlite:///' + str(tmp_path / 'source.db'))
+    db.init_db(engine)
+    monkeypatch.setattr(analytics, 'analyze', lambda request, question, eng:
+                        {'request': request.model_dump(mode='json'), 'n_selected': 2,
+                         'quality': {'snapshot_hash': 'fixed'}, 'id': 'report'})
+    monkeypatch.setattr('app.agent.render', lambda result: 'N = 2')
+    def planner(question, **kwargs):
+        if question == 'два':
+            raise TimeoutError('private URL with token')
+        return AnalysisRequest(intent='search', language='ru')
+    try:
+        report = acceptance.run_factual(source, tmp_path / 'result.json', eng=engine, planner=planner)
+    finally:
+        engine.dispose()
+    assert report['complete']
+    assert report['scores']['overall']['fact_total'] == 2
+    assert report['scores']['overall']['fact_correct'] == 1
+    assert report['scores']['overall']['failures'] == 1
+    assert 'private URL' not in json.dumps(report)
+
+
+def test_visibility_matches_values_across_number_and_date_formats():
+    answer = 'N = 3; сумма 689 760.00 KZT; қол қойылған күні 2026-01-12; БСН 980440001034'
+    assert acceptance._visible_value(answer, 689760)
+    assert acceptance._visible_value(answer, 3)
+    assert acceptance._visible_value(answer, '2026-01-12 14:53:32')
+    assert acceptance._visible_value(answer, '980440001034')
+    assert not acceptance._visible_value(answer, 689761)

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: qazprocure-config
+  namespace: qazprocure
+data:
+  LLM_PROVIDER: "rules"
+  OLLAMA_URL: ""
+  OLLAMA_MODEL: ""
+  SYNC_INTERVAL_HOURS: "6"
+  PAGE_SIZE: "50"
+  REQUEST_INTERVAL: "0.3"
+  POSTGRES_DB: "qazprocure"
+  POSTGRES_USER: "qazprocure"

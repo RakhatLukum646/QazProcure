@@ -12,3 +12,14 @@ data/
 *.db-shm
 *.log
 outputs/
+secrets/
+
+# Windows-only local dev convenience scripts, superseded by Docker/Kubernetes
+start.ps1
+start-worker.ps1
+install-worker.ps1
+
+# Session working notes (planning-with-files) — internal audit trail, not a ТЗ deliverable
+findings.md
+progress.md
+task_plan.md

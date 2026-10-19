@@ -345,12 +345,20 @@ def quantity_anomaly(rows, request):
     # Compare identical month/day windows; leap day is clamped for previous years.
     today=datetime.now(ZoneInfo('Asia/Qyzylorda')).date()
     cutoff=(today.month,today.day) if target_year==today.year else (12,31)
+    explicit_window=False
     if request.date_to and request.date_to.year==target_year:
         cutoff=(request.date_to.month,request.date_to.day)
+        explicit_window=True
     groups=defaultdict(lambda:defaultdict(list))
     for r in rows:
         signed=r['signed_at'][:10]
-        end=date(r['year'],cutoff[0],min(cutoff[1],calendar.monthrange(r['year'],cutoff[0])[1]))
+        # Years strictly before target_year are already complete; only clamp them to the
+        # cutoff when the window was explicitly requested, not for the implicit "today" default,
+        # otherwise a target year still in progress wrongly discards fully elapsed prior years.
+        if r['year']==target_year or explicit_window:
+            end=date(r['year'],cutoff[0],min(cutoff[1],calendar.monthrange(r['year'],cutoff[0])[1]))
+        else:
+            end=date(r['year'],12,31)
         if signed>str(end):
             continue
         groups[(r['customer_bin'],r['enstru'],r['unit'])][r['year']].append(r)
@@ -397,7 +405,10 @@ def analyze(request: AnalysisRequest, question='', eng=db.engine):
             raise AnalysisError('Lot number is absent from storage')
         request=request.model_copy(update={'lot_id':id_})
     all_rows,quality=snapshot(eng)
-    rows=[r for r in all_rows if matches(r,request)]
+    from .ingest import scope
+    configured=scope()
+    target_request=request if request.bins else request.model_copy(update={'bins':configured['bins']})
+    rows=[r for r in all_rows if matches(r,target_request)]
     # Comparative reference excludes target-BIN and lot filters, but keeps explicit period/code/location/text.
     reference_request=request.model_copy(update={'bins':[],'lot_id':None,'lot_number':None})
     universe=[r for r in all_rows if matches(r,reference_request)]
@@ -405,7 +416,7 @@ def analyze(request: AnalysisRequest, question='', eng=db.engine):
         result=anomaly(rows,universe,request)
     elif request.intent=='fair_price':
         if not any(r['lot_id']==request.lot_id for r in rows):
-            rows=planned_lot_targets(request,eng)
+            rows=planned_lot_targets(target_request,eng)
         result=fair_price(rows,universe,request)
     elif request.intent=='quantity_anomaly':
         result=quantity_anomaly(rows,request)
@@ -418,8 +429,6 @@ def analyze(request: AnalysisRequest, question='', eng=db.engine):
     latest=quality['latest_sync']
     if request.intent in ('price_anomaly','fair_price'):
         result['limitations'].append('loaded_comparison_universe')
-    from .ingest import scope
-    configured=scope()
     target_bins=request.bins or configured['bins']
     partitions=quality.pop('backfill_partitions')
     completed={(p['entity'],p['filters'].get('subjectBiin') or p['filters'].get('customerBin'),

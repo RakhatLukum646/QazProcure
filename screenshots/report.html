@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>QazProcure — отчёт о работе агента, 19 октября 2026</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; margin: 40px; line-height: 1.45; }
+  h1 { font-size: 22px; border-bottom: 2px solid #1b4332; padding-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 34px; color: #1b4332; }
+  p { font-size: 13px; }
+  .meta { color: #555; font-size: 12px; margin-bottom: 20px; }
+  .case { page-break-inside: avoid; margin-bottom: 10px; }
+  .case img { width: 100%; max-width: 980px; border: 1px solid #ccc; border-radius: 6px; margin-top: 8px; }
+  .question { background: #f4f6f5; border-left: 3px solid #1b4332; padding: 8px 12px; font-size: 13px; margin: 10px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 12px; margin: 10px 0; }
+  td, th { border: 1px solid #ccc; padding: 6px 8px; text-align: left; }
+  .ok { color: #1b7a3d; font-weight: 600; }
+  .note { color: #8a5a00; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<h1>QazProcure — AI-агент анализа госзакупок РК</h1>
+<p class="meta">Отчёт сгенерирован 19 октября 2026. Демонстрация работы живого приложения (API + UI) на реальных данных OWS v3: 40&nbsp;217 договоров, 110&nbsp;181 позиция, 27 организаций из ТЗ, 2024–2026 годы. Скриншоты сняты headless Chrome через реальный HTTP-запрос к работающему серверу (127.0.0.1:8765), без постановочных данных.</p>
+
+<h2>Сводка проверки ТЗ за эту сессию</h2>
+<table>
+<tr><th>Проверено</th><th>Результат</th></tr>
+<tr><td>Исправление бага quantity_anomaly (окно даты ломало историю прошлых лет)</td><td class="ok">Исправлено, 2 регрессионных теста, 77/77 тестов проходят</td></tr>
+<tr><td>Независимая факт-проверка (20 вопросов RU/KZ, 6 типов intent)</td><td class="ok">102/102 факта (100%), все 6 типов intent — оговорка: development acceptance, не слепая внешняя приёмка</td></tr>
+<tr><td>Актуальность данных (≤24ч от публикации)</td><td class="ok">freshness_seconds=2504 (~42 минуты), stale=false, backlog 0 незавершённых / 0 с ошибкой</td></tr>
+<tr><td>Fair Price — рабочий численный пример</td><td class="ok">fair_price=302&nbsp;700 ₸, 33 аналога, отклонение +81,7% — см. скриншот №1</td></tr>
+<tr><td>Готовность к on-prem (Docker + Kubernetes)</td><td class="ok">Docker/Compose проверены smoke-тестом; манифесты Kubernetes добавлены (k8s/), собираются kustomize, не применялись на живом кластере</td></tr>
+<tr><td>Риски и ограничения</td><td class="ok">Консолидированы в docs/risks.md</td></tr>
+</table>
+<p class="note">Полный пункт-за-пунктом чек-лист соответствия ТЗ (24 пункта) — в findings.md корневой папки проекта.</p>
+
+<h2>Пример 1. Fair Price (RU) — работающая численная оценка</h2>
+<div class="question">«Оцени Fair Price лота 40202186 за 2026 год относительно аналогичных контрактов других ведомств в идентичном городе поставки»</div>
+<p>Результат: фактическая цена 550&nbsp;000 ₸, ориентир (медиана 33 аналогов) 302&nbsp;700 ₸, отклонение +81,7%. Подтверждённый город (КАТО 710000000, Астана). Это реальный, воспроизводимый пример сравнительного подхода из формального определения Fair Price в ТЗ.</p>
+<div class="case"><img src="01_fair_price_ru.png"></div>
+
+<h2>Пример 2. Отклонение цены (RU) — обязательный тип вопроса из ТЗ</h2>
+<div class="question">«Найди закупки с отклонением цены больше 30% от средневзвешенной по ЕНС ТРУ 292040.100.000003 за 2024-2026 годы у БИН 020240002363»</div>
+<p>Найдено отклонение −82,06% относительно цены аналогов (14 договоров-аналогов), с прямой ссылкой на договор и подтверждённым городом.</p>
+<div class="case"><img src="02_price_anomaly_ru.png"></div>
+
+<h2>Пример 3. Сводная аналитика (RU)</h2>
+<div class="question">«Подведи итог по молоку ЕНС ТРУ 105111.410.000000 у БИН 980440001034 за 2024-2026 годы»</div>
+<p>Группировка по году/КАТО с суммой, количеством и средневзвешенной ценой по каждой группе — независимо пересчитываемые цифры с источниками.</p>
+<div class="case"><img src="03_summary_ru.png"></div>
+
+<h2>Пример 4. Аномалия объёма (KZ) — после исправления бага этой сессии</h2>
+<div class="question">«980440001034 БСН бойынша 105111.410.000000 сүтінің 2024–2026 жылдардағы шарттық көлем өсімін 20% шегімен тексер»</div>
+<p>До исправления этот класс вопросов возвращал «недостаточно данных» для 87% групп из-за ошибки в оконной логике (см. app/analytics.py:quantity_anomaly). После исправления: база 1&nbsp;485,5, рост 28,98% — корректно найден и отображён в реальном UI на казахском языке.</p>
+<div class="case"><img src="04_quantity_anomaly_kk.png"></div>
+
+<h2>Примечания и ограничения</h2>
+<p>Документация полностью — <code>docs/architecture.md</code>, <code>docs/methodology.md</code>, <code>docs/risks.md</code>, <code>docs/schema.sql</code>, <code>k8s/</code>. Данный отчёт создан в дополнение к существующему <code>report-with-screenshots.pdf</code> и фиксирует состояние системы и исправления конкретно на 19 октября 2026.</p>
+
+</body>
+</html>

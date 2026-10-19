@@ -182,3 +182,16 @@ def test_exact_kato_factor_one_is_not_presented_as_city_calibration(language):
     assert ('город не подтвержден' if language=='ru' else 'қала расталмаған') in text
     assert ('условность, не оценка калибровки' if language=='ru' else 'шартты мән, калибрлеу бағасы емес') in text
     assert ('Аналоги того же города' if language=='ru' else 'Сол қаланың баламалары') not in text
+
+
+def test_search_render_exposes_provenance_fields():
+    req=AnalysisRequest(intent='search',years=[2026])
+    result={'request':req.model_dump(mode='json'),'examples':[{
+        'contract_id':24155641,'item_id':54747313,'customer_bin':'980440001034',
+        'signed_at':'2026-01-12 10:00:00','kato':'711510000','name_ru':'Молоко',
+        'price_net':360,'quantity':1916,'contract_url':'https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641'}],
+        'n_selected':1,'n_evaluated':1,'n_matches':1,'confidence':'limited',
+        'limitations':[],'id':'test','method_version':'test','quality':{'snapshot_hash':'test'}}
+    text=render(result)
+    for source_fact in ('54747313','2026-01-12','980440001034','711510000'):
+        assert source_fact in text

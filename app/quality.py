@@ -34,6 +34,15 @@ def quality_report(eng=db.engine, configured=None, now=None):
                 job=by_key.get(job_key(entity,filters))
                 partitions.append({'entity':entity,'bin':bin_,'year':year,'complete':bool(job and job['complete']),
                                    'rows':job['rows'] if job else 0,'error':job['error'] if job else None})
+    active_base_keys={job_key(p['entity'], {'subjectBiin':p['bin'],'plnPointYear':[p['year']]} if p['entity']=='Plans' else {'customerBin':p['bin'],'finYear':p['year']}) for p in partitions}
+    current_jobs=[j for j in jobs if j['key'] in active_base_keys or
+                  (j['entity']=='Lots' and 'pointList' in j['filters'] and j['filters'].get('customerBin') in bins)]
+    peer_jobs=[j for j in jobs if j['entity'] in ('Plans','Lots','Contract') and
+               (j['filters'].get('refEnstruCode') or j['filters'].get('trdBuyId') or
+                ('pointList' in j['filters'] and not j['filters'].get('customerBin')))]
+    obsolete_jobs=[j for j in jobs if j not in current_jobs and j not in peer_jobs and
+                   not (j['entity']=='Plans' and 'id' in j['filters']) and not (j['entity']=='Lots' and 'id' in j['filters'])]
+    link_jobs=[j for j in jobs if 'id' in j['filters'] and j['entity'] in ('Plans','Lots')]
     age=None
     if success:
         stamp=datetime.fromisoformat(success['finished_at'] or success['started_at'])
@@ -52,7 +61,11 @@ def quality_report(eng=db.engine, configured=None, now=None):
             'total_partitions':len(partitions),'partition_definition':'Configured BIN/year Plans and Contract backfill partitions; lot/link hydration is tracked separately.',
             'last_successful_run':success,'freshness_seconds':age,'stale':age is None or age>86400,
             'latest_run':relevant[0] if relevant else None,
-            'backlog':{'incomplete_jobs':sum(not j['complete'] for j in jobs),'error_jobs':sum(bool(j['error']) for j in jobs)},
+            'backlog':{'incomplete_jobs':sum(not j['complete'] for j in current_jobs),
+                       'error_jobs':sum(bool(j['error']) for j in current_jobs),
+                       'historical_incomplete_jobs':sum(not j['complete'] for j in obsolete_jobs),
+                       'peer_incomplete_jobs':sum(not j['complete'] for j in peer_jobs),
+                       'link_lookup_incomplete_jobs':sum(not j['complete'] for j in link_jobs)},
             'job_errors':[{'key':j['key'],'entity':j['entity'],'error':j['error']} for j in jobs if j['error']],
             'latest_source_index_dates':latest,
             'source_index_lag_seconds':index_lag,

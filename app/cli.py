@@ -34,7 +34,7 @@ def main():
     p=sub.add_parser('peers')
     p.add_argument('--enstru',required=True)
     p.add_argument('--years',type=int,nargs='+',default=[2024,2025,2026])
-    p.add_argument('--max-pages',type=int,default=10)
+    p.add_argument('--max-pages',type=int,default=100)
     sub.add_parser('worker')
     sub.add_parser('quality')
     p=sub.add_parser('ask');p.add_argument('question')

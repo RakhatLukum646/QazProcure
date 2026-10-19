@@ -1,7 +1,8 @@
-from datetime import date
+from datetime import date, datetime
 import pytest
 from app import db
 from app.normalize import contract, plan
+import app.analytics as analytics_mod
 from app.analytics import (anomaly, fair_price, quantity_anomaly, statistics_for,
                            snapshot, grouped, analyze, AnalysisError)
 from app.schemas import AnalysisRequest
@@ -78,6 +79,45 @@ def test_quantity_missing_year_is_not_zero():
     assert e['baseline_quantity']==10 and e['deviation_pct']==900
 
 
+def test_quantity_anomaly_keeps_full_history_for_completed_past_years(monkeypatch):
+    # Target year is "today's" year (in progress), so it gets clamped to the
+    # same-day-of-year window. Prior years are already complete and must use
+    # their full annual quantity even if their one contract was signed later
+    # in the calendar year than today's cutoff date.
+    class FakeDateTime(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return cls(2026, 10, 19, tzinfo=tz)
+    monkeypatch.setattr(analytics_mod, 'datetime', FakeDateTime)
+    req=AnalysisRequest(intent='quantity_anomaly',years=[2024,2025,2026],threshold_pct=20,direction='above')
+    rows=[row(1,quantity=1513,year=2024,signed_at='2024-12-09',customer_bin='980440001034'),
+          row(2,quantity=1458,year=2025,signed_at='2025-11-18',customer_bin='980440001034'),
+          row(3,quantity=1916,year=2026,signed_at='2026-01-12',customer_bin='980440001034')]
+    result=quantity_anomaly(rows,req)
+    assert result['n_matches']==1
+    e=result['examples'][0]
+    assert e['baseline_quantity']==1485.5
+    assert e['deviation_pct']==pytest.approx(28.98014137,abs=1e-6)
+
+
+def test_quantity_anomaly_explicit_date_to_still_windows_history(monkeypatch):
+    # When the caller explicitly asks for an equal sub-year window (date_to),
+    # that window should still apply uniformly to past years too.
+    class FakeDateTime(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return cls(2026, 10, 19, tzinfo=tz)
+    monkeypatch.setattr(analytics_mod, 'datetime', FakeDateTime)
+    req=AnalysisRequest(intent='quantity_anomaly',years=[2024,2025,2026],threshold_pct=20,direction='above',
+                         date_to=date(2026,10,19))
+    rows=[row(1,quantity=1513,year=2024,signed_at='2024-12-09',customer_bin='980440001034'),
+          row(2,quantity=1458,year=2025,signed_at='2025-11-18',customer_bin='980440001034'),
+          row(3,quantity=1916,year=2026,signed_at='2026-01-12',customer_bin='980440001034')]
+    result=quantity_anomaly(rows,req)
+    assert result['n_matches']==0
+    assert result['n_insufficient_history']==1
+
+
 def test_grouped_quantities_do_not_mix_units():
     r=grouped([row(1,unit='796'),row(2,unit='166')],AnalysisRequest(intent='compare'))
     assert r['n_groups']==2
@@ -120,6 +160,22 @@ def test_idempotent_ingestion_and_report_audit(engine):
         assert conn.execute(select(func.count()).select_from(db.items)).scalar()==1
         saved=conn.execute(select(db.audits.c.result)).scalar()
         assert saved['quality']['snapshot_hash']==result['quality']['snapshot_hash']
+
+
+def test_default_targets_stay_in_configured_bins_after_peer_ingestion(engine):
+    with engine.begin() as conn:
+        seed_plan(conn)
+        contract(conn,make_contract(1))
+        outside=make_contract(2,root=2)
+        outside['customerBin']='123456789012'
+        outside['ContractUnits'][0]['rootId']=20
+        contract(conn,outside)
+    default=analyze(AnalysisRequest(years=[2025]),eng=engine)
+    explicit=analyze(AnalysisRequest(years=[2025],bins=['123456789012']),eng=engine)
+    assert default['n_selected']==1
+    assert explicit['n_selected']==1
+    assert default['examples'][0]['customer_bin']=='000740001307'
+    assert explicit['examples'][0]['customer_bin']=='123456789012'
 
 
 def test_invalid_zero_quantity_excluded(engine):

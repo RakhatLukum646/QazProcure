@@ -49,6 +49,21 @@ def test_quality_distinguishes_link_failures_and_success_freshness(engine):
     assert 'not a publication SLA' in result['source_index_note']
 
 
+def test_quality_separates_old_and_peer_jobs_from_core_backlog(engine):
+    entries=[('Lots',{'customerBin':'000740001307'}),
+             ('Plans',{'id':[999]}),
+             ('Contract',{'trdBuyId':[1]})]
+    with engine.begin() as conn:
+        for entity,filters in entries:
+            conn.execute(db.jobs.insert(),dict(key=job_key(entity,filters),entity=entity,
+                                               filters=filters,complete=False,rows=0))
+    result=quality_report(engine,{'bins':['000740001307'],'years':[2024]})
+    assert result['backlog']['incomplete_jobs']==0
+    assert result['backlog']['historical_incomplete_jobs']==1
+    assert result['backlog']['link_lookup_incomplete_jobs']==1
+    assert result['backlog']['peer_incomplete_jobs']==1
+
+
 def test_worker_cadence_measured_from_cycle_start(monkeypatch):
     import app.cli as cli
     calls=[]

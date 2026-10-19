@@ -1,0 +1,65 @@
+services:
+  db:
+    image: postgres:16-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: qazprocure
+      POSTGRES_USER: qazprocure
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets:
+      - postgres_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U qazprocure -d qazprocure"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  api:
+    image: qazprocure:local
+    build: .
+    restart: unless-stopped
+    init: true
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      LLM_PROVIDER: ${ONPREM_LLM_PROVIDER:-rules}
+      OLLAMA_URL: ${ONPREM_OLLAMA_URL:-}
+      OLLAMA_MODEL: ${ONPREM_OLLAMA_MODEL:-}
+    secrets:
+      - postgres_password
+    ports:
+      - "127.0.0.1:${API_PORT:-8765}:8765"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/api/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  worker:
+    image: qazprocure:local
+    build: .
+    command: ["worker"]
+    restart: unless-stopped
+    init: true
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SYNC_INTERVAL_HOURS: ${SYNC_INTERVAL_HOURS:-6}
+      PAGE_SIZE: ${PAGE_SIZE:-50}
+      REQUEST_INTERVAL: ${REQUEST_INTERVAL:-0.3}
+    secrets:
+      - postgres_password
+      - ows_token
+
+secrets:
+  postgres_password:
+    file: ./secrets/postgres_password
+  ows_token:
+    file: ./secrets/ows_token
+
+volumes:
+  postgres_data:

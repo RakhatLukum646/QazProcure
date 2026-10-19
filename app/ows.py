@@ -1,5 +1,6 @@
 """Small read-only OWS client: bounded retries, no credentials in logs."""
 import time
+from urllib.parse import urlsplit
 import httpx
 from . import settings
 
@@ -49,6 +50,43 @@ class OWSClient:
             time.sleep(settings.REQUEST_INTERVAL)
             return body
         raise OWSError('OWS retry budget exhausted')
+
+    def kato(self, code):
+        """Return an official KATO node by exact code; never infer ancestors from digits."""
+        if not str(code).isdigit():
+            raise OWSError('Invalid KATO code')
+        origin = urlsplit(settings.OWS_URL)
+        url = f'{origin.scheme}://{origin.netloc}/v3/refs/ref_kato/{code}'
+        for attempt in range(4):
+            try:
+                response = self.client.get(url)
+            except httpx.TransportError:
+                if attempt == 3:
+                    raise OWSError('OWS KATO network failure') from None
+                time.sleep(2 ** attempt)
+                continue
+            if response.status_code in (429, 500, 502, 503, 504) and attempt < 3:
+                time.sleep(2 ** attempt)
+                continue
+            if response.status_code == 404:
+                return None
+            if response.status_code != 200:
+                raise OWSError(f'OWS KATO HTTP {response.status_code}')
+            try:
+                body = response.json()
+                items = body['items']
+            except (ValueError, KeyError, TypeError):
+                raise OWSError('OWS KATO invalid response') from None
+            if not isinstance(items, list) or len(items) > 1:
+                raise OWSError('OWS KATO ambiguous response')
+            if not items:
+                return None
+            node = items[0]
+            if str(node.get('code')) != str(code):
+                raise OWSError('OWS KATO code mismatch')
+            time.sleep(settings.REQUEST_INTERVAL)
+            return node
+        raise OWSError('OWS KATO retry budget exhausted')
 
 
 PLAN_FIELDS = '''id rootrecordId subjectBiin subjectNameRu subjectNameKz

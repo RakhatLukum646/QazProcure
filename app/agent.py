@@ -201,7 +201,10 @@ def render(result):
         lines.append(l('Недостаточно аналогов для позиций: ','Баламалары жеткіліксіз позициялар: ')+str(result['n_insufficient_peers']))
     if 'amount_net' in result:lines.append(l('Общая сумма: ','Жалпы сома: ')+fmt(result['amount_net'])+' KZT')
     for g in result.get('groups',[]):
-        lines.append(f"• {g['group']} | {g['enstru']} | {g['unit']} | N={g['n_contracts']} | "+l('сумма ','сома ')+fmt(g['amount_net'])+' KZT; '+l('средневзвешенная цена ','орташа өлшенген баға ')+fmt(g['weighted_price']))
+        lines.append(f"• {g['group']} | {g['enstru']} | {g['unit']} | N={g['n_contracts']} | "+
+                     l('сумма ','сома ')+fmt(g['amount_net'])+' KZT; '+
+                     l('количество ','саны ')+fmt(g['quantity'])+'; '+
+                     l('средневзвешенная цена ','орташа өлшенген баға ')+fmt(g['weighted_price']))
     lines += ['',l('Ограничения и уверенность','Шектеулер және сенімділік'),
               l('Уверенность: ','Сенімділік: ')+({'insufficient':l('недостаточно данных','деректер жеткіліксіз'),'limited':l('ограниченная','шектеулі'),'descriptive':l('описательный результат','сипаттамалық нәтиже')}[result['confidence']])]
     for limitation in result['limitations']:lines.append('• '+LIMITATIONS.get(limitation,(limitation,limitation))[idx])
@@ -215,7 +218,13 @@ def render(result):
                 lines.append(l('  Подписанный договор отсутствует; фактическая цена и отклонение не рассчитываются.','  Қол қойылған шарт жоқ; нақты баға мен ауытқу есептелмейді.'))
             else:
                 lines.append('• '+str(name or '—')+f" | ID {e['contract_id']} | "+l('цена ','баға ')+fmt(e.get('price_net'))+' KZT; '+l('количество ','саны ')+fmt(e.get('quantity')))
+                lines.append(l('  Позиция ID ','  Позиция ID ')+str(e.get('item_id') or '—')+
+                             l('; дата подписания ','; қол қойылған күні ')+str(e.get('signed_at') or '—')+
+                             l('; БИН заказчика ','; тапсырыс беруші БСН ')+str(e.get('customer_bin') or '—')+
+                             '; КАТО '+str(e.get('kato') or '—'))
             if e.get('deviation_pct') is not None:lines.append(l('  Отклонение: ','  Ауытқу: ')+fmt(e['deviation_pct'])+f"%; N={e['n_peers']}")
+            if e.get('reference_price') is not None:
+                lines.append(l('  Цена аналогов для сравнения: ','  Салыстыру үшін балама баға: ')+fmt(e['reference_price'])+' KZT')
             if 'fair_price' in e:lines.append(l('  Ориентир: ','  Бағдар: ')+fmt(e['fair_price'])+f" KZT; IQR {fmt(e['q25'])}–{fmt(e['q75'])}")
             if r['intent']=='fair_price':
                 statuses={
@@ -249,6 +258,9 @@ def render(result):
                 lines.extend('  '+f'https://goszakup.gov.kz/ru/egzcontract/cpublic/show/{id_}' for id_ in e['peer_contract_ids'][:3])
         elif 'baseline_quantity' in e:
             lines.append(f"• {e['customer_bin']} | {e['enstru']} | {fmt(e['quantity'])} / {fmt(e['baseline_quantity'])}; {fmt(e['deviation_pct'])}%")
+            lines.append(l('  Объем по годам: ','  Жылдар бойынша көлем: ')+
+                         ', '.join(f"{year}: {fmt(value)}" for year,value in sorted(e.get('baseline_by_year',{}).items()))+
+                         l('; договоров: ','; шарттар: ')+str(e.get('n_contracts','—')))
             lines.extend('  '+f'https://goszakup.gov.kz/ru/egzcontract/cpublic/show/{id_}' for id_ in e['contract_ids'][:3])
         else:
             lines.append(f"• ID {e.get('item_id')}: "+l('недостаточно сопоставимых данных','салыстырмалы деректер жеткіліксіз')+f"; N={e.get('n_peers',0)}")
