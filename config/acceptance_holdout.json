@@ -1,0 +1,22 @@
+[
+  {"id":"ru_01","question":"Покажи действующие договоры заказчика БИН 020440003656 за 2024 год","expected":{"intent":"search","language":"ru","bins":["020440003656"],"years":[2024]}},
+  {"id":"ru_02","question":"Сравни закупки по БИН 000740001307 за 2024 и 2026 годы","expected":{"intent":"compare","language":"ru","bins":["000740001307"],"years":[2024,2026]}},
+  {"id":"ru_03","question":"Найди закупки по ЕНСТРУ 391621.100.000001 за 2025 год","expected":{"intent":"search","language":"ru","enstru":"391621.100.000001","years":[2025]}},
+  {"id":"ru_04","question":"Найди закупки «Тонер-картридж» за 2025 год","expected":{"intent":"search","language":"ru","text":"Тонер-картридж","years":[2025]}},
+  {"id":"ru_05","question":"Покажи поставки по КАТО 711310000 за 2024 год","expected":{"intent":"search","language":"ru","kato":"711310000","years":[2024]}},
+  {"id":"ru_06","question":"Покажи договоры с 2025-02-01 по 2025-08-31","expected":{"intent":"search","language":"ru","years":[2025],"date_from":"2025-02-01","date_to":"2025-08-31"}},
+  {"id":"ru_07","question":"Найди аномальные объемы по ЕНСТРУ 172312.300.000001 за 2024–2026 годы","expected":{"intent":"quantity_anomaly","language":"ru","enstru":"172312.300.000001","years":[2024,2025,2026]}},
+  {"id":"ru_08","question":"Оцени разумность цены лота №79012345","expected":{"intent":"fair_price","language":"ru","lot_id":79012345}},
+  {"id":"ru_09","question":"Покажи топ-7 закупок за 2026 год","expected":{"intent":"search","language":"ru","top_k":7,"years":[2026]}},
+  {"id":"ru_10","question":"Найди отклонения цены дешевле на 18% за 2025 год","expected":{"intent":"price_anomaly","language":"ru","direction":"below","threshold_pct":18,"years":[2025]}},
+  {"id":"kk_01","question":"2025 жылы БСН 050740004819 бойынша сатып алуларды көрсет","expected":{"intent":"search","language":"kk","bins":["050740004819"],"years":[2025]}},
+  {"id":"kk_02","question":"2024 және 2026 жылдардағы сатып алуларды салыстыр","expected":{"intent":"compare","language":"kk","years":[2024,2026]}},
+  {"id":"kk_03","question":"ЕНСТРУ 441621.100.000001 бойынша 2025 жылғы сатып алуларды көрсет","expected":{"intent":"search","language":"kk","enstru":"441621.100.000001","years":[2025]}},
+  {"id":"kk_04","question":"«Медициналық қолғап» атауы бар 2024 жылғы сатып алуларды ізде","expected":{"intent":"search","language":"kk","text":"Медициналық қолғап","years":[2024]}},
+  {"id":"kk_05","question":"КАТО 711310000 бойынша 2026 жылғы жеткізілімдерді көрсет","expected":{"intent":"search","language":"kk","kato":"711310000","years":[2026]}},
+  {"id":"kk_06","question":"2025-03-01 мен 2025-09-30 аралығындағы сатып алуларды көрсет","expected":{"intent":"search","language":"kk","years":[2025],"date_from":"2025-03-01","date_to":"2025-09-30"}},
+  {"id":"kk_07","question":"2024–2026 жылдардағы көлем ауытқуын 30 пайыздан жоғары көрсет","expected":{"intent":"quantity_anomaly","language":"kk","years":[2024,2025,2026],"threshold_pct":30,"direction":"above"}},
+  {"id":"kk_08","question":"Лот №68004567 бойынша әділ бағаны бағала","expected":{"intent":"fair_price","language":"kk","lot_id":68004567}},
+  {"id":"kk_09","question":"2026 жылғы сатып алуларды көрсет, топ 6","expected":{"intent":"search","language":"kk","years":[2026],"top_k":6}},
+  {"id":"kk_10","question":"2025 жылғы сатып алулардың жалпы сомасын көрсет","expected":{"intent":"summary","language":"kk","years":[2025]}}
+]
