@@ -38,6 +38,21 @@ def test_unknown_task_not_sent_to_db():
     with pytest.raises(Clarification):rule_plan('Напиши стихотворение')
 
 
+def test_fair_price_identical_city_phrase_does_not_require_clarification():
+    # This is the ТЗ's own mandatory fair-price example question. It names no
+    # specific city ("идентичном городе поставки" = the lot's own city, resolved
+    # automatically by fair_price) and must not be mistaken for a named-city mention.
+    req=rule_plan('Оцени адекватность цены лота №12345 относительно аналогичных '
+                   'контрактов других ведомств в идентичном городе поставки')
+    assert req.intent=='fair_price' and req.lot_id==12345
+
+
+def test_two_hyphen_lot_number_not_truncated():
+    req=rule_plan('Покажи договоры по лоту 22906306-ОЛ-ОК1')
+    assert req.lot_number=='22906306-ОЛ-ОК1'
+    assert req.lot_id is None
+
+
 def test_llm_fabricated_identifier_is_rejected(monkeypatch):
     from app.agent import llm_plan
     import app.agent as agent

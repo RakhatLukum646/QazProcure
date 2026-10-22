@@ -14,6 +14,21 @@ class Clarification(ValueError):
     pass
 
 
+# Kazakhstan city names (from the КАТО reference values loaded at ingestion time,
+# "г.<Name>" entries), used only to detect when a question names a specific city.
+# Kept as a static list so rule_plan stays a pure function with no DB access.
+KNOWN_CITIES = ['Абай','Аксай','Аксу','Актау','Актобе','Алматы','Алтай','Аральск','Аркалык',
+    'Астана','Атбасар','Атырау','Аягоз','Байконыр','Балхаш','Булаево','Державинск','Есик',
+    'Есиль','Жанаозен','Жанатас','Жаркент','Жезказган','Жетысай','Житикара','Зайсан',
+    'Караганда','Каражал','Каратау','Каркаралинск','Каскелен','Кентау','Кокшетау','Костанай',
+    'Косшы','Кульсары','Курчатов','Кызылорда','Ленгер','Макинск','Мамлютка','Павлодар',
+    'Петропавловск','Приозерск','Риддер','Рудный','Саркан','Сарыагаш','Семей','Серебрянск',
+    'Тайынша','Талгар','Талдыкорган','Тараз','Текели','Темиртау','Тобыл','Туркестан',
+    'Уральск','Усть-Каменогорск','Уштобе','Форт-Шевченко','Шардара','Шемонаиха','Шу',
+    'Шымкент','Щучинск','Экибастуз','Қонаев']
+_CITY_RE = re.compile(r'\b(?:' + '|'.join(re.escape(c.lower()) for c in KNOWN_CITIES) + r')\w*')
+
+
 class PlannedRequest(BaseModel):
     request: AnalysisRequest | None = None
     clarification: str | None = Field(default=None,max_length=1000)
@@ -54,7 +69,9 @@ def rule_plan(question, previous=None):
     if code:req.enstru=code.group(1).rstrip('.')
     kato=re.search(r'(?:като|kato)\s*[:=]?\s*(\d{9})',t)
     if kato:req.kato=kato.group(1)
-    lot=re.search(r'(?:лот(?:а|у)?|лоттың)\s*(?:№|id|номер|нөмірі)?\s*[:=]?\s*(\d+(?:-[\w]+)?)',t)
+    # Real lot numbers commonly carry two or more hyphen-separated suffixes (e.g. "22906306-ОЛ-ОК1");
+    # a single optional group here used to truncate everything after the first hyphen.
+    lot=re.search(r'(?:лот(?:а|у)?|лоттың)\s*(?:№|id|номер|нөмірі)?\s*[:=]?\s*(\d+(?:-[\w]+)*)',t)
     if lot:
         value=lot.group(1)
         req.lot_id=int(value) if value.isdigit() else None
@@ -75,8 +92,11 @@ def rule_plan(question, previous=None):
     dates=re.findall(r'\b\d{4}-\d{2}-\d{2}\b',t)
     if len(dates)==2:
         req.date_from=date.fromisoformat(dates[0]);req.date_to=date.fromisoformat(dates[1])
-    # Do not silently ignore a named city; fallback accepts explicit KATO only.
-    if not kato and re.search(r'\b(?:город|городе|г\.|алмат[ыа]|астан[ае]|шымкент|қала)',t):
+    # Only ask for explicit KATO when a specific city is actually named (e.g. "в Алматы").
+    # A generic phrase like the ТЗ's own fair-price example — "в идентичном городе
+    # поставки" — does not name a city at all; it just means "the lot's own city",
+    # which fair_price already resolves automatically from the target lot/plan.
+    if not kato and (re.search(r'г\.\s*\w',t) or _CITY_RE.search(t)):
         raise Clarification('Укажите КАТО места поставки (например, КАТО 750000000). Город регистрации заказчика не используется как место поставки.')
     if re.search(r'\b(?:миллион|млн|миллиард|млрд)\b',t):
         raise Clarification('Фильтр по сумме пока не поддержан. Доступны период, БИН, ЕНСТРУ, КАТО и название в кавычках.')
