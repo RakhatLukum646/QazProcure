@@ -398,9 +398,16 @@ def grouped(rows, request):
 
 
 def analyze(request: AnalysisRequest, question='', eng=db.engine):
-    if request.lot_number:
+    # A purely numeric "lot number" is ambiguous between the internal lot_id and
+    # the human lot_number field (the planner, especially the LLM, sometimes puts
+    # a numeric value in lot_number just because the question said "номер"). Don't
+    # let a stray lot_number override an already-correct lot_id, and if lot_number
+    # itself turns out to be numeric, try it as a lot_id before giving up.
+    if request.lot_number and not request.lot_id:
         with eng.connect() as conn:
             id_=conn.execute(select(db.lots.c.id).where(db.lots.c.number==request.lot_number)).scalar()
+            if id_ is None and request.lot_number.isdigit():
+                id_=conn.execute(select(db.lots.c.id).where(db.lots.c.id==int(request.lot_number))).scalar()
         if id_ is None:
             raise AnalysisError('Lot number is absent from storage')
         request=request.model_copy(update={'lot_id':id_})

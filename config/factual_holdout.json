@@ -576,21 +576,21 @@
       },
       {
         "path": "result.examples.0.reference_price",
-        "value": 2780802.774666667,
+        "value": 2615989.6637500003,
         "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
-        "answer_text": "2 780 802.77 KZT"
+        "answer_text": "2 615 989.66 KZT"
       },
       {
         "path": "result.examples.0.deviation_pct",
-        "value": -82.0555415,
+        "value": -80.92500108,
         "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
-        "answer_text": "-82.06%"
+        "answer_text": "-80.93%"
       },
       {
         "path": "result.examples.0.n_peers",
-        "value": 14,
+        "value": 15,
         "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
-        "answer_text": "договоров-аналогов: 14"
+        "answer_text": "договоров-аналогов: 15"
       },
       {
         "path": "result.examples.0.contract_url",
@@ -636,21 +636,21 @@
       },
       {
         "path": "result.examples.0.reference_price",
-        "value": 2780802.774666667,
+        "value": 2615989.6637500003,
         "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
-        "answer_text": "2 780 802.77 KZT"
+        "answer_text": "2 615 989.66 KZT"
       },
       {
         "path": "result.examples.0.deviation_pct",
-        "value": -82.0555415,
+        "value": -80.92500108,
         "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
-        "answer_text": "-82.06%"
+        "answer_text": "-80.93%"
       },
       {
         "path": "result.examples.0.n_peers",
-        "value": 14,
+        "value": 15,
         "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
-        "answer_text": "договоров-аналогов: 14"
+        "answer_text": "договоров-аналогов: 15"
       },
       {
         "path": "result.examples.0.contract_url",

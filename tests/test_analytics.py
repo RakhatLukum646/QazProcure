@@ -123,6 +123,34 @@ def test_grouped_quantities_do_not_mix_units():
     assert r['n_groups']==2
 
 
+def test_lot_id_takes_priority_over_a_stray_lot_number(engine):
+    # The LLM planner sometimes fills both lot_id and lot_number for a purely
+    # numeric lot reference (e.g. because the question said "лот номер"). A
+    # stray lot_number that doesn't match any real lots.number must not override
+    # an already-correct lot_id.
+    with engine.begin() as conn:
+        conn.execute(db.lots.insert().values(id=555,number='999-ОЛ-ОК1',customer_bin='123456789012',deleted=False))
+    req=AnalysisRequest(intent='search',years=[2025],lot_id=555,lot_number='555')
+    result=analyze(req,eng=engine)
+    assert result['n_evaluated']==0  # no contract items seeded, but it must not raise
+
+
+def test_numeric_lot_number_falls_back_to_lot_id(engine):
+    # Some planner outputs put a purely numeric lot reference into lot_number
+    # instead of lot_id. If it doesn't match any lots.number string, it should
+    # be tried as a lot_id before giving up with "lot not found".
+    with engine.begin() as conn:
+        conn.execute(db.lots.insert().values(id=777,number='73050442-ЗЦП1',customer_bin='123456789012',deleted=False))
+    req=AnalysisRequest(intent='search',years=[2025],lot_number='777')
+    result=analyze(req,eng=engine)
+    assert result['n_evaluated']==0  # resolved without raising AnalysisError
+
+
+def test_unresolvable_lot_number_still_raises(engine):
+    with pytest.raises(AnalysisError):
+        analyze(AnalysisRequest(intent='search',years=[2025],lot_number='no-such-lot'),eng=engine)
+
+
 def make_contract(id_,root=1,signed='2025-03-10',deleted=0,status=190,price=100):
     return dict(id=id_,rootId=root,signDate=signed,finYear=2025,customerBin='000740001307',supplierBiin='123456789012',
                 refContractStatusId=status,refCurrencyCode='KZT',deleted=deleted,indexDate=signed,
