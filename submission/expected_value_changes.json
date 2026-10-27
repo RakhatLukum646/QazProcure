@@ -1,0 +1,56 @@
+{
+  "reason": "Source-backed fair-price comparison updated on frozen current warehouse; questions and request expectations unchanged",
+  "evidence": "fair_baseline_source_check.json",
+  "changes": [
+    {
+      "id": "fair_price_audit_estimated_ru",
+      "facts": [
+        {
+          "path": "result.examples.0.fair_price",
+          "old": 302700.0,
+          "new": 303000.0
+        },
+        {
+          "path": "result.examples.0.deviation_pct",
+          "old": 81.69805087545426,
+          "new": 81.51815181518151
+        },
+        {
+          "path": "result.examples.0.q25",
+          "old": 181666.0,
+          "new": 184444.0
+        },
+        {
+          "path": "result.examples.0.q75",
+          "old": 652500.0,
+          "new": 723500.0
+        }
+      ]
+    },
+    {
+      "id": "fair_price_audit_estimated_kk",
+      "facts": [
+        {
+          "path": "result.examples.0.fair_price",
+          "old": 302700.0,
+          "new": 303000.0
+        },
+        {
+          "path": "result.examples.0.deviation_pct",
+          "old": 81.69805087545426,
+          "new": 81.51815181518151
+        },
+        {
+          "path": "result.examples.0.q25",
+          "old": 181666.0,
+          "new": 184444.0
+        },
+        {
+          "path": "result.examples.0.q75",
+          "old": 652500.0,
+          "new": 723500.0
+        }
+      ]
+    }
+  ]
+}

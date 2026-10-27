@@ -1,0 +1,778 @@
+{
+  "generated_at": "2026-10-24T02:14:28.934966+00:00",
+  "scope": {
+    "bins": [
+      "000740001307",
+      "020240002363",
+      "020440003656",
+      "030440003698",
+      "050740004819",
+      "051040005150",
+      "100140011059",
+      "120940001946",
+      "140340016539",
+      "150540000186",
+      "171041003124",
+      "210240019348",
+      "210240033968",
+      "210941010761",
+      "230740013340",
+      "231040023028",
+      "780140000023",
+      "900640000128",
+      "940740000911",
+      "940940000384",
+      "960440000220",
+      "970940001378",
+      "971040001050",
+      "980440001034",
+      "981140001551",
+      "990340005977",
+      "990740002243"
+    ],
+    "years": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "totals": {
+    "items": 107939,
+    "null_plan_id": 0,
+    "missing_plan_lookup": 2244,
+    "invalid_or_deleted_plan": 9405,
+    "linked_active_plan_items": 96290
+  },
+  "rows": [
+    {
+      "bin": "000740001307",
+      "year": 2024,
+      "items": 391,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 13,
+      "linked_active_plan_items": 378
+    },
+    {
+      "bin": "000740001307",
+      "year": 2025,
+      "items": 509,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 4,
+      "linked_active_plan_items": 505
+    },
+    {
+      "bin": "000740001307",
+      "year": 2026,
+      "items": 594,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 3,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 591
+    },
+    {
+      "bin": "020240002363",
+      "year": 2024,
+      "items": 56,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 56
+    },
+    {
+      "bin": "020240002363",
+      "year": 2025,
+      "items": 22,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 22
+    },
+    {
+      "bin": "020240002363",
+      "year": 2026,
+      "items": 21,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 1,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 20
+    },
+    {
+      "bin": "020440003656",
+      "year": 2024,
+      "items": 3925,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 543,
+      "linked_active_plan_items": 3382
+    },
+    {
+      "bin": "020440003656",
+      "year": 2025,
+      "items": 3272,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 343,
+      "linked_active_plan_items": 2929
+    },
+    {
+      "bin": "020440003656",
+      "year": 2026,
+      "items": 2884,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 22,
+      "invalid_or_deleted_plan": 19,
+      "linked_active_plan_items": 2843
+    },
+    {
+      "bin": "030440003698",
+      "year": 2024,
+      "items": 6544,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 972,
+      "linked_active_plan_items": 5572
+    },
+    {
+      "bin": "030440003698",
+      "year": 2025,
+      "items": 3510,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 362,
+      "linked_active_plan_items": 3148
+    },
+    {
+      "bin": "030440003698",
+      "year": 2026,
+      "items": 2349,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 43,
+      "invalid_or_deleted_plan": 135,
+      "linked_active_plan_items": 2171
+    },
+    {
+      "bin": "050740004819",
+      "year": 2024,
+      "items": 307,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 30,
+      "linked_active_plan_items": 277
+    },
+    {
+      "bin": "050740004819",
+      "year": 2025,
+      "items": 305,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 26,
+      "linked_active_plan_items": 279
+    },
+    {
+      "bin": "050740004819",
+      "year": 2026,
+      "items": 217,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 63,
+      "invalid_or_deleted_plan": 3,
+      "linked_active_plan_items": 151
+    },
+    {
+      "bin": "051040005150",
+      "year": 2024,
+      "items": 2487,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 158,
+      "linked_active_plan_items": 2329
+    },
+    {
+      "bin": "051040005150",
+      "year": 2025,
+      "items": 2042,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 70,
+      "linked_active_plan_items": 1972
+    },
+    {
+      "bin": "051040005150",
+      "year": 2026,
+      "items": 588,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 5,
+      "invalid_or_deleted_plan": 40,
+      "linked_active_plan_items": 543
+    },
+    {
+      "bin": "100140011059",
+      "year": 2024,
+      "items": 2600,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 398,
+      "linked_active_plan_items": 2202
+    },
+    {
+      "bin": "100140011059",
+      "year": 2025,
+      "items": 2330,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 298,
+      "linked_active_plan_items": 2032
+    },
+    {
+      "bin": "100140011059",
+      "year": 2026,
+      "items": 2219,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 6,
+      "invalid_or_deleted_plan": 9,
+      "linked_active_plan_items": 2204
+    },
+    {
+      "bin": "120940001946",
+      "year": 2024,
+      "items": 125,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 27,
+      "linked_active_plan_items": 98
+    },
+    {
+      "bin": "120940001946",
+      "year": 2025,
+      "items": 147,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 5,
+      "linked_active_plan_items": 142
+    },
+    {
+      "bin": "120940001946",
+      "year": 2026,
+      "items": 100,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 2,
+      "invalid_or_deleted_plan": 2,
+      "linked_active_plan_items": 96
+    },
+    {
+      "bin": "140340016539",
+      "year": 2024,
+      "items": 207,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 4,
+      "linked_active_plan_items": 203
+    },
+    {
+      "bin": "140340016539",
+      "year": 2025,
+      "items": 185,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 3,
+      "linked_active_plan_items": 182
+    },
+    {
+      "bin": "140340016539",
+      "year": 2026,
+      "items": 248,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 62,
+      "invalid_or_deleted_plan": 8,
+      "linked_active_plan_items": 178
+    },
+    {
+      "bin": "150540000186",
+      "year": 2024,
+      "items": 582,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 23,
+      "linked_active_plan_items": 559
+    },
+    {
+      "bin": "150540000186",
+      "year": 2025,
+      "items": 317,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 5,
+      "linked_active_plan_items": 312
+    },
+    {
+      "bin": "150540000186",
+      "year": 2026,
+      "items": 280,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 1,
+      "linked_active_plan_items": 279
+    },
+    {
+      "bin": "171041003124",
+      "year": 2024,
+      "items": 1727,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 1,
+      "invalid_or_deleted_plan": 50,
+      "linked_active_plan_items": 1676
+    },
+    {
+      "bin": "171041003124",
+      "year": 2025,
+      "items": 1436,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 119,
+      "linked_active_plan_items": 1317
+    },
+    {
+      "bin": "171041003124",
+      "year": 2026,
+      "items": 1165,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 15,
+      "invalid_or_deleted_plan": 34,
+      "linked_active_plan_items": 1116
+    },
+    {
+      "bin": "210240019348",
+      "year": 2024,
+      "items": 74,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 9,
+      "linked_active_plan_items": 65
+    },
+    {
+      "bin": "210240019348",
+      "year": 2025,
+      "items": 26,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 3,
+      "linked_active_plan_items": 23
+    },
+    {
+      "bin": "210240019348",
+      "year": 2026,
+      "items": 20,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 4,
+      "invalid_or_deleted_plan": 1,
+      "linked_active_plan_items": 15
+    },
+    {
+      "bin": "210240033968",
+      "year": 2024,
+      "items": 644,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 1,
+      "invalid_or_deleted_plan": 47,
+      "linked_active_plan_items": 596
+    },
+    {
+      "bin": "210240033968",
+      "year": 2025,
+      "items": 591,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 35,
+      "linked_active_plan_items": 556
+    },
+    {
+      "bin": "210240033968",
+      "year": 2026,
+      "items": 523,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 262,
+      "invalid_or_deleted_plan": 4,
+      "linked_active_plan_items": 257
+    },
+    {
+      "bin": "210941010761",
+      "year": 2024,
+      "items": 973,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 23,
+      "linked_active_plan_items": 950
+    },
+    {
+      "bin": "210941010761",
+      "year": 2025,
+      "items": 1029,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 7,
+      "linked_active_plan_items": 1022
+    },
+    {
+      "bin": "210941010761",
+      "year": 2026,
+      "items": 1288,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 1288
+    },
+    {
+      "bin": "230740013340",
+      "year": 2024,
+      "items": 380,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 5,
+      "linked_active_plan_items": 375
+    },
+    {
+      "bin": "230740013340",
+      "year": 2025,
+      "items": 346,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 7,
+      "linked_active_plan_items": 339
+    },
+    {
+      "bin": "230740013340",
+      "year": 2026,
+      "items": 420,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 146,
+      "invalid_or_deleted_plan": 2,
+      "linked_active_plan_items": 272
+    },
+    {
+      "bin": "231040023028",
+      "year": 2024,
+      "items": 4453,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 238,
+      "linked_active_plan_items": 4215
+    },
+    {
+      "bin": "231040023028",
+      "year": 2025,
+      "items": 3327,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 417,
+      "linked_active_plan_items": 2910
+    },
+    {
+      "bin": "231040023028",
+      "year": 2026,
+      "items": 1942,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 16,
+      "invalid_or_deleted_plan": 20,
+      "linked_active_plan_items": 1906
+    },
+    {
+      "bin": "780140000023",
+      "year": 2024,
+      "items": 1212,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 42,
+      "linked_active_plan_items": 1170
+    },
+    {
+      "bin": "780140000023",
+      "year": 2025,
+      "items": 1001,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 37,
+      "linked_active_plan_items": 964
+    },
+    {
+      "bin": "780140000023",
+      "year": 2026,
+      "items": 742,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 1,
+      "invalid_or_deleted_plan": 3,
+      "linked_active_plan_items": 738
+    },
+    {
+      "bin": "900640000128",
+      "year": 2024,
+      "items": 6,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 6
+    },
+    {
+      "bin": "900640000128",
+      "year": 2025,
+      "items": 20,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 2,
+      "linked_active_plan_items": 18
+    },
+    {
+      "bin": "900640000128",
+      "year": 2026,
+      "items": 6,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 1,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 5
+    },
+    {
+      "bin": "940740000911",
+      "year": 2024,
+      "items": 542,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 5,
+      "linked_active_plan_items": 537
+    },
+    {
+      "bin": "940740000911",
+      "year": 2025,
+      "items": 621,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 8,
+      "linked_active_plan_items": 613
+    },
+    {
+      "bin": "940740000911",
+      "year": 2026,
+      "items": 538,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 1,
+      "invalid_or_deleted_plan": 4,
+      "linked_active_plan_items": 533
+    },
+    {
+      "bin": "940940000384",
+      "year": 2024,
+      "items": 411,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 12,
+      "linked_active_plan_items": 399
+    },
+    {
+      "bin": "940940000384",
+      "year": 2025,
+      "items": 319,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 22,
+      "linked_active_plan_items": 297
+    },
+    {
+      "bin": "940940000384",
+      "year": 2026,
+      "items": 270,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 152,
+      "invalid_or_deleted_plan": 1,
+      "linked_active_plan_items": 117
+    },
+    {
+      "bin": "960440000220",
+      "year": 2024,
+      "items": 10,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 3,
+      "linked_active_plan_items": 7
+    },
+    {
+      "bin": "960440000220",
+      "year": 2025,
+      "items": 13,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 4,
+      "linked_active_plan_items": 9
+    },
+    {
+      "bin": "960440000220",
+      "year": 2026,
+      "items": 16,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 9,
+      "invalid_or_deleted_plan": 2,
+      "linked_active_plan_items": 5
+    },
+    {
+      "bin": "970940001378",
+      "year": 2024,
+      "items": 1997,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 268,
+      "linked_active_plan_items": 1729
+    },
+    {
+      "bin": "970940001378",
+      "year": 2025,
+      "items": 2393,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 165,
+      "linked_active_plan_items": 2228
+    },
+    {
+      "bin": "970940001378",
+      "year": 2026,
+      "items": 1666,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 642,
+      "invalid_or_deleted_plan": 9,
+      "linked_active_plan_items": 1015
+    },
+    {
+      "bin": "971040001050",
+      "year": 2024,
+      "items": 1942,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 256,
+      "linked_active_plan_items": 1686
+    },
+    {
+      "bin": "971040001050",
+      "year": 2025,
+      "items": 1379,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 184,
+      "linked_active_plan_items": 1195
+    },
+    {
+      "bin": "971040001050",
+      "year": 2026,
+      "items": 2353,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 10,
+      "invalid_or_deleted_plan": 4,
+      "linked_active_plan_items": 2339
+    },
+    {
+      "bin": "980440001034",
+      "year": 2024,
+      "items": 1089,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 152,
+      "linked_active_plan_items": 937
+    },
+    {
+      "bin": "980440001034",
+      "year": 2025,
+      "items": 1093,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 154,
+      "linked_active_plan_items": 939
+    },
+    {
+      "bin": "980440001034",
+      "year": 2026,
+      "items": 1157,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 580,
+      "invalid_or_deleted_plan": 13,
+      "linked_active_plan_items": 564
+    },
+    {
+      "bin": "981140001551",
+      "year": 2024,
+      "items": 1125,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 2,
+      "invalid_or_deleted_plan": 57,
+      "linked_active_plan_items": 1066
+    },
+    {
+      "bin": "981140001551",
+      "year": 2025,
+      "items": 646,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 50,
+      "linked_active_plan_items": 596
+    },
+    {
+      "bin": "981140001551",
+      "year": 2026,
+      "items": 404,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 1,
+      "invalid_or_deleted_plan": 9,
+      "linked_active_plan_items": 394
+    },
+    {
+      "bin": "990340005977",
+      "year": 2024,
+      "items": 175,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 175
+    },
+    {
+      "bin": "990340005977",
+      "year": 2025,
+      "items": 4,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 4
+    },
+    {
+      "bin": "990340005977",
+      "year": 2026,
+      "items": 0,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 0,
+      "linked_active_plan_items": 0
+    },
+    {
+      "bin": "990740002243",
+      "year": 2024,
+      "items": 9611,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 24,
+      "invalid_or_deleted_plan": 1742,
+      "linked_active_plan_items": 7845
+    },
+    {
+      "bin": "990740002243",
+      "year": 2025,
+      "items": 9660,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 0,
+      "invalid_or_deleted_plan": 1603,
+      "linked_active_plan_items": 8057
+    },
+    {
+      "bin": "990740002243",
+      "year": 2026,
+      "items": 5791,
+      "null_plan_id": 0,
+      "missing_plan_lookup": 169,
+      "invalid_or_deleted_plan": 72,
+      "linked_active_plan_items": 5550
+    }
+  ],
+  "definition": "All stored contract item rows in scope; not deduplicated signed analytical positions. Link status is not analytical eligibility."
+}

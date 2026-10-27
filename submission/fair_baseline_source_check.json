@@ -1,0 +1,68 @@
+{
+  "snapshot": "b34d638cb3c5ed3f5f488f5d1df602d4886d0be1dbb9c2e1586e7a34148928fd",
+  "method": "Independent exact-quarter comparator predicates, numpy percentiles and raw OWS ContractUnits itemPrice cross-check; uses shared normalized snapshot",
+  "examples": [
+    {
+      "lot_id": 40202186,
+      "fair_price": 303000.0,
+      "q25": 184444.0,
+      "q75": 723500.0,
+      "deviation_pct": 81.51815181518151,
+      "n_peers": 33,
+      "peer_item_ids": [
+        54760561,
+        54988670,
+        55153976,
+        55153973,
+        55831334,
+        55262258,
+        54832914,
+        54733534,
+        54654394,
+        55391403,
+        54733100,
+        55120836,
+        55024472,
+        55661038,
+        55210059,
+        55202996,
+        55185641,
+        55151169,
+        55905483,
+        55593450,
+        55548922,
+        55541725,
+        55499539,
+        55461588,
+        56014387,
+        56008160,
+        55991999,
+        55912600,
+        55723090,
+        55599334,
+        55800513,
+        56176766,
+        55863315,
+        56073321,
+        56059693
+      ],
+      "raw_prices_verified": true
+    },
+    {
+      "lot_id": 41029081,
+      "fair_price": 150000.0,
+      "q25": 130000.0,
+      "q75": 390000.0,
+      "deviation_pct": -19.999999999999996,
+      "n_peers": 5,
+      "peer_item_ids": [
+        56505217,
+        56392760,
+        56466124,
+        56585032,
+        56514301
+      ],
+      "raw_prices_verified": true
+    }
+  ]
+}

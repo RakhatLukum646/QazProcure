@@ -31,6 +31,26 @@ def test_weighted_mean_not_mean_of_prices():
     assert stats['median_price']==150
 
 
+def test_historical_lot_delivery_fallback_is_exact_and_rejects_ambiguity(engine):
+    from app.normalize import lot
+    with engine.begin() as conn:
+        plan(conn,{'id':1,'refEnstruCode':'code','refUnitsCode':'796','isActive':1,'isDeleted':0})
+        contract(conn,{'id':1,'rootId':1,'customerBin':'buyer','signDate':'2024-01-01',
+            'finYear':2024,'refContractStatusId':190,'refCurrencyCode':'KZT',
+            'ContractUnits':[{'id':1,'rootId':1,'lotId':1,'plnPointId':1,'itemPrice':100,'quantity':1}]})
+        lot(conn,{'id':1,'plnPointKatoList':['710000000'],'Plans':[{'id':1,
+            'refEnstruCode':'code','refUnitsCode':'796','isActive':1,'isDeleted':0}]})
+    rows,_=snapshot(engine)
+    assert rows[0]['kato']=='710000000' and rows[0]['location_source']=='ows_lot_plnPointKatoList'
+    with engine.begin() as conn:
+        db.upsert(conn,db.lot_delivery_codes,dict(lot_id=1,kato='750000000'))
+    assert snapshot(engine)[0][0]['kato'] is None
+    with engine.begin() as conn:
+        conn.execute(db.lot_delivery_codes.delete().where(db.lot_delivery_codes.c.kato=='750000000'))
+        conn.execute(db.lot_plans.delete())
+    assert snapshot(engine)[0][0]['kato'] is None
+
+
 def test_anomaly_excludes_entire_contract_and_uses_strict_threshold():
     peers=[row(i,100) for i in range(1,6)]
     target=row(20,131)
@@ -79,25 +99,31 @@ def test_quantity_missing_year_is_not_zero():
     assert e['baseline_quantity']==10 and e['deviation_pct']==900
 
 
-def test_quantity_anomaly_keeps_full_history_for_completed_past_years(monkeypatch):
-    # Target year is "today's" year (in progress), so it gets clamped to the
-    # same-day-of-year window. Prior years are already complete and must use
-    # their full annual quantity even if their one contract was signed later
-    # in the calendar year than today's cutoff date.
+def test_quantity_anomaly_uses_equal_window_for_all_years(monkeypatch):
+    # Target year is "today's" year (in progress), so it is clamped to the
+    # same-day-of-year window. Prior years must use the SAME window (not their
+    # full annual total), otherwise a partial current year is compared against
+    # a larger full-year baseline and real growth gets masked: e.g. 100 units/year
+    # signed before the cutoff plus 100 more signed after it in each prior year,
+    # vs. 150 units signed before the cutoff this year, is a real 50% increase
+    # over the comparable window but looks like a decrease (150 vs 200) if the
+    # late-signed prior-year units are folded into the baseline.
     class FakeDateTime(datetime):
         @classmethod
         def now(cls, tz=None):
             return cls(2026, 10, 19, tzinfo=tz)
     monkeypatch.setattr(analytics_mod, 'datetime', FakeDateTime)
     req=AnalysisRequest(intent='quantity_anomaly',years=[2024,2025,2026],threshold_pct=20,direction='above')
-    rows=[row(1,quantity=1513,year=2024,signed_at='2024-12-09',customer_bin='980440001034'),
-          row(2,quantity=1458,year=2025,signed_at='2025-11-18',customer_bin='980440001034'),
-          row(3,quantity=1916,year=2026,signed_at='2026-01-12',customer_bin='980440001034')]
+    rows=[row(1,quantity=100,year=2024,signed_at='2024-09-01',customer_bin='980440001034'),
+          row(2,quantity=100,year=2024,signed_at='2024-12-09',customer_bin='980440001034'),
+          row(3,quantity=100,year=2025,signed_at='2025-09-01',customer_bin='980440001034'),
+          row(4,quantity=100,year=2025,signed_at='2025-11-18',customer_bin='980440001034'),
+          row(5,quantity=150,year=2026,signed_at='2026-09-01',customer_bin='980440001034')]
     result=quantity_anomaly(rows,req)
     assert result['n_matches']==1
     e=result['examples'][0]
-    assert e['baseline_quantity']==1485.5
-    assert e['deviation_pct']==pytest.approx(28.98014137,abs=1e-6)
+    assert e['baseline_quantity']==100
+    assert e['deviation_pct']==pytest.approx(50.0,abs=1e-6)
 
 
 def test_quantity_anomaly_explicit_date_to_still_windows_history(monkeypatch):

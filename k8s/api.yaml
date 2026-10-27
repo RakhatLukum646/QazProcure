@@ -30,7 +30,7 @@ spec:
               mountPath: /app/data
           readinessProbe:
             httpGet:
-              path: /api/health
+              path: /api/ready
               port: 8765
             initialDelaySeconds: 5
             periodSeconds: 10
@@ -54,6 +54,8 @@ spec:
             items:
               - key: postgres_password
                 path: postgres_password
+              - key: google_api_key
+                path: google_api_key
         - name: data
           emptyDir: {}
 ---

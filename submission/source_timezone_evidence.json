@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-23T11:02:11.866341+00:00",
+  "method": "OWS publication string equals official portal field; compare portal serverSync clock with HTTP Date GMT on same response. Empirical confirmation for current timestamps, not a claim about historical timezone changes.",
+  "observations": [
+    {
+      "id": 17858280,
+      "url": "https://old.goszakup.gov.kz/ru/announce/index/17858280",
+      "publishDate": "2026-10-23 15:59:34",
+      "publishDate_present_in_html": true,
+      "portal_server_time": "2026/10/23 16:02:17",
+      "http_date": "Fri, 23 Oct 2026 11:02:17 GMT",
+      "inferred_offset_minutes": 300.0,
+      "html_sha256": "0fcb731ef380e5bb8758a5524bd87dc9f4b7ff2f424fa93de5d451d3653a03cd"
+    },
+    {
+      "id": 17858262,
+      "url": "https://old.goszakup.gov.kz/ru/announce/index/17858262",
+      "publishDate": "2026-10-23 15:57:34",
+      "publishDate_present_in_html": true,
+      "portal_server_time": "2026/10/23 16:02:17",
+      "http_date": "Fri, 23 Oct 2026 11:02:17 GMT",
+      "inferred_offset_minutes": 300.0,
+      "html_sha256": "698425973e389ec43a5f09fbbfb32a90c5599bad3d70bb8c5f903ba881d44328"
+    },
+    {
+      "id": 17858261,
+      "url": "https://old.goszakup.gov.kz/ru/announce/index/17858261",
+      "publishDate": "2026-10-23 15:57:30",
+      "publishDate_present_in_html": true,
+      "portal_server_time": "2026/10/23 16:02:18",
+      "http_date": "Fri, 23 Oct 2026 11:02:18 GMT",
+      "inferred_offset_minutes": 300.0,
+      "html_sha256": "3a8234d687ad6b439a62393664c1e2d2d91e24a102b3229d83eb2777358b35a5"
+    }
+  ],
+  "confirmed_offset_minutes": 300
+}

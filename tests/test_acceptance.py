@@ -113,15 +113,21 @@ def test_factual_run_on_frozen_database_keeps_errors_in_denominator(tmp_path, mo
                         {'request': request.model_dump(mode='json'), 'n_selected': 2,
                          'quality': {'snapshot_hash': 'fixed'}, 'id': 'report'})
     monkeypatch.setattr('app.agent.render', lambda result: 'N = 2')
+    from threading import Barrier
+    rendezvous=Barrier(2)
     def planner(question, **kwargs):
+        rendezvous.wait(timeout=5)
         if question == 'два':
             raise TimeoutError('private URL with token')
         return AnalysisRequest(intent='search', language='ru')
     try:
-        report = acceptance.run_factual(source, tmp_path / 'result.json', eng=engine, planner=planner)
+        report = acceptance.run_factual(source, tmp_path / 'result.json', eng=engine, planner=planner,workers=3)
     finally:
         engine.dispose()
     assert report['complete']
+    assert report['workers']==3 and report['expected_cases']==2
+    assert report['details'][0]['answer']=='N = 2'
+    assert report['code_sha256']['acceptance.py']
     assert report['scores']['overall']['fact_total'] == 2
     assert report['scores']['overall']['fact_correct'] == 1
     assert report['scores']['overall']['failures'] == 1
@@ -135,3 +141,12 @@ def test_visibility_matches_values_across_number_and_date_formats():
     assert acceptance._visible_value(answer, '2026-01-12 14:53:32')
     assert acceptance._visible_value(answer, '980440001034')
     assert not acceptance._visible_value(answer, 689761)
+
+
+def test_factual_report_rejects_concurrent_writer_before_starting(tmp_path):
+    from filelock import FileLock, Timeout
+    import pytest
+    output=tmp_path/'report.json'
+    with FileLock(str(output)+'.lock'):
+        with pytest.raises(Timeout):
+            acceptance.run_factual(tmp_path/'not-needed.json',output)

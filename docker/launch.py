@@ -23,6 +23,7 @@ def main():
         env['OWS_TOKEN'] = secret('ows_token')
         command = [sys.executable, '-m', 'app.cli', 'worker']
     else:
+        env['GOOGLE_API_KEY'] = secret('google_api_key')
         command = [sys.executable, '-m', 'uvicorn', 'app.main:app', '--host', '0.0.0.0', '--port', '8765']
     os.execvpe(command[0], command, env)
 

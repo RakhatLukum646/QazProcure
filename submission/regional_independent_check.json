@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-23T15:17:29.194325+00:00",
+  "passed": true,
+  "lot_id": 42570523,
+  "n_contracts": 439,
+  "fair_price": 283955.6664923771,
+  "source_snapshot": "aad1533ce1efa3853aaa57c8549f24a96d765de4d48754ffb840e262af00af3c",
+  "example_sha256": "911191dfc65ac3175719fc3f24f5b0455aad4b93cea554eb20bb49966278ea59",
+  "method": "Independent peer predicates and normal-equation fit; all individual adjusted prices checked. Uses shared normalized source snapshot; not an independent audit of OWS truth."
+}

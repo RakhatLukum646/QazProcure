@@ -4,9 +4,9 @@ metadata:
   name: qazprocure-config
   namespace: qazprocure
 data:
-  LLM_PROVIDER: "rules"
-  OLLAMA_URL: ""
-  OLLAMA_MODEL: ""
+  LLM_PROVIDER: "gemini"
+  GEMINI_MODEL: "gemini-3.8-flash"
+  OWS_PUBLICATION_UTC_OFFSET_MINUTES: "300"
   SYNC_INTERVAL_HOURS: "6"
   PAGE_SIZE: "50"
   REQUEST_INTERVAL: "0.3"

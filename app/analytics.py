@@ -14,7 +14,7 @@ from . import db, settings
 from .schemas import AnalysisRequest
 from .fair_model import city_index, joint_model
 
-VERSION = '1.1.0'
+VERSION = '1.2.0'
 SIGNED_STATUSES = {190, 375, 390, 455}
 LIMIT = 200000
 
@@ -100,6 +100,11 @@ def snapshot(eng=db.engine):
         for row in conn.execute(select(db.deliveries).where(db.deliveries.c.active.is_(True))).mappings():
             if row['kato']:
                 locations[row['plan_id']].add(row['kato'])
+        lot_locations=defaultdict(set)
+        for row in conn.execute(select(db.lot_delivery_codes).join(db.lots,
+                db.lots.c.id==db.lot_delivery_codes.c.lot_id).where(db.lots.c.deleted.is_(False))).mappings():
+            lot_locations[row['lot_id']].add(row['kato'])
+        verified_lot_plans=set(conn.execute(select(db.lot_plans.c.lot_id,db.lot_plans.c.plan_id)).all())
         job_rows = [dict(r) for r in conn.execute(select(db.jobs)).mappings()]
         city_locations = city_index([dict(r) for r in conn.execute(select(db.refs)).mappings()])
         from .ingest import scope
@@ -129,6 +134,10 @@ def snapshot(eng=db.engine):
             reasons['non_kzt_or_unknown_currency'] += 1
         else:
             kats = locations.get(r['plan_id'], set())
+            r['location_source']='plan_delivery'
+            if not kats and (r['lot_id'],r['plan_id']) in verified_lot_plans:
+                kats=lot_locations.get(r['lot_id'],set())
+                r['location_source']='ows_lot_plnPointKatoList'
             r['kato'] = next(iter(kats)) if len(kats)==1 else None
             r.update(city_locations.get(r['kato'], {}))
             r['price'], r['quantity'] = float(r['price']), float(r['quantity'])
@@ -175,6 +184,7 @@ def evidence(r, **extra):
         original_unit=r.get('original_unit',r['unit']),original_price_net=r.get('original_price',r['price']),
         original_quantity=r.get('original_quantity',r['quantity']),
         city_code=r.get('city_code'),city_name=r.get('city_name'),city_resolution=r.get('city_resolution'),
+          location_source=r.get('location_source'),
         contract_url=f'https://goszakup.gov.kz/ru/egzcontract/cpublic/show/{r["contract_id"]}',
         lot_url=None, **extra)
 
@@ -268,8 +278,15 @@ def fair_price(rows, universe, request):
         regional=joint_model(matched,target['signed_at'],target['city_code'],settings.MIN_PEERS) if same_city else None
         model=regional or time_model(peers,target['signed_at'])
         if model:
-            adjusted=[r['price']*model['factors'].get(r['signed_at'][:7],1) for r in peers if r['signed_at'][:7] in model['factors']]
-            used=[r for r in peers if r['signed_at'][:7] in model['factors']]
+            local_used=[r for r in peers if r['signed_at'][:7] in model['factors']]
+            if len({r['contract_root'] for r in local_used})<settings.MIN_PEERS:
+                reports.append(evidence(target,status='insufficient_time_matched_peers',n_peers=len(local_used)))
+                continue
+            used=[r for r in (matched if regional else peers) if r['signed_at'][:7] in model['factors']
+                  and (not regional or r.get('city_code') in regional['region_city_effects'])]
+            regional_factors={r['item_id']:math.exp(regional['region_city_effects'][target['city_code']]
+                -regional['region_city_effects'][r['city_code']]) if regional else 1. for r in used}
+            adjusted=[r['price']*model['factors'][r['signed_at'][:7]]*regional_factors[r['item_id']] for r in used]
         else:
             # A narrow calendar quarter controls seasonality but cannot estimate inflation.
             used=[r for r in peers if r['signed_at'][:4]==target['signed_at'][:4] and (int(r['signed_at'][5:7])-1)//3==(int(target['signed_at'][5:7])-1)//3]
@@ -286,6 +303,14 @@ def fair_price(rows, universe, request):
             region_reason='joint_city_effect_calibration_same_city_peers' if regional else 'identical_verified_city' if same_city else 'identical_delivery_KATO',
             regional_model=regional,time_model=model,
             peer_item_ids=[r['item_id'] for r in used],peer_contract_ids=sorted({r['contract_id'] for r in used})))
+        if regional:
+            reports[-1].update(region_reason='cross_city_prices_adjusted_to_target_city',
+                same_city_n_contracts=len({r['contract_root'] for r in local_used}),
+                same_city_time_adjusted_median=statistics.median(r['price']*model['factors'][r['signed_at'][:7]] for r in local_used),
+                same_city_contract_ids=sorted({r['contract_id'] for r in local_used}),
+                adjustments=[{'item_id':r['item_id'],'contract_id':r['contract_id'],'source_city':r['city_code'],
+                    'original_price':r['price'],'time_factor':model['factors'][r['signed_at'][:7]],
+                    'region_factor':regional_factors[r['item_id']],'adjusted_price':v} for r,v in zip(used,adjusted)])
     for report, target in zip(reports, targets):
         if target.get('target_kind') == 'planned_lot':
             report.update(target_kind='planned_lot', planned_price=target.get('planned_price'),
@@ -345,20 +370,16 @@ def quantity_anomaly(rows, request):
     # Compare identical month/day windows; leap day is clamped for previous years.
     today=datetime.now(ZoneInfo('Asia/Qyzylorda')).date()
     cutoff=(today.month,today.day) if target_year==today.year else (12,31)
-    explicit_window=False
     if request.date_to and request.date_to.year==target_year:
         cutoff=(request.date_to.month,request.date_to.day)
-        explicit_window=True
     groups=defaultdict(lambda:defaultdict(list))
     for r in rows:
         signed=r['signed_at'][:10]
-        # Years strictly before target_year are already complete; only clamp them to the
-        # cutoff when the window was explicitly requested, not for the implicit "today" default,
-        # otherwise a target year still in progress wrongly discards fully elapsed prior years.
-        if r['year']==target_year or explicit_window:
-            end=date(r['year'],cutoff[0],min(cutoff[1],calendar.monthrange(r['year'],cutoff[0])[1]))
-        else:
-            end=date(r['year'],12,31)
+        # Every year, including completed prior years, is clamped to the same month/day
+        # window as the target year so growth compares equal calendar periods. When the
+        # target year is already complete (past year or explicit date_to), cutoff is
+        # (12,31) for all years, so this clamp is a no-op there.
+        end=date(r['year'],cutoff[0],min(cutoff[1],calendar.monthrange(r['year'],cutoff[0])[1]))
         if signed>str(end):
             continue
         groups[(r['customer_bin'],r['enstru'],r['unit'])][r['year']].append(r)
@@ -452,7 +473,7 @@ def analyze(request: AnalysisRequest, question='', eng=db.engine):
         if elapsed>24:
             result['limitations'].append('stale_data')
     result.update(id=str(uuid.uuid4()),created_at=db.now(),method_version=VERSION,request=request.model_dump(mode='json'),
-                  n_selected=len(rows),quality=quality,
+                  n_selected=len(rows),quality=quality,target_bins=target_bins,
                   confidence='insufficient' if not result.get('n_evaluated') else 'limited' if result['limitations'] else 'descriptive')
     result=json.loads(json.dumps(result,default=as_json,ensure_ascii=False))
     with eng.begin() as conn:

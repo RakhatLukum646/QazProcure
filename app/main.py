@@ -49,6 +49,18 @@ def status():
         'planner':settings.planner_name()}
 
 
+@app.get('/api/ready')
+def ready():
+    health()
+    provider=settings.planner_name()
+    if provider=='gemini':
+        if not settings.GOOGLE_API_KEY:
+            raise HTTPException(503,'Language model key is not configured')
+    else:
+        raise HTTPException(503,'A language model is required; rules mode is explicitly limited')
+    return {'status':'ready','planner':provider}
+
+
 @app.get('/api/quality')
 def quality():
     return quality_report(eng=db.engine)

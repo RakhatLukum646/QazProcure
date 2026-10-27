@@ -1,0 +1,27 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.8-flash",
+  "at": "2026-10-24T03:50:36.621388+00:00",
+  "request": {
+    "intent": "fair_price",
+    "language": "ru",
+    "bins": [],
+    "years": [
+      2024,
+      2025,
+      2026
+    ],
+    "enstru": null,
+    "kato": null,
+    "text": null,
+    "lot_id": 42570523,
+    "lot_number": null,
+    "threshold_pct": 30.0,
+    "direction": "both",
+    "top_k": 10,
+    "group_by": "year",
+    "date_from": null,
+    "date_to": null
+  },
+  "passed": true
+}

@@ -26,8 +26,10 @@ def number(value):
 def archive(conn, entity, obj):
     encoded = json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
     digest = hashlib.sha256(encoded.encode()).hexdigest()
+    now = db.now()
     db.upsert(conn, db.raw, dict(key=f'{entity}:{obj["id"]}:{digest}', entity=entity,
-              source_id=obj['id'], hash=digest, payload=obj, fetched_at=db.now()))
+              source_id=obj['id'], hash=digest, payload=obj, fetched_at=now))
+    db.insert_once(conn, db.first_seen, dict(entity=entity, source_id=obj['id'], seen_at=now))
 
 
 def references(conn, obj):
@@ -78,6 +80,10 @@ def lot(conn, l):
         description=clean(l.get('descriptionRu')), quantity=number(l.get('count')), amount=number(l.get('amount')),
         status=l.get('refLotStatusId'), deleted=bool(l.get('isDeleted')), index_date=l.get('indexDate')))
     conn.execute(db.lot_plans.delete().where(db.lot_plans.c.lot_id == l['id']))
+    conn.execute(db.lot_delivery_codes.delete().where(db.lot_delivery_codes.c.lot_id == l['id']))
+    for code in set(l.get('plnPointKatoList') or []):
+        if code and str(code).isdigit():
+            db.upsert(conn,db.lot_delivery_codes,dict(lot_id=l['id'],kato=str(code)))
     for p in l.get('Plans') or []:
         plan(conn, p)
         db.upsert(conn, db.lot_plans, dict(lot_id=l['id'], plan_id=p['id']))

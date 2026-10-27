@@ -1,0 +1,75 @@
+Краткий вывод
+Проанализировано 2899 групп заказчик/код/единица; найдено результатов: 1040.
+
+Использованные данные
+Годы: 2024, 2025, 2026
+БИН (цель): 000740001307, 020240002363, 020440003656, 030440003698, 050740004819, 051040005150, 100140011059, 120940001946, 140340016539, 150540000186, 171041003124, 210240019348, 210240033968, 210941010761, 230740013340, 231040023028, 780140000023, 900640000128, 940740000911, 940940000384, 960440000220, 970940001378, 971040001050, 980440001034, 981140001551, 990340005977, 990740002243 (не указан — по умолчанию настроенный охват из 27 БИН, а не всё загруженное)
+ЕНСТРУ: —; КАТО: —; N = 69256
+Лот: —; Название: —
+Даты: — … —
+Цены в KZT без НДС.
+
+Сравнение и метрика
+Рост количества относительно медианы минимум двух прошлых лет за одинаковый период.
+Порог: 20.00%; направление: выше
+
+Ограничения и уверенность
+Уверенность: ограниченная
+• Сравниваются договорные объемы, а не фактическое потребление.
+• Отсутствие записей не считается нулевым объемом; нужны как минимум два предыдущих года.
+• Рост объема сам по себе не доказывает завышение потребности.
+• Позиции без доступного плана исключены.
+
+Примеры и источники
+• 990740002243 | 251123.600.000045 | 5 520.00 / 60.00; 9 100.00%
+  Объем по годам: 2024: 40.00, 2025: 80.00; договоров: 4
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20273353
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22980516
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24289670
+• 030440003698 | 222923.200.000011 | 56 699.00 / 750.00; 7 459.87%
+  Объем по годам: 2024: 1 000.00, 2025: 500.00; договоров: 4
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20192963
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22838468
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24843652
+• 990740002243 | 212023.400.000026 | 900.00 / 12.50; 7 100.00%
+  Объем по годам: 2024: 23.00, 2025: 2.00; договоров: 4
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19635066
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23405972
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24289608
+• 100140011059 | 108430.100.000000 | 1 348.60 / 21.50; 6 172.56%
+  Объем по годам: 2024: 5.00, 2025: 38.00; договоров: 3
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19750246
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22338493
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25420287
+• 990740002243 | 222929.900.000070 | 210.00 / 4.00; 5 150.00%
+  Объем по годам: 2024: 2.00, 2025: 6.00; договоров: 4
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20434832
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22179716
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25290242
+• 020440003656 | 329959.900.000081 | 2 974.00 / 75.00; 3 865.33%
+  Объем по годам: 2024: 50.00, 2025: 100.00; договоров: 3
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19580516
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22311558
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24136664
+• 990740002243 | 212013.990.000330 | 6 970.00 / 197.50; 3 429.11%
+  Объем по годам: 2024: 95.00, 2025: 300.00; договоров: 4
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20518267
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23535564
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24250489
+• 020440003656 | 271222.900.000003 | 341.00 / 12.50; 2 628.00%
+  Объем по годам: 2024: 20.00, 2025: 5.00; договоров: 5
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19154955
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23026218
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24512428
+• 171041003124 | 030021.990.000001 | 1 600.00 / 67.50; 2 270.37%
+  Объем по годам: 2024: 80.00, 2025: 55.00; договоров: 4
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20291929
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22750656
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24541842
+• 990740002243 | 325013.100.000059 | 4 011.00 / 180.00; 2 128.33%
+  Объем по годам: 2024: 9.00, 2025: 351.00; договоров: 8
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20485590
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21928513
+  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22320168
+
+ID: 36e6f8ae-26c0-413e-a0af-2e17fc3d83de | v1.1.0 | snapshot: 47ab257157d4

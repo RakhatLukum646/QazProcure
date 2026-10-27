@@ -33,15 +33,32 @@ def test_joint_fit_separates_city_trend_seasonality_and_ignores_future():
     model=joint_model(peers+[future],'2025-01-01','B')
     assert model['region_factor']==pytest.approx(1.4)
     assert model['region_reference_city']=='A'
-    assert model['coefficients'][1]==pytest.approx(.01)
+    assert model['coefficients'][1]==pytest.approx(.12)  # annual log trend
     assert model['coefficients'][2]==pytest.approx(.08)
     assert 999 not in model['calibration_item_ids']
     assert model['factor_components']['2023-01']['empirical_trend_factor']==pytest.approx(math.exp(.24))
 
 
+def test_unbalanced_panel_is_serializable_and_recovers_city_adjustments():
+    import json
+    peers=[r for r in calibration() if not (r['city_code']=='B' and r['signed_at'][5:7] in ('03','07'))]
+    model=joint_model(peers,'2025-01-01','B')
+    assert model is not None
+    json.dumps(model,allow_nan=False)
+    assert model['temporal_validation']['available'] is True
+    assert model['temporal_validation']['median_absolute_percentage_error']<1e-8
+    target_price=100*1.4*math.exp(.24+.08*.5)
+    for row in peers:
+        region=math.exp(model['region_city_effects']['B']-model['region_city_effects'][row['city_code']])
+        adjusted=row['price']*model['factors'][row['signed_at'][:7]]*region
+        assert adjusted==pytest.approx(target_price)
+
+
 def test_joint_fit_rejects_nonoverlapping_or_repeated_contract_history():
     peers=calibration()
-    assert joint_model([r for r in peers if r['city_code']=='A' or r['signed_at']<'2024'],'2025-01-01','A') is None
+    nonoverlapping=[r for r in peers if (r['city_code']=='A' and r['signed_at']<'2024') or
+                    (r['city_code']=='B' and r['signed_at']>='2024')]
+    assert joint_model(nonoverlapping,'2025-01-01','A') is None
     assert joint_model([{**r,'contract_root':1} for r in peers],'2025-01-01','A') is None
 
 

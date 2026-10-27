@@ -927,36 +927,18 @@
     "facts": [
       {
         "path": "result.n_matches",
-        "value": 1,
-        "source": "Independent SQL aggregation by BIN/code/year: quantities 1513, 1458, 1916; >20% vs prior-year median",
-        "answer_text": "найдено результатов: 1"
+        "value": 0,
+        "source": "Independent check: the only 2024 (Contract:21503715, signed 2024-12-09) and 2025 (Contract:23785340, signed 2025-11-18) contracts for this BIN/code are both signed after the Oct cutoff used for the in-progress target year 2026, so neither counts toward the equal-window history; only one year (2026, Contract:24155641, signed 2026-01-12) remains and 2+ prior years are required",
+        "answer_text": "найдено результатов: 0"
       },
       {
-        "path": "result.examples.0.customer_bin",
-        "value": "980440001034",
-        "source": "raw_objects keys Contract:21503715:*, Contract:23785340:*, Contract:24155641:*",
-        "answer_text": "980440001034"
-      },
-      {
-        "path": "result.examples.0.examples.0.quantity",
-        "value": 1916,
-        "source": "Independent SQL SUM(quantity) for 2026; raw key Contract:24155641:*",
-        "answer_text": "1 916.00"
-      },
-      {
-        "path": "result.examples.0.baseline_quantity",
-        "value": 1485.5,
-        "source": "Independent median of prior annual quantities: median(1513,1458)",
-        "answer_text": "1 485.50"
-      },
-      {
-        "path": "result.examples.0.deviation_pct",
-        "value": 28.98014137,
-        "source": "Independent calculation 100*(1916/1485.5-1)",
-        "answer_text": "28.98%"
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL count for BIN/code across all requested years: Contract:21503715, Contract:23785340, Contract:24155641",
+        "answer_text": "N = 3"
       }
     ],
-    "expected_outcome": "numeric"
+    "expected_outcome": "insufficient"
   },
   {
     "id": "quantity_milk_growth_kk",
@@ -980,33 +962,211 @@
     "facts": [
       {
         "path": "result.n_matches",
+        "value": 0,
+        "source": "Independent check: the only 2024 (Contract:21503715, signed 2024-12-09) and 2025 (Contract:23785340, signed 2025-11-18) contracts for this BIN/code are both signed after the Oct cutoff used for the in-progress target year 2026, so neither counts toward the equal-window history; only one year (2026, Contract:24155641, signed 2026-01-12) remains and 2+ prior years are required",
+        "answer_text": "найдено результатов: 0"
+      },
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL count for BIN/code across all requested years: Contract:21503715, Contract:23785340, Contract:24155641",
+        "answer_text": "N = 3"
+      }
+    ],
+    "expected_outcome": "insufficient"
+  },
+  {
+    "id": "fair_price_audit_estimated_ru",
+    "question": "Оцени Fair Price лота 40202186 за 2026 год по другим заказчикам в том же месте поставки",
+    "request": {
+      "intent": "fair_price",
+      "language": "ru",
+      "lot_id": 40202186,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
         "value": 1,
-        "source": "Independent SQL aggregation by BIN/code/year: quantities 1513, 1458, 1916; >20% vs prior-year median",
+        "source": "Independent re-derivation directly from contracts/items/plans/deliveries tables (not via app.analytics.fair_price): target item 56156037/contract 24858274, enstru 692010.000.000002, unit 5114, city 710000000 (г.Астана), signed 2026-03-13",
         "answer_text": "найдено результатов: 1"
       },
       {
-        "path": "result.examples.0.customer_bin",
-        "value": "980440001034",
-        "source": "raw_objects keys Contract:21503715:*, Contract:23785340:*, Contract:24155641:*",
-        "answer_text": "980440001034"
+        "path": "result.examples.0.fair_price",
+        "value": 302700.0,
+        "source": "Independent median of 34 same-city/same-description/same-quarter(2026 Q1) peer items from 33 distinct contract families, quantity 0.5-2x target",
+        "answer_text": "302 700.00"
       },
       {
-        "path": "result.examples.0.examples.0.quantity",
-        "value": 1916,
-        "source": "Independent SQL SUM(quantity) for 2026; raw key Contract:24155641:*",
-        "answer_text": "1 916.00"
-      },
-      {
-        "path": "result.examples.0.baseline_quantity",
-        "value": 1485.5,
-        "source": "Independent median of prior annual quantities: median(1513,1458)",
-        "answer_text": "1 485.50"
+        "path": "result.examples.0.n_peers",
+        "value": 33,
+        "source": "Independent count of distinct peer contract_root values after the same filters",
+        "answer_text": "N=33"
       },
       {
         "path": "result.examples.0.deviation_pct",
-        "value": 28.98014137,
-        "source": "Independent calculation 100*(1916/1485.5-1)",
-        "answer_text": "28.98%"
+        "value": 81.69805087545426,
+        "source": "Independent calculation 100*(550000/302700-1)",
+        "answer_text": "81.70"
+      },
+      {
+        "path": "result.examples.0.q25",
+        "value": 181666.0,
+        "source": "Independent 25th percentile of the same 34 peer item prices",
+        "answer_text": "181 666.00"
+      },
+      {
+        "path": "result.examples.0.q75",
+        "value": 652500.0,
+        "source": "Independent 75th percentile of the same 34 peer item prices",
+        "answer_text": "652 500.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "fair_price_audit_estimated_kk",
+    "question": "40202186 лотының 2026 жылғы Fair Price бағасын сол жеткізу орнындағы басқа тапсырыс берушілермен бағала",
+    "request": {
+      "intent": "fair_price",
+      "language": "kk",
+      "lot_id": 40202186,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 1,
+        "source": "Independent re-derivation directly from contracts/items/plans/deliveries tables (not via app.analytics.fair_price): target item 56156037/contract 24858274, enstru 692010.000.000002, unit 5114, city 710000000 (г.Астана), signed 2026-03-13",
+        "answer_text": "найдено результатов: 1"
+      },
+      {
+        "path": "result.examples.0.fair_price",
+        "value": 302700.0,
+        "source": "Independent median of 34 same-city/same-description/same-quarter(2026 Q1) peer items from 33 distinct contract families, quantity 0.5-2x target",
+        "answer_text": "302 700.00"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 33,
+        "source": "Independent count of distinct peer contract_root values after the same filters",
+        "answer_text": "N=33"
+      },
+      {
+        "path": "result.examples.0.deviation_pct",
+        "value": 81.69805087545426,
+        "source": "Independent calculation 100*(550000/302700-1)",
+        "answer_text": "81.70"
+      },
+      {
+        "path": "result.examples.0.q25",
+        "value": 181666.0,
+        "source": "Independent 25th percentile of the same 34 peer item prices",
+        "answer_text": "181 666.00"
+      },
+      {
+        "path": "result.examples.0.q75",
+        "value": 652500.0,
+        "source": "Independent 75th percentile of the same 34 peer item prices",
+        "answer_text": "652 500.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "fair_price_audit_small_ru",
+    "question": "Оцени Fair Price лота 41029081 за 2026 год по другим заказчикам в том же месте поставки",
+    "request": {
+      "intent": "fair_price",
+      "language": "ru",
+      "lot_id": 41029081,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 1,
+        "source": "Independent re-derivation directly from contracts/items/plans/deliveries tables (not via app.analytics.fair_price): target item 56506276/contract 25015278, enstru 692010.000.000002, unit 5114, city 710000000 (г.Астана), signed 2026-04-14",
+        "answer_text": "найдено результатов: 1"
+      },
+      {
+        "path": "result.examples.0.fair_price",
+        "value": 150000.0,
+        "source": "Independent median of 5 same-city/same-description/same-quarter(2026 Q2) peer items from 5 distinct contract families, quantity 0.5-2x target",
+        "answer_text": "150 000.00"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 5,
+        "source": "Independent count of distinct peer contract_root values after the same filters",
+        "answer_text": "N=5"
+      },
+      {
+        "path": "result.examples.0.deviation_pct",
+        "value": -19.999999999999996,
+        "source": "Independent calculation 100*(120000/150000-1)",
+        "answer_text": "-20.00"
+      },
+      {
+        "path": "result.examples.0.q25",
+        "value": 130000.0,
+        "source": "Independent 25th percentile of the same 5 peer item prices",
+        "answer_text": "130 000.00"
+      },
+      {
+        "path": "result.examples.0.q75",
+        "value": 390000.0,
+        "source": "Independent 75th percentile of the same 5 peer item prices",
+        "answer_text": "390 000.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "fair_price_audit_small_kk",
+    "question": "41029081 лотының 2026 жылғы Fair Price бағасын сол жеткізу орнындағы басқа тапсырыс берушілермен бағала",
+    "request": {
+      "intent": "fair_price",
+      "language": "kk",
+      "lot_id": 41029081,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 1,
+        "source": "Independent re-derivation directly from contracts/items/plans/deliveries tables (not via app.analytics.fair_price): target item 56506276/contract 25015278, enstru 692010.000.000002, unit 5114, city 710000000 (г.Астана), signed 2026-04-14",
+        "answer_text": "найдено результатов: 1"
+      },
+      {
+        "path": "result.examples.0.fair_price",
+        "value": 150000.0,
+        "source": "Independent median of 5 same-city/same-description/same-quarter(2026 Q2) peer items from 5 distinct contract families, quantity 0.5-2x target",
+        "answer_text": "150 000.00"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 5,
+        "source": "Independent count of distinct peer contract_root values after the same filters",
+        "answer_text": "N=5"
+      },
+      {
+        "path": "result.examples.0.deviation_pct",
+        "value": -19.999999999999996,
+        "source": "Independent calculation 100*(120000/150000-1)",
+        "answer_text": "-20.00"
+      },
+      {
+        "path": "result.examples.0.q25",
+        "value": 130000.0,
+        "source": "Independent 25th percentile of the same 5 peer item prices",
+        "answer_text": "130 000.00"
+      },
+      {
+        "path": "result.examples.0.q75",
+        "value": 390000.0,
+        "source": "Independent 75th percentile of the same 5 peer item prices",
+        "answer_text": "390 000.00"
       }
     ],
     "expected_outcome": "numeric"

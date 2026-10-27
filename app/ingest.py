@@ -120,6 +120,7 @@ def hydrate_kato_parents(client, eng=db.engine):
     with eng.connect() as conn:
         rows = [dict(r) for r in conn.execute(select(db.refs).where(db.refs.c.kind == 'RefKato')).mappings()]
         delivery_codes = set(conn.execute(select(db.deliveries.c.kato).where(db.deliveries.c.kato.is_not(None)).distinct()).scalars())
+        delivery_codes.update(conn.execute(select(db.lot_delivery_codes.c.kato).distinct()).scalars())
     known = {str(r['code']): r for r in rows}
     pending = set(str(c) for c in delivery_codes if str(c) not in known)
     for row in rows:
@@ -201,6 +202,9 @@ def _sync(mode='backfill', bins=None, years=None, max_pages=None, max_link_batch
     details = {'bins': bins, 'years': years, 'jobs': [], 'warnings': []}
     try:
         client = OWSClient()
+        if mode=='incremental':
+            from .publication import sweep
+            details['publication_sweep']=sweep(client,bins,years,eng)
         # OWS indexDate is a naive source timestamp. A one-day upper overlap
         # avoids losing records if the source clock/zone leads this host.
         incremental_window = [since.strftime('%Y-%m-%d %H:%M:%S'),

@@ -105,7 +105,7 @@ ANNOUNCEMENT_FIELDS = '''id numberAnno nameRu nameKz orgBin customerBin
 publishDate finYear refBuyStatusId indexDate RefBuyStatus { id nameRu nameKz }'''
 
 LOT_FIELDS = '''id lotNumber nameRu nameKz descriptionRu descriptionKz customerBin
-count amount trdBuyId refLotStatusId isDeleted indexDate pointList
+count amount trdBuyId refLotStatusId isDeleted indexDate pointList plnPointKatoList
 RefLotsStatus { id nameRu nameKz }
 TrdBuy { ''' + ANNOUNCEMENT_FIELDS + ''' }
 Plans { ''' + PLAN_FIELDS + ''' }'''

@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-24T03:53:08.247669+00:00",
+  "provider": "gemini",
+  "pytest": {
+    "passed": 102,
+    "failed": 0
+  },
+  "visualizations_smoke": "passed",
+  "kubernetes": {
+    "kustomize_exit_code": 0,
+    "live_deploy_verified": false
+  },
+  "factual_smoke": {
+    "report": "gemini_current_smoke.json",
+    "scores": {
+      "cases": 12,
+      "exact_cases": 12,
+      "route_correct": 12,
+      "fact_correct": 64,
+      "fact_total": 64,
+      "fact_accuracy": 1.0,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "visible_accuracy": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "outcome_correct": 12,
+      "outcome_total": 12,
+      "numeric_answers": 8,
+      "insufficient_answers": 4,
+      "failures": 0
+    }
+  },
+  "full_factual_acceptance": "not_run_for_current_gemini_code",
+  "docker_smoke": "docker_smoke.json"
+}

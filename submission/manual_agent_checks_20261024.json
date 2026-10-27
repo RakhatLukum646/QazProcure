@@ -1,0 +1,3497 @@
+{
+  "started_at": "2026-10-24T08:17:02.430271+00:00",
+  "endpoint": "http://127.0.0.1:8765/api/chat",
+  "cases": [
+    {
+      "id": "search_ru",
+      "question": "Найди позицию договора по лоту 38693950 за 2026 год. Покажи цену без НДС, количество, БИН заказчика и дату подписания.",
+      "seconds": 15.97,
+      "response": {
+        "answer": "Краткий вывод\nПроанализировано 1 позиций; найдено результатов: 1.\n\nИспользованные данные\nГоды: 2026\nБИН (цель): 000740001307, 020240002363, 020440003656, 030440003698, 050740004819, 051040005150, 100140011059, 120940001946, 140340016539, 150540000186, 171041003124, 210240019348, 210240033968, 210941010761, 230740013340, 231040023028, 780140000023, 900640000128, 940740000911, 940940000384, 960440000220, 970940001378, 971040001050, 980440001034, 981140001551, 990340005977, 990740002243 (не указан — по умолчанию настроенный охват из 27 БИН, а не всё загруженное)\nЕНСТРУ: —; КАТО: —; N = 1\nЛот: 38693950; Название: —\nДаты: — … —\nЦены в KZT без НДС.\n\nСравнение и метрика\nПоиск по действующим версиям подписанных договоров.\n\nОграничения и уверенность\nУверенность: ограниченная\n• Позиции без доступного плана исключены.\n\nПримеры и источники\n• Молоко натуральное | ID 24155641 | цена 360.00 KZT; количество 1 916.00\n  Позиция ID 54747313; дата подписания 2026-01-12 15:05:39; БИН заказчика 980440001034; КАТО 711510000\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641\n\nID: 6d9b20f0-ae88-4f45-a8af-75b89a2345b1 | v1.2.0 | snapshot: 3a7bcad5690a",
+        "request": {
+          "intent": "search",
+          "language": "ru",
+          "bins": [],
+          "years": [
+            2026
+          ],
+          "enstru": null,
+          "kato": null,
+          "text": null,
+          "lot_id": 38693950,
+          "lot_number": null,
+          "threshold_pct": 30.0,
+          "direction": "both",
+          "top_k": 10,
+          "group_by": "year",
+          "date_from": null,
+          "date_to": null
+        },
+        "result": {
+          "method": "filtered effective signed contract items; net KZT",
+          "n_evaluated": 1,
+          "n_matches": 1,
+          "examples": [
+            {
+              "item_id": 54747313,
+              "contract_id": 24155641,
+              "lot_id": 38693950,
+              "plan_id": 80807335,
+              "customer_bin": "980440001034",
+              "supplier_bin": "040440005686",
+              "name_ru": "Молоко натуральное",
+              "name_kz": "Табиғи сүт",
+              "enstru": "105111.410.000000",
+              "unit": "112",
+              "kato": "711510000",
+              "year": 2026,
+              "signed_at": "2026-01-12 15:05:39",
+              "price_net": 360.0,
+              "quantity": 1916.0,
+              "original_unit": "112",
+              "original_price_net": 360.0,
+              "original_quantity": 1916.0,
+              "city_code": "710000000",
+              "city_name": "г.Астана",
+              "city_resolution": "reference_parent_hierarchy",
+              "location_source": "plan_delivery",
+              "contract_url": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641",
+              "lot_url": null
+            }
+          ],
+          "limitations": [
+            "missing_plans_excluded"
+          ],
+          "id": "6d9b20f0-ae88-4f45-a8af-75b89a2345b1",
+          "created_at": "2026-10-24T08:17:18.329581+00:00",
+          "method_version": "1.2.0",
+          "request": {
+            "intent": "search",
+            "language": "ru",
+            "bins": [],
+            "years": [
+              2026
+            ],
+            "enstru": null,
+            "kato": null,
+            "text": null,
+            "lot_id": 38693950,
+            "lot_number": null,
+            "threshold_pct": 30.0,
+            "direction": "both",
+            "top_k": 10,
+            "group_by": "year",
+            "date_from": null,
+            "date_to": null
+          },
+          "n_selected": 1,
+          "quality": {
+            "raw_items": 110372,
+            "usable_items": 71585,
+            "excluded": {
+              "inactive_or_previous_contract": 36903,
+              "missing_or_deleted_plan": 1882,
+              "non_kzt_or_unknown_currency": 1,
+              "invalid_price_or_quantity": 1
+            },
+            "jobs_total": 13704,
+            "jobs_complete": 13670,
+            "latest_sync": {
+              "id": "edc85852-b401-478b-9335-ee5f7ddd5599",
+              "mode": "incremental",
+              "started_at": "2026-10-24T08:11:44.716385+00:00",
+              "finished_at": "2026-10-24T08:16:50.042815+00:00",
+              "status": "complete",
+              "details": {
+                "bins": [
+                  "000740001307",
+                  "020240002363",
+                  "020440003656",
+                  "030440003698",
+                  "050740004819",
+                  "051040005150",
+                  "100140011059",
+                  "120940001946",
+                  "140340016539",
+                  "150540000186",
+                  "171041003124",
+                  "210240019348",
+                  "210240033968",
+                  "210941010761",
+                  "230740013340",
+                  "231040023028",
+                  "780140000023",
+                  "900640000128",
+                  "940740000911",
+                  "940940000384",
+                  "960440000220",
+                  "970940001378",
+                  "971040001050",
+                  "980440001034",
+                  "981140001551",
+                  "990340005977",
+                  "990740002243"
+                ],
+                "years": [
+                  2024,
+                  2025,
+                  2026
+                ],
+                "jobs": [
+                  {
+                    "entity": "Plans",
+                    "bin": "000740001307",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "000740001307",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "000740001307",
+                    "year": 2025,
+                    "rows": 8,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "000740001307",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "000740001307",
+                    "year": 2026,
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "000740001307",
+                    "year": 2026,
+                    "rows": 10,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "000740001307",
+                    "rows": 4,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020240002363",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020240002363",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020240002363",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020240002363",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020240002363",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020240002363",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "020240002363",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020440003656",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020440003656",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020440003656",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020440003656",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020440003656",
+                    "year": 2026,
+                    "rows": 60,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020440003656",
+                    "year": 2026,
+                    "rows": 15,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "020440003656",
+                    "rows": 54,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "030440003698",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "030440003698",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "030440003698",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "030440003698",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "030440003698",
+                    "year": 2026,
+                    "rows": 1659,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "030440003698",
+                    "year": 2026,
+                    "rows": 30,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "030440003698",
+                    "rows": 17,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "050740004819",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "050740004819",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "050740004819",
+                    "year": 2025,
+                    "rows": 6,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "050740004819",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "050740004819",
+                    "year": 2026,
+                    "rows": 6,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "050740004819",
+                    "year": 2026,
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "050740004819",
+                    "rows": 2,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "051040005150",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "051040005150",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "051040005150",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "051040005150",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "051040005150",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "051040005150",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "051040005150",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "100140011059",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "100140011059",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "100140011059",
+                    "year": 2025,
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "100140011059",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "100140011059",
+                    "year": 2026,
+                    "rows": 2264,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "100140011059",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "100140011059",
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "120940001946",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "120940001946",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "120940001946",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "120940001946",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "120940001946",
+                    "year": 2026,
+                    "rows": 91,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "120940001946",
+                    "year": 2026,
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "120940001946",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "140340016539",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "140340016539",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "140340016539",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "140340016539",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "140340016539",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "140340016539",
+                    "year": 2026,
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "140340016539",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "150540000186",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "150540000186",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "150540000186",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "150540000186",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "150540000186",
+                    "year": 2026,
+                    "rows": 30,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "150540000186",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "150540000186",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "171041003124",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "171041003124",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "171041003124",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "171041003124",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "171041003124",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "171041003124",
+                    "year": 2026,
+                    "rows": 10,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "171041003124",
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240019348",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240019348",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240019348",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240019348",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240019348",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240019348",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "210240019348",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240033968",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240033968",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240033968",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240033968",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240033968",
+                    "year": 2026,
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240033968",
+                    "year": 2026,
+                    "rows": 7,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "210240033968",
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210941010761",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210941010761",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210941010761",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210941010761",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210941010761",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210941010761",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "210941010761",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "230740013340",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "230740013340",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "230740013340",
+                    "year": 2025,
+                    "rows": 27,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "230740013340",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "230740013340",
+                    "year": 2026,
+                    "rows": 20,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "230740013340",
+                    "year": 2026,
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "230740013340",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "231040023028",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "231040023028",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "231040023028",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "231040023028",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "231040023028",
+                    "year": 2026,
+                    "rows": 14,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "231040023028",
+                    "year": 2026,
+                    "rows": 8,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "231040023028",
+                    "rows": 16,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "780140000023",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "780140000023",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "780140000023",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "780140000023",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "780140000023",
+                    "year": 2026,
+                    "rows": 10,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "780140000023",
+                    "year": 2026,
+                    "rows": 4,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "780140000023",
+                    "rows": 8,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "900640000128",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "900640000128",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "900640000128",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "900640000128",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "900640000128",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "900640000128",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "900640000128",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940740000911",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940740000911",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940740000911",
+                    "year": 2025,
+                    "rows": 19,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940740000911",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940740000911",
+                    "year": 2026,
+                    "rows": 9,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940740000911",
+                    "year": 2026,
+                    "rows": 6,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "940740000911",
+                    "rows": 2,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940940000384",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940940000384",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940940000384",
+                    "year": 2025,
+                    "rows": 28,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940940000384",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940940000384",
+                    "year": 2026,
+                    "rows": 294,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940940000384",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "940940000384",
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "960440000220",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "960440000220",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "960440000220",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "960440000220",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "960440000220",
+                    "year": 2026,
+                    "rows": 14,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "960440000220",
+                    "year": 2026,
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "960440000220",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "970940001378",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "970940001378",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "970940001378",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "970940001378",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "970940001378",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "970940001378",
+                    "year": 2026,
+                    "rows": 6,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "970940001378",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "971040001050",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "971040001050",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "971040001050",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "971040001050",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "971040001050",
+                    "year": 2026,
+                    "rows": 61,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "971040001050",
+                    "year": 2026,
+                    "rows": 18,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "971040001050",
+                    "rows": 58,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "980440001034",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "980440001034",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "980440001034",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "980440001034",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "980440001034",
+                    "year": 2026,
+                    "rows": 7,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "980440001034",
+                    "year": 2026,
+                    "rows": 2,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "980440001034",
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "981140001551",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "981140001551",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "981140001551",
+                    "year": 2025,
+                    "rows": 176,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "981140001551",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "981140001551",
+                    "year": 2026,
+                    "rows": 394,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "981140001551",
+                    "year": 2026,
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "981140001551",
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990340005977",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990340005977",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990340005977",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990340005977",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990340005977",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990340005977",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "990340005977",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990740002243",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990740002243",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990740002243",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990740002243",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990740002243",
+                    "year": 2026,
+                    "rows": 5559,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990740002243",
+                    "year": 2026,
+                    "rows": 56,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "990740002243",
+                    "rows": 47,
+                    "complete": true
+                  }
+                ],
+                "warnings": [
+                  "Some item links remain unresolved in the source; see unresolved_links_after and quality report."
+                ],
+                "publication_sweep": {
+                  "bins": [
+                    "000740001307",
+                    "020240002363",
+                    "020440003656",
+                    "030440003698",
+                    "050740004819",
+                    "051040005150",
+                    "100140011059",
+                    "120940001946",
+                    "140340016539",
+                    "150540000186",
+                    "171041003124",
+                    "210240019348",
+                    "210240033968",
+                    "210941010761",
+                    "230740013340",
+                    "231040023028",
+                    "780140000023",
+                    "900640000128",
+                    "940740000911",
+                    "940940000384",
+                    "960440000220",
+                    "970940001378",
+                    "971040001050",
+                    "980440001034",
+                    "981140001551",
+                    "990340005977",
+                    "990740002243"
+                  ],
+                  "years": [
+                    2024,
+                    2025,
+                    2026
+                  ],
+                  "window_utc": [
+                    "2026-10-21T08:11:44.921082+00:00",
+                    "2026-10-24T08:11:44.921082+00:00"
+                  ],
+                  "source_window": [
+                    "2026-10-21 13:11:44",
+                    "2026-10-24 13:11:44"
+                  ],
+                  "source_offset_minutes": 300,
+                  "scanned": 16346,
+                  "matched": 110,
+                  "matched_ids": [
+                    17860285,
+                    17859909,
+                    17859837,
+                    17859773,
+                    17859517,
+                    17859484,
+                    17859470,
+                    17859451,
+                    17859285,
+                    17858996,
+                    17858878,
+                    17858602,
+                    17858117,
+                    17857629,
+                    17857603,
+                    17857491,
+                    17857440,
+                    17857405,
+                    17857362,
+                    17857324,
+                    17857227,
+                    17856933,
+                    17856412,
+                    17856384,
+                    17856188,
+                    17855938,
+                    17855867,
+                    17855730,
+                    17855502,
+                    17855378,
+                    17855004,
+                    17854942,
+                    17854666,
+                    17854665,
+                    17854663,
+                    17854662,
+                    17854658,
+                    17854655,
+                    17854652,
+                    17854569,
+                    17854239,
+                    17853163,
+                    17853095,
+                    17852791,
+                    17852777,
+                    17852706,
+                    17852655,
+                    17852630,
+                    17852501,
+                    17852082,
+                    17851529,
+                    17851473,
+                    17851239,
+                    17851003,
+                    17850897,
+                    17850034,
+                    17848880,
+                    17848447,
+                    17848079,
+                    17847624,
+                    17847250,
+                    17847026,
+                    17846772,
+                    17846252,
+                    17845971,
+                    17845946,
+                    17845891,
+                    17845887,
+                    17845840,
+                    17845159,
+                    17844926,
+                    17844916,
+                    17844912,
+                    17844911,
+                    17844852,
+                    17844766,
+                    17844722,
+                    17844172,
+                    17844140,
+                    17844092,
+                    17843999,
+                    17843961,
+                    17843774,
+                    17843742,
+                    17843648,
+                    17843645,
+                    17843643,
+                    17843641,
+                    17843566,
+                    17843563,
+                    17843394,
+                    17843346,
+                    17842834,
+                    17842664,
+                    17841992,
+                    17841929,
+                    17841634,
+                    17841619,
+                    17840476,
+                    17839880,
+                    17835840,
+                    17833314,
+                    17832573,
+                    17830397,
+                    17824074,
+                    17823923,
+                    17823808,
+                    17823744,
+                    17822702,
+                    17758569
+                  ],
+                  "source_total": 16346,
+                  "pages": 164,
+                  "complete": true
+                },
+                "link_requests": {
+                  "plans": 1796,
+                  "lots": 0
+                },
+                "unresolved_links_after": {
+                  "plan_ids": 1796,
+                  "lot_ids": 0
+                },
+                "kato_parents": {
+                  "fetched": 0,
+                  "source_absent": 6
+                }
+              }
+            },
+            "snapshot_hash": "3a7bcad5690a8de58a62c079cc6122faf0694fd123771d70bd2818509228d2c4",
+            "missing_backfill_partitions": [],
+            "sync_age_hours": 0.01
+          },
+          "target_bins": [
+            "000740001307",
+            "020240002363",
+            "020440003656",
+            "030440003698",
+            "050740004819",
+            "051040005150",
+            "100140011059",
+            "120940001946",
+            "140340016539",
+            "150540000186",
+            "171041003124",
+            "210240019348",
+            "210240033968",
+            "210941010761",
+            "230740013340",
+            "231040023028",
+            "780140000023",
+            "900640000128",
+            "940740000911",
+            "940940000384",
+            "960440000220",
+            "970940001378",
+            "971040001050",
+            "980440001034",
+            "981140001551",
+            "990340005977",
+            "990740002243"
+          ],
+          "confidence": "limited"
+        },
+        "planner": "gemini",
+        "warnings": []
+      },
+      "checks": {
+        "gemini": true,
+        "nonempty_examples": true,
+        "routing": true,
+        "price_net": true,
+        "quantity": true,
+        "customer_bin": true,
+        "signed_at": true,
+        "lot_id": true,
+        "visible_facts": true
+      },
+      "passed": true
+    },
+    {
+      "id": "anomaly_kk",
+      "question": "2026 жылғы бағасы баламалардың орташа өлшенген бағасынан 30 пайыздан артық жоғары сатып алуларды тап. Ең үлкен ауытқуы бар 3 нәтижені көрсет.",
+      "seconds": 89.55,
+      "response": {
+        "answer": "Қысқаша қорытынды\n5238 позиция талданды; нәтижелер саны: 1688.\n\nҚолданылған деректер\nЖылдар: 2026\nБСН (мақсат): 000740001307, 020240002363, 020440003656, 030440003698, 050740004819, 051040005150, 100140011059, 120940001946, 140340016539, 150540000186, 171041003124, 210240019348, 210240033968, 210941010761, 230740013340, 231040023028, 780140000023, 900640000128, 940740000911, 940940000384, 960440000220, 970940001378, 971040001050, 980440001034, 981140001551, 990340005977, 990740002243 (көрсетілмеген — әдепкі бойынша 27 БСН-нан тұратын теңшелген қамту, барлық жүктелген емес)\nБСН (баламалар): мақсатты тізіммен шектелмеген; төмендегі loaded_comparison_universe шектеуін қараңыз\nЕНСТРУ: —; КАТО: —; N = 20542\nЛот: —; Атауы: —\nКүндер: — … —\nБағалар KZT, ҚҚС-сыз.\n\nСалыстыру және метрика\nАуытқу = (баға / баламалардың орташа өлшенген бағасы − 1) × 100%. Мақсатты шарт баламалардан шығарылған.\nШек: 30.00%; бағыт: жоғары\nБаламалары жеткіліксіз позициялар: 15304\n\nШектеулер және сенімділік\nСенімділік: шектеулі\n• ЕНСТРУ сәйкестігі сипаттамалардың бірдей екенін кепілдемейді.\n• Шекті талдау уақыт түзетуінсіз номиналды бағаларды қолданады.\n• Ауытқу тексеруге негіз болады, бұзушылықтың дәлелі емес.\n• Баламалар жүктелген тапсырыс берушілер мен шарттармен шектелген; бүкіл нарық қамтылмаған.\n• Қолжетімді жоспары жоқ позициялар есепке алынбады.\n\nМысалдар және дереккөздер\n• Компьютерлік/сырттағы кеңсе техникасын/жабдықтарын және оларды бөліктерін техникалық қамтамасыз ету бойынша қызмет көрсетулер | ID 24243589 | баға 2 568 759 489.66 KZT; саны 1.00\n  Позиция ID 54961846; қол қойылған күні 2026-01-28 11:53:05; тапсырыс беруші БСН 981140001551; КАТО 711210000\n  Ауытқу: 230 094.19%; N=18\n  Салыстыру үшін балама баға: 1 115 909.76 KZT\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24243589\n  Салыстыру шарттары (алғашқы 3):\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24134815\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24153632\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155623\n• Шприц | ID 25482142 | баға 33 660.00 KZT; саны 400.00\n  Позиция ID 57470607; қол қойылған күні 2026-06-24 14:41:11; тапсырыс беруші БСН 990740002243; КАТО 711210000\n  Ауытқу: 116 966.63%; N=6\n  Салыстыру үшін балама баға: 28.75 KZT\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25482142\n  Салыстыру шарттары (алғашқы 3):\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24863896\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24951393\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25532930\n• Шприц | ID 25482142 | баға 30 140.00 KZT; саны 35.00\n  Позиция ID 57470606; қол қойылған күні 2026-06-24 14:41:11; тапсырыс беруші БСН 990740002243; КАТО 711210000\n  Ауытқу: 104 724.37%; N=6\n  Салыстыру үшін балама баға: 28.75 KZT\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25482142\n  Салыстыру шарттары (алғашқы 3):\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24863896\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24951393\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25532930\n\nID: 81e46dad-a2a2-46f3-9610-7a0851cd6b45 | v1.2.0 | snapshot: 3a7bcad5690a",
+        "request": {
+          "intent": "price_anomaly",
+          "language": "kk",
+          "bins": [],
+          "years": [
+            2026
+          ],
+          "enstru": null,
+          "kato": null,
+          "text": null,
+          "lot_id": null,
+          "lot_number": null,
+          "threshold_pct": 30.0,
+          "direction": "above",
+          "top_k": 3,
+          "group_by": "enstru",
+          "date_from": null,
+          "date_to": null
+        },
+        "result": {
+          "method": "leave-one-contract-out quantity-weighted mean; exact ENSTRU/unit/KATO/type; net KZT",
+          "n_evaluated": 5238,
+          "n_insufficient_peers": 15304,
+          "n_matches": 1688,
+          "examples": [
+            {
+              "item_id": 54961846,
+              "contract_id": 24243589,
+              "lot_id": 33594252,
+              "plan_id": 84590618,
+              "customer_bin": "981140001551",
+              "supplier_bin": "070840007927",
+              "name_ru": "Услуги по техническому обслуживанию компьютерной/периферийной оргтехники/оборудования и их частей",
+              "name_kz": "Компьютерлік/сырттағы кеңсе техникасын/жабдықтарын және оларды бөліктерін техникалық қамтамасыз ету бойынша қызмет көрсетулер",
+              "enstru": "951110.000.000003",
+              "unit": "5114",
+              "kato": "711210000",
+              "year": 2026,
+              "signed_at": "2026-01-28 11:53:05",
+              "price_net": 2568759489.66,
+              "quantity": 1.0,
+              "original_unit": "5114",
+              "original_price_net": 2568759489.66,
+              "original_quantity": 1.0,
+              "city_code": "710000000",
+              "city_name": "г.Астана",
+              "city_resolution": "reference_parent_hierarchy",
+              "location_source": "plan_delivery",
+              "contract_url": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24243589",
+              "lot_url": null,
+              "deviation_pct": 230094.19471906,
+              "reference_price": 1115909.7616666667,
+              "n_peers": 18,
+              "peer_item_ids": [
+                55402331,
+                56130052,
+                56375116,
+                58039218,
+                56732565,
+                54747258,
+                54692809,
+                56003397,
+                55302017,
+                56219774,
+                54759442,
+                54759374,
+                56373237,
+                55181350,
+                57537653,
+                56081016,
+                57446165,
+                54741550
+              ],
+              "peer_contract_ids": [
+                24134815,
+                24153632,
+                24155623,
+                24160305,
+                24160324,
+                24362103,
+                24433815,
+                24488976,
+                24789557,
+                24824532,
+                24846468,
+                24885792,
+                24954926,
+                24955819,
+                25121586,
+                25469214,
+                25518117,
+                25789684
+              ]
+            },
+            {
+              "item_id": 57470607,
+              "contract_id": 25482142,
+              "lot_id": 40222448,
+              "plan_id": 83210626,
+              "customer_bin": "990740002243",
+              "supplier_bin": "180340015112",
+              "name_ru": "Шприц",
+              "name_kz": "Шприц",
+              "enstru": "325013.110.000000",
+              "unit": "796",
+              "kato": "711210000",
+              "year": 2026,
+              "signed_at": "2026-06-24 14:41:11",
+              "price_net": 33660.0,
+              "quantity": 400.0,
+              "original_unit": "796",
+              "original_price_net": 33660.0,
+              "original_quantity": 400.0,
+              "city_code": "710000000",
+              "city_name": "г.Астана",
+              "city_resolution": "reference_parent_hierarchy",
+              "location_source": "plan_delivery",
+              "contract_url": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25482142",
+              "lot_url": null,
+              "deviation_pct": 116966.62774257,
+              "reference_price": 28.752856940595862,
+              "n_peers": 6,
+              "peer_item_ids": [
+                58058981,
+                58028275,
+                57993962,
+                57566561,
+                56365396,
+                56365395,
+                56365394,
+                56168817
+              ],
+              "peer_contract_ids": [
+                24863896,
+                24951393,
+                25532930,
+                25766086,
+                25783912,
+                25800752
+              ]
+            },
+            {
+              "item_id": 57470606,
+              "contract_id": 25482142,
+              "lot_id": 40222463,
+              "plan_id": 83210629,
+              "customer_bin": "990740002243",
+              "supplier_bin": "180340015112",
+              "name_ru": "Шприц",
+              "name_kz": "Шприц",
+              "enstru": "325013.110.000000",
+              "unit": "796",
+              "kato": "711210000",
+              "year": 2026,
+              "signed_at": "2026-06-24 14:41:11",
+              "price_net": 30140.0,
+              "quantity": 35.0,
+              "original_unit": "796",
+              "original_price_net": 30140.0,
+              "original_quantity": 35.0,
+              "city_code": "710000000",
+              "city_name": "г.Астана",
+              "city_resolution": "reference_parent_hierarchy",
+              "location_source": "plan_delivery",
+              "contract_url": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25482142",
+              "lot_url": null,
+              "deviation_pct": 104724.36601785,
+              "reference_price": 28.752856940595862,
+              "n_peers": 6,
+              "peer_item_ids": [
+                58058981,
+                58028275,
+                57993962,
+                57566561,
+                56365396,
+                56365395,
+                56365394,
+                56168817
+              ],
+              "peer_contract_ids": [
+                24863896,
+                24951393,
+                25532930,
+                25766086,
+                25783912,
+                25800752
+              ]
+            }
+          ],
+          "limitations": [
+            "code_level_comparison",
+            "time_not_adjusted",
+            "anomaly_is_not_proof",
+            "loaded_comparison_universe",
+            "missing_plans_excluded"
+          ],
+          "id": "81e46dad-a2a2-46f3-9610-7a0851cd6b45",
+          "created_at": "2026-10-24T08:18:47.839142+00:00",
+          "method_version": "1.2.0",
+          "request": {
+            "intent": "price_anomaly",
+            "language": "kk",
+            "bins": [],
+            "years": [
+              2026
+            ],
+            "enstru": null,
+            "kato": null,
+            "text": null,
+            "lot_id": null,
+            "lot_number": null,
+            "threshold_pct": 30.0,
+            "direction": "above",
+            "top_k": 3,
+            "group_by": "enstru",
+            "date_from": null,
+            "date_to": null
+          },
+          "n_selected": 20542,
+          "quality": {
+            "raw_items": 110372,
+            "usable_items": 71585,
+            "excluded": {
+              "inactive_or_previous_contract": 36903,
+              "missing_or_deleted_plan": 1882,
+              "non_kzt_or_unknown_currency": 1,
+              "invalid_price_or_quantity": 1
+            },
+            "jobs_total": 13704,
+            "jobs_complete": 13670,
+            "latest_sync": {
+              "id": "edc85852-b401-478b-9335-ee5f7ddd5599",
+              "mode": "incremental",
+              "started_at": "2026-10-24T08:11:44.716385+00:00",
+              "finished_at": "2026-10-24T08:16:50.042815+00:00",
+              "status": "complete",
+              "details": {
+                "bins": [
+                  "000740001307",
+                  "020240002363",
+                  "020440003656",
+                  "030440003698",
+                  "050740004819",
+                  "051040005150",
+                  "100140011059",
+                  "120940001946",
+                  "140340016539",
+                  "150540000186",
+                  "171041003124",
+                  "210240019348",
+                  "210240033968",
+                  "210941010761",
+                  "230740013340",
+                  "231040023028",
+                  "780140000023",
+                  "900640000128",
+                  "940740000911",
+                  "940940000384",
+                  "960440000220",
+                  "970940001378",
+                  "971040001050",
+                  "980440001034",
+                  "981140001551",
+                  "990340005977",
+                  "990740002243"
+                ],
+                "years": [
+                  2024,
+                  2025,
+                  2026
+                ],
+                "jobs": [
+                  {
+                    "entity": "Plans",
+                    "bin": "000740001307",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "000740001307",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "000740001307",
+                    "year": 2025,
+                    "rows": 8,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "000740001307",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "000740001307",
+                    "year": 2026,
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "000740001307",
+                    "year": 2026,
+                    "rows": 10,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "000740001307",
+                    "rows": 4,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020240002363",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020240002363",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020240002363",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020240002363",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020240002363",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020240002363",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "020240002363",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020440003656",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020440003656",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020440003656",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020440003656",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "020440003656",
+                    "year": 2026,
+                    "rows": 60,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "020440003656",
+                    "year": 2026,
+                    "rows": 15,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "020440003656",
+                    "rows": 54,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "030440003698",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "030440003698",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "030440003698",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "030440003698",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "030440003698",
+                    "year": 2026,
+                    "rows": 1659,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "030440003698",
+                    "year": 2026,
+                    "rows": 30,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "030440003698",
+                    "rows": 17,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "050740004819",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "050740004819",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "050740004819",
+                    "year": 2025,
+                    "rows": 6,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "050740004819",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "050740004819",
+                    "year": 2026,
+                    "rows": 6,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "050740004819",
+                    "year": 2026,
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "050740004819",
+                    "rows": 2,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "051040005150",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "051040005150",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "051040005150",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "051040005150",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "051040005150",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "051040005150",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "051040005150",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "100140011059",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "100140011059",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "100140011059",
+                    "year": 2025,
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "100140011059",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "100140011059",
+                    "year": 2026,
+                    "rows": 2264,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "100140011059",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "100140011059",
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "120940001946",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "120940001946",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "120940001946",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "120940001946",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "120940001946",
+                    "year": 2026,
+                    "rows": 91,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "120940001946",
+                    "year": 2026,
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "120940001946",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "140340016539",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "140340016539",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "140340016539",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "140340016539",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "140340016539",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "140340016539",
+                    "year": 2026,
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "140340016539",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "150540000186",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "150540000186",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "150540000186",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "150540000186",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "150540000186",
+                    "year": 2026,
+                    "rows": 30,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "150540000186",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "150540000186",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "171041003124",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "171041003124",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "171041003124",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "171041003124",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "171041003124",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "171041003124",
+                    "year": 2026,
+                    "rows": 10,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "171041003124",
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240019348",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240019348",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240019348",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240019348",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240019348",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240019348",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "210240019348",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240033968",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240033968",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240033968",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240033968",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210240033968",
+                    "year": 2026,
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210240033968",
+                    "year": 2026,
+                    "rows": 7,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "210240033968",
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210941010761",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210941010761",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210941010761",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210941010761",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "210941010761",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "210941010761",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "210941010761",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "230740013340",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "230740013340",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "230740013340",
+                    "year": 2025,
+                    "rows": 27,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "230740013340",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "230740013340",
+                    "year": 2026,
+                    "rows": 20,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "230740013340",
+                    "year": 2026,
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "230740013340",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "231040023028",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "231040023028",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "231040023028",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "231040023028",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "231040023028",
+                    "year": 2026,
+                    "rows": 14,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "231040023028",
+                    "year": 2026,
+                    "rows": 8,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "231040023028",
+                    "rows": 16,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "780140000023",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "780140000023",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "780140000023",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "780140000023",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "780140000023",
+                    "year": 2026,
+                    "rows": 10,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "780140000023",
+                    "year": 2026,
+                    "rows": 4,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "780140000023",
+                    "rows": 8,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "900640000128",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "900640000128",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "900640000128",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "900640000128",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "900640000128",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "900640000128",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "900640000128",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940740000911",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940740000911",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940740000911",
+                    "year": 2025,
+                    "rows": 19,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940740000911",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940740000911",
+                    "year": 2026,
+                    "rows": 9,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940740000911",
+                    "year": 2026,
+                    "rows": 6,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "940740000911",
+                    "rows": 2,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940940000384",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940940000384",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940940000384",
+                    "year": 2025,
+                    "rows": 28,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940940000384",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "940940000384",
+                    "year": 2026,
+                    "rows": 294,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "940940000384",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "940940000384",
+                    "rows": 3,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "960440000220",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "960440000220",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "960440000220",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "960440000220",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "960440000220",
+                    "year": 2026,
+                    "rows": 14,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "960440000220",
+                    "year": 2026,
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "960440000220",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "970940001378",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "970940001378",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "970940001378",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "970940001378",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "970940001378",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "970940001378",
+                    "year": 2026,
+                    "rows": 6,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "970940001378",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "971040001050",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "971040001050",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "971040001050",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "971040001050",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "971040001050",
+                    "year": 2026,
+                    "rows": 61,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "971040001050",
+                    "year": 2026,
+                    "rows": 18,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "971040001050",
+                    "rows": 58,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "980440001034",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "980440001034",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "980440001034",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "980440001034",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "980440001034",
+                    "year": 2026,
+                    "rows": 7,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "980440001034",
+                    "year": 2026,
+                    "rows": 2,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "980440001034",
+                    "rows": 1,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "981140001551",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "981140001551",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "981140001551",
+                    "year": 2025,
+                    "rows": 176,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "981140001551",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "981140001551",
+                    "year": 2026,
+                    "rows": 394,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "981140001551",
+                    "year": 2026,
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "981140001551",
+                    "rows": 5,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990340005977",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990340005977",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990340005977",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990340005977",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990340005977",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990340005977",
+                    "year": 2026,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "990340005977",
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990740002243",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990740002243",
+                    "year": 2024,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990740002243",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990740002243",
+                    "year": 2025,
+                    "rows": 0,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Plans",
+                    "bin": "990740002243",
+                    "year": 2026,
+                    "rows": 5559,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Contract",
+                    "bin": "990740002243",
+                    "year": 2026,
+                    "rows": 56,
+                    "complete": true
+                  },
+                  {
+                    "entity": "Lots",
+                    "bin": "990740002243",
+                    "rows": 47,
+                    "complete": true
+                  }
+                ],
+                "warnings": [
+                  "Some item links remain unresolved in the source; see unresolved_links_after and quality report."
+                ],
+                "publication_sweep": {
+                  "bins": [
+                    "000740001307",
+                    "020240002363",
+                    "020440003656",
+                    "030440003698",
+                    "050740004819",
+                    "051040005150",
+                    "100140011059",
+                    "120940001946",
+                    "140340016539",
+                    "150540000186",
+                    "171041003124",
+                    "210240019348",
+                    "210240033968",
+                    "210941010761",
+                    "230740013340",
+                    "231040023028",
+                    "780140000023",
+                    "900640000128",
+                    "940740000911",
+                    "940940000384",
+                    "960440000220",
+                    "970940001378",
+                    "971040001050",
+                    "980440001034",
+                    "981140001551",
+                    "990340005977",
+                    "990740002243"
+                  ],
+                  "years": [
+                    2024,
+                    2025,
+                    2026
+                  ],
+                  "window_utc": [
+                    "2026-10-21T08:11:44.921082+00:00",
+                    "2026-10-24T08:11:44.921082+00:00"
+                  ],
+                  "source_window": [
+                    "2026-10-21 13:11:44",
+                    "2026-10-24 13:11:44"
+                  ],
+                  "source_offset_minutes": 300,
+                  "scanned": 16346,
+                  "matched": 110,
+                  "matched_ids": [
+                    17860285,
+                    17859909,
+                    17859837,
+                    17859773,
+                    17859517,
+                    17859484,
+                    17859470,
+                    17859451,
+                    17859285,
+                    17858996,
+                    17858878,
+                    17858602,
+                    17858117,
+                    17857629,
+                    17857603,
+                    17857491,
+                    17857440,
+                    17857405,
+                    17857362,
+                    17857324,
+                    17857227,
+                    17856933,
+                    17856412,
+                    17856384,
+                    17856188,
+                    17855938,
+                    17855867,
+                    17855730,
+                    17855502,
+                    17855378,
+                    17855004,
+                    17854942,
+                    17854666,
+                    17854665,
+                    17854663,
+                    17854662,
+                    17854658,
+                    17854655,
+                    17854652,
+                    17854569,
+                    17854239,
+                    17853163,
+                    17853095,
+                    17852791,
+                    17852777,
+                    17852706,
+                    17852655,
+                    17852630,
+                    17852501,
+                    17852082,
+                    17851529,
+                    17851473,
+                    17851239,
+                    17851003,
+                    17850897,
+                    17850034,
+                    17848880,
+                    17848447,
+                    17848079,
+                    17847624,
+                    17847250,
+                    17847026,
+                    17846772,
+                    17846252,
+                    17845971,
+                    17845946,
+                    17845891,
+                    17845887,
+                    17845840,
+                    17845159,
+                    17844926,
+                    17844916,
+                    17844912,
+                    17844911,
+                    17844852,
+                    17844766,
+                    17844722,
+                    17844172,
+                    17844140,
+                    17844092,
+                    17843999,
+                    17843961,
+                    17843774,
+                    17843742,
+                    17843648,
+                    17843645,
+                    17843643,
+                    17843641,
+                    17843566,
+                    17843563,
+                    17843394,
+                    17843346,
+                    17842834,
+                    17842664,
+                    17841992,
+                    17841929,
+                    17841634,
+                    17841619,
+                    17840476,
+                    17839880,
+                    17835840,
+                    17833314,
+                    17832573,
+                    17830397,
+                    17824074,
+                    17823923,
+                    17823808,
+                    17823744,
+                    17822702,
+                    17758569
+                  ],
+                  "source_total": 16346,
+                  "pages": 164,
+                  "complete": true
+                },
+                "link_requests": {
+                  "plans": 1796,
+                  "lots": 0
+                },
+                "unresolved_links_after": {
+                  "plan_ids": 1796,
+                  "lot_ids": 0
+                },
+                "kato_parents": {
+                  "fetched": 0,
+                  "source_absent": 6
+                }
+              }
+            },
+            "snapshot_hash": "3a7bcad5690a8de58a62c079cc6122faf0694fd123771d70bd2818509228d2c4",
+            "missing_backfill_partitions": [],
+            "sync_age_hours": 0.03
+          },
+          "target_bins": [
+            "000740001307",
+            "020240002363",
+            "020440003656",
+            "030440003698",
+            "050740004819",
+            "051040005150",
+            "100140011059",
+            "120940001946",
+            "140340016539",
+            "150540000186",
+            "171041003124",
+            "210240019348",
+            "210240033968",
+            "210941010761",
+            "230740013340",
+            "231040023028",
+            "780140000023",
+            "900640000128",
+            "940740000911",
+            "940940000384",
+            "960440000220",
+            "970940001378",
+            "971040001050",
+            "980440001034",
+            "981140001551",
+            "990340005977",
+            "990740002243"
+          ],
+          "confidence": "limited"
+        },
+        "planner": "gemini",
+        "warnings": []
+      },
+      "independent_recalculation": [
+        {
+          "item_id": 54961846,
+          "peer_items": 18,
+          "weighted_price": 1115909.7616666667,
+          "deviation_pct": 230094.19471906
+        },
+        {
+          "item_id": 57470607,
+          "peer_items": 8,
+          "weighted_price": 28.752856940595862,
+          "deviation_pct": 116966.62774257
+        },
+        {
+          "item_id": 57470606,
+          "peer_items": 8,
+          "weighted_price": 28.752856940595862,
+          "deviation_pct": 104724.36601785
+        }
+      ],
+      "checks": {
+        "gemini": true,
+        "nonempty_examples": true,
+        "routing": true,
+        "three_examples": true,
+        "54961846_arithmetic": true,
+        "54961846_source_link": true,
+        "57470607_arithmetic": true,
+        "57470607_source_link": true,
+        "57470606_arithmetic": true,
+        "57470606_source_link": true
+      },
+      "passed": true
+    }
+  ],
+  "verification_scope": "Search facts checked against saved raw OWS Contract payload; anomaly arithmetic recalculated from SQL prices/quantities for returned peer IDs. Does not independently verify complete peer selection or portal truth.",
+  "passed": true
+}

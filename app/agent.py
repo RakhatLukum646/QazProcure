@@ -103,8 +103,11 @@ def rule_plan(question, previous=None):
     return AnalysisRequest.model_validate(req.model_dump())
 
 
-def llm_plan(question, previous=None, provider='ollama'):
+def llm_plan(question, previous=None, provider='gemini'):
     schema=PlannedRequest.model_json_schema()
+    schema['required']=['request','clarification']
+    schema['$defs']['AnalysisRequest']['required']=['intent']
+    schema['$defs']['AnalysisRequest']['properties']['intent'].pop('default',None)
     if provider=='gemini':
         # Require explicit values; optional defaults otherwise allow an empty valid object.
         def strict_schema(node):
@@ -123,12 +126,22 @@ Choose intent: search, compare, summary, price_anomaly, fair_price, quantity_ano
 quantity_anomaly means atypical growth or overstatement of purchased quantities/volumes, not price deviation or ordinary search.
 Example: "Выяви нетипичное завышение количества ТРУ за 2024–2026 годы" -> intent quantity_anomaly, language ru, years [2024,2025,2026], direction above.
 Extract exact BINs (strings retaining leading zeroes), ENSTRU, KATO, years, lot ID/number, threshold.
+For fair_price, 'same/identical delivery city' or 'бірдей жеткізу қаласы' means the target lot's own delivery city, resolved by analytics. Do not ask for KATO for this relative phrase. Preserve all hyphen-separated segments of lot numbers.
+A lot ID or full lot number ALONE is sufficient for fair_price: analytics resolves its BIN, ENSTRU, delivery city and date. Never require these additional identifiers when a lot is supplied.
+Example: "Оцени справедливость цены лота 42570523 в идентичном городе поставки" -> {"request":{"intent":"fair_price","lot_id":42570523,"language":"ru"},"clarification":null}.
 Do not invent identifiers. Leave unknown filters null/empty. language is ru or kk.
 Defaults: years 2024,2025,2026; threshold_pct 30; direction both. Use above for overpriced and below for underpriced.
+All filters are OPTIONAL. Empty bins means all configured 27 organizations; empty product means all products. Broad summary/anomaly/quantity requests are valid. Do not ask for BIN, ENSTRU, KATO or a product when the user wants an overview across the scope.
 Use previous request only for follow-up references. Never inherit stale lot filters when user explicitly switches task.
 If a city or organization name cannot be resolved from identifiers explicitly supplied by the user/history, ask for clarification. Do not put a city or organization into the product text filter.
 Unsupported constraints (budget filters, official CPI, legal verdicts, unspecified units) require clarification rather than silently dropping them.
-Schema: '''+json.dumps(schema,ensure_ascii=False)
+Schema: '''+json.dumps(schema,ensure_ascii=False)+'''
+IMPORTANT: The database already contains the configured procurement scope. Missing filters are NOT missing data.
+Valid broad request example:
+User: Выяви нетипичное завышение количества ТРУ за 2024–2026 годы
+Output: {"request":{"intent":"quantity_anomaly","language":"ru","years":[2024,2025,2026],"bins":[],"direction":"above"},"clarification":null}
+Return a request for this kind of question. Only unsupported constraints or genuinely ambiguous intent require clarification.
+'''
     messages=[{'role':'system','content':system}]
     if previous:messages.append({'role':'user','content':'Previous parameters: '+previous.model_dump_json()})
     messages.append({'role':'user','content':question})
@@ -143,20 +156,50 @@ Schema: '''+json.dumps(schema,ensure_ascii=False)
         if not candidates:raise ValueError('Gemini returned no candidate')
         content=''.join(p.get('text','') for p in candidates[0].get('content',{}).get('parts',[]))
     else:
-        response=httpx.post(settings.OLLAMA_URL+'/api/chat',json={'model':settings.OLLAMA_MODEL,'stream':False,
-            'format':schema,'options':{'temperature':0},'messages':messages},timeout=90)
-        response.raise_for_status()
-        content=response.json()['message']['content']
-    plan=PlannedRequest.model_validate_json(content)
+        raise ValueError('Unsupported language model provider')
+    # Literal years outrank model output even when that output is invalid (e.g.
+    # [2024, 2] for an explicit 2024–2025 range). Validate the repaired payload,
+    # never silently accept invalid years when the question provides no years.
+    payload=json.loads(content)
+    years=[int(y) for y in re.findall(r'\b(20\d{2})\b',question)]
+    if years and isinstance(payload,dict) and isinstance(payload.get('request'),dict):
+        payload['request']['years']=(list(range(min(years),max(years)+1))
+            if re.search(r'20\d{2}\s*[-–—]\s*20\d{2}',question) else sorted(set(years)))
+    plan=PlannedRequest.model_validate(payload)
     if plan.request is None or plan.clarification:
         raise Clarification(plan.clarification or 'Уточните параметры запроса. / Сұрау параметрлерін нақтылаңыз.')
     request=plan.request
     # Explicit numeric constraints win over model defaults or omissions.
-    years=[int(y) for y in re.findall(r'\b(20\d{2})\b',question)]
-    if years:
-        request.years=list(range(min(years),max(years)+1)) if re.search(r'20\d{2}\s*[-–—]\s*20\d{2}',question) else sorted(set(years))
     bins=re.findall(r'(?<!\d)\d{12}(?!\d)',question)
     if bins:request.bins=list(dict.fromkeys(bins))
+    # Literal identifiers must survive model omissions; this does not select intent.
+    code=re.search(r'(?<!\d)(\d{6}\.\d{3}\.\d{6})(?!\d)',question)
+    if not code:
+        code=re.search(r'(?:енс\s*тру|енстру|enstru)\s*[:=№]?\s*(\d{6,15}(?:\.\d+)+)',question,re.I)
+    if code:
+        request.enstru=code.group(1).rstrip('.')
+        # With an exact classification code, the accompanying category label is
+        # not a second literal substring filter (e.g. молоку vs Молоко).
+        # Quoted additional product specifications remain explicit constraints.
+        quoted=re.search(r'[«"]([^»"]+)[»"]',question)
+        request.text=quoted.group(1) if quoted else None
+    kato=re.search(r'(?:като|kato)\s*[:=]?\s*(\d{9})',question,re.I)
+    if not kato:kato=re.search(r'(?<!\d)(\d{9})\s+(?:като|kato)\b',question,re.I)
+    if kato:request.kato=kato.group(1)
+    lot=re.search(r'(?:лот(?:а|у)?|лоттың)\s*(?:№|id|номер|нөмірі)?\s*[:=]?\s*(\d+(?:-[\w]+)*)',question,re.I)
+    if not lot:
+        lot=re.search(r'(?<![\w.])(\d+(?:-[\w]+)*)\s+лот[а-яәғқңөұүһі]*\b',question,re.I)
+    if lot:
+        value=lot.group(1)
+        request.lot_id=int(value) if value.isdigit() else None
+        request.lot_number=value.upper() if not value.isdigit() else None
+    threshold=re.search(r'(\d+(?:[.,]\d+)?)\s*(?:%|процент|пайыз)',question,re.I)
+    if threshold:request.threshold_pct=float(threshold.group(1).replace(',','.'))
+    if request.intent=='price_anomaly':
+        if re.search(r'дешевле|ниже|арзан|төмен',question,re.I):request.direction='below'
+        elif re.search(r'дороже|выше|завыш|қымбат|жоғары',question,re.I):request.direction='above'
+    if request.intent=='quantity_anomaly' and re.search(r'рост|завыш|өс|артық',question,re.I):
+        request.direction='above'
     request.language=language_of(question)
     supplied=question+' '+(previous.model_dump_json() if previous else '')
     for value in [*request.bins,request.enstru,request.kato,request.lot_number,request.lot_id]:
@@ -196,13 +239,23 @@ def render(result):
     kk=result['request']['language']=='kk';idx=int(kk)
     def l(ru,kz):return kz if kk else ru
     n=result.get('n_matches',result.get('n_groups',0));examined=result.get('n_evaluated',0)
-    lines=[l('Краткий вывод','Қысқаша қорытынды'),l(f'Проанализировано {examined} позиций; найдено результатов: {n}.',f'{examined} позиция талданды; нәтижелер саны: {n}.')]
+    # n_evaluated means different units per intent: quantity_anomaly counts distinct
+    # (customer_bin, ENSTRU, unit) cohorts with enough history to compare, not line items.
+    unit_ru,unit_kz=('групп заказчик/код/единица','тапсырыс беруші/код/өлшем бірлігі топтары') if result['request']['intent']=='quantity_anomaly' else ('позиций','позиция')
+    lines=[l('Краткий вывод','Қысқаша қорытынды'),l(f'Проанализировано {examined} {unit_ru}; найдено результатов: {n}.',f'{examined} {unit_kz} талданды; нәтижелер саны: {n}.')]
     if not examined:lines.append(l('Недостаточно подходящих данных для вывода.','Қорытынды жасауға жарамды деректер жеткіліксіз.'))
     r=result['request']
+    target_bins_line=(l('БИН (цель): ','БСН (мақсат): ')+', '.join(map(str,result.get('target_bins') or r['bins'] or []))+
+        (l(' (не указан — по умолчанию настроенный охват из 27 БИН, а не всё загруженное)',
+           ' (көрсетілмеген — әдепкі бойынша 27 БСН-нан тұратын теңшелген қамту, барлық жүктелген емес)')
+         if not r['bins'] else ''))
     lines += ['',l('Использованные данные','Қолданылған деректер'),
               l('Годы: ','Жылдар: ')+', '.join(map(str,r['years'])),
-              l('БИН: ','БСН: ')+(', '.join(r['bins']) or l('все загруженные','барлық жүктелген')),
-              f"ЕНСТРУ: {r['enstru'] or '—'}; КАТО: {r['kato'] or '—'}; N = {result['n_selected']}",
+              target_bins_line]
+    if r['intent'] in ('price_anomaly','fair_price'):
+        lines.append(l('БИН (аналоги): ','БСН (баламалар): ')+l('не ограничены целевым списком; см. ограничение loaded_comparison_universe ниже',
+                                                                  'мақсатты тізіммен шектелмеген; төмендегі loaded_comparison_universe шектеуін қараңыз'))
+    lines += [f"ЕНСТРУ: {r['enstru'] or '—'}; КАТО: {r['kato'] or '—'}; N = {result['n_selected']}",
               l('Лот: ','Лот: ')+str(r['lot_number'] or r['lot_id'] or '—')+'; '+l('Название: ','Атауы: ')+(r['text'] or '—'),
               l('Даты: ','Күндер: ')+f"{r['date_from'] or '—'} … {r['date_to'] or '—'}",
               l('Цены в KZT без НДС.','Бағалар KZT, ҚҚС-сыз.'),
@@ -259,7 +312,9 @@ def render(result):
                 if 'region_factor' in e:
                     if e.get('region_reason')=='joint_city_effect_calibration_same_city_peers' or e.get('regional_model'):
                         lines.append(l('  Региональный коэффициент калибровки: ','  Калибрлеудің өңірлік коэффициенті: ')+fmt(e['region_factor'])+l('; базовый город (КАТО): ','; базалық қала (КАТО): ')+str(e.get('region_reference_city') or '—'))
-                        lines.append(l('  Аналоги того же города; региональный коэффициент повторно к ценам не применяется.','  Сол қаланың баламалары; өңірлік коэффициент бағаларға қайта қолданылмайды.'))
+                        lines.append(l('  Цены межгородских аналогов приведены к городу целевого лота.','  Басқа қалалардағы баламалардың бағалары нысаналы лот қаласына келтірілді.'))
+                        if e.get('same_city_n_contracts'):
+                            lines.append(l('  Отдельное сравнение в том же городе: N=', '  Сол қаладағы жеке салыстыру: N=')+str(e['same_city_n_contracts'])+l('; медиана с учетом времени ', '; уақыт бойынша түзетілген медиана ')+fmt(e['same_city_time_adjusted_median']))
                     elif e.get('city_code') and e.get('region_reason')!='identical_delivery_KATO':
                         lines.append(l('  Аналоги того же подтвержденного города; региональный множитель 1 — условность, не оценка калибровки.','  Сол расталған қаланың баламалары; өңірлік көбейткіш 1 — шартты мән, калибрлеу бағасы емес.'))
                     else:
@@ -267,6 +322,9 @@ def render(result):
                 model=e.get('regional_model') or e.get('time_model')
                 if model:
                     lines.append(l('  Тренд и годовая сезонность по ценам OWS, не официальный ИПЦ. Месяцев: ','  OWS бағаларының тренді мен жылдық маусымдылығы, ресми ТБИ емес. Айлар: ')+str(model.get('months','—'))+'; R² '+fmt(model.get('r2')))
+                    validation=model.get('temporal_validation') or {}
+                    if validation.get('available'):
+                        lines.append(l('  Проверка на последних шести месяцах, исключённых из обучения: медианная ошибка ', '  Оқытуға кірмеген соңғы алты айдағы тексеру: медианалық қате ')+fmt(validation['median_absolute_percentage_error'])+'%; P90 '+fmt(validation['p90_absolute_percentage_error'])+'%.'+l(' Оценка статистическая, точная цена не гарантируется.', ' Баға статистикалық, нақты бағаға кепілдік берілмейді.'))
                     if 'calibration_contract_ids' in model:
                         lines.append(l('  Калибровка: договоров ','  Калибрлеу: шарттар ')+str(len(model['calibration_contract_ids']))+l('; позиций ','; позициялар ')+str(len(model.get('calibration_item_ids',[]))))
                     for month,parts in model.get('factor_components',{}).items():
@@ -293,13 +351,15 @@ def answer(question, previous=None, filters=None, eng=None):
     warnings=[]
     if filters:
         request=filters
-    elif settings.planner_name() in ('gemini','ollama'):
+    elif settings.planner_name() == 'gemini':
         try:
             planner=settings.planner_name()
             request=llm_plan(question,previous,provider=planner)
         except Clarification:
             raise
         except (httpx.HTTPError,ValueError,KeyError,ValidationError):
+            if not settings.ALLOW_RULES_FALLBACK:
+                raise Clarification('Языковая модель недоступна или вернула некорректный запрос. Проверьте готовность модели; шаблонная подмена отключена.') from None
             warnings.append('LLM unavailable or invalid output; restricted rules used.')
             planner='rules'
             request=rule_plan(question,previous)

@@ -306,7 +306,18 @@ def summarize_factual(details):
                            for intent in sorted({d['intent'] for d in details})})
 
 
-def run_factual(dataset, output, *, eng=None, provider='gemini', planner=None, _frozen=False):
+def run_factual(dataset, output, *, eng=None, provider='gemini', planner=None, _frozen=False, workers=1):
+    """One writer per report; parallelize model calls, serialize SQLite analysis."""
+    from filelock import FileLock
+    if workers not in (1,2,3):
+        raise ValueError('Factual workers must be 1, 2 or 3')
+    Path(output).parent.mkdir(parents=True,exist_ok=True)
+    with FileLock(str(output)+'.lock',timeout=0):
+        return _run_factual(dataset,output,eng=eng,provider=provider,planner=planner,
+                            _frozen=_frozen,workers=workers)
+
+
+def _run_factual(dataset, output, *, eng=None, provider='gemini', planner=None, _frozen=False, workers=1):
     """Run natural questions on one immutable database snapshot; no rules fallback."""
     from . import db
     eng = eng or db.engine
@@ -323,8 +334,8 @@ def run_factual(dataset, output, *, eng=None, provider='gemini', planner=None, _
                     target.close()
             frozen = db.make_engine('sqlite:///' + str(path))
             try:
-                return run_factual(dataset, output, eng=frozen, provider=provider,
-                                   planner=planner, _frozen=True)
+                return _run_factual(dataset, output, eng=frozen, provider=provider,
+                                   planner=planner, _frozen=True, workers=workers)
             finally:
                 frozen.dispose()
     from . import analytics
@@ -347,25 +358,36 @@ def run_factual(dataset, output, *, eng=None, provider='gemini', planner=None, _
                         'questions and renderer are developed against this same set, so this is not a blind holdout or certification. '
                         'Only annotated required facts are scored; unannotated extra claims and OWS source truth are not exhaustively checked.',
                   dataset=str(Path(dataset).resolve()), dataset_sha256=hashlib.sha256(raw).hexdigest(),
-                  provider=provider, model=model, started_at=stamp(), complete=False, details=[])
+                  provider=provider, model=model, started_at=stamp(), complete=False, details=[],
+                  expected_cases=len(cases), workers=workers,
+                  code_sha256={p.name:hashlib.sha256(p.read_bytes()).hexdigest()
+                               for p in sorted(Path(__file__).parent.glob('*.py'))})
     snapshot_hash = None
-    for case in cases:
+    def evaluate(case, planned):
         try:
-            request = (planner or llm_plan)(case['question'], provider=provider)
+            request = planned.result()
             request = AnalysisRequest.model_validate(request)
             result = analytics.analyze(request, case['question'], eng=eng)
-            if snapshot_hash is None:
-                snapshot_hash = result['quality']['snapshot_hash']
-            elif result['quality']['snapshot_hash'] != snapshot_hash:
+            result_hash = result['quality']['snapshot_hash']
+            if snapshot_hash is not None and result_hash != snapshot_hash:
                 raise RuntimeError('Snapshot changed during factual holdout')
             response = dict(request=result['request'], result=result, answer=render(result))
             detail = score_factual_case(case, response)
+            detail['answer']=response['answer']
+            detail['actual_request']=response['request']
+            return detail,result_hash
         except Exception as exc:
-            detail = score_factual_case(case, error=type(exc).__name__)
-        report['details'].append(detail)
-        report.update(updated_at=stamp(), snapshot_sha256=snapshot_hash,
-                      scores=summarize_factual(report['details']), completed_cases=len(report['details']))
-        save_report(output, report)
+            return score_factual_case(case, error=type(exc).__name__),None
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        planned=[pool.submit(planner or llm_plan,case['question'],provider=provider) for case in cases]
+        for case,future in zip(cases,planned):
+            detail,result_hash=evaluate(case,future)
+            if snapshot_hash is None and result_hash is not None:
+                snapshot_hash=result_hash
+            report['details'].append(detail)
+            report.update(updated_at=stamp(), snapshot_sha256=snapshot_hash,
+                          scores=summarize_factual(report['details']), completed_cases=len(report['details']))
+            save_report(output, report)
     report['complete'] = True
     save_report(output, report)
     return report
@@ -375,15 +397,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dataset', type=Path, default=settings.ROOT / 'config/acceptance_holdout.json')
     parser.add_argument('--output', type=Path, default=settings.DATA / 'acceptance_latest.json')
-    parser.add_argument('--workers', type=int, choices=(2, 3), default=2)
+    parser.add_argument('--workers', type=int, choices=(1, 2, 3), default=2)
     parser.add_argument('--no-resume', action='store_true')
     parser.add_argument('--verify-facts', action='store_true')
     parser.add_argument('--factual-only', action='store_true', help='Run real-data final-answer factual holdout')
+    parser.add_argument('--provider',choices=('gemini',),default=settings.planner_name(),help='Language model for factual acceptance; no rule fallback')
     parser.add_argument('--factual-dataset', type=Path, default=settings.ROOT / 'config/factual_holdout.json')
     parser.add_argument('--factual-output', type=Path, default=settings.DATA / 'factual_latest.json')
     args = parser.parse_args()
     if args.factual_only:
-        report = run_factual(args.factual_dataset, args.factual_output)
+        report = run_factual(args.factual_dataset, args.factual_output,workers=args.workers,provider=args.provider)
         print(json.dumps({k: v for k, v in report.items() if k != 'details'}, ensure_ascii=False, indent=2))
         if report['scores']['overall']['fact_accuracy'] < .85:
             raise SystemExit(1)

@@ -1,0 +1,8058 @@
+{
+  "generated_at": "2026-10-24T02:14:33.507230+00:00",
+  "scope": {
+    "bins": [
+      "000740001307",
+      "020240002363",
+      "020440003656",
+      "030440003698",
+      "050740004819",
+      "051040005150",
+      "100140011059",
+      "120940001946",
+      "140340016539",
+      "150540000186",
+      "171041003124",
+      "210240019348",
+      "210240033968",
+      "210941010761",
+      "230740013340",
+      "231040023028",
+      "780140000023",
+      "900640000128",
+      "940740000911",
+      "940940000384",
+      "960440000220",
+      "970940001378",
+      "971040001050",
+      "980440001034",
+      "981140001551",
+      "990340005977",
+      "990740002243"
+    ],
+    "years": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "plan_links": {
+    "items": 107939,
+    "null_plan_id": 0,
+    "missing_plan_lookup": 2244,
+    "invalid_or_deleted_plan": 9405
+  },
+  "latest_publication_sweep": {
+    "id": "1e3510e7-9a80-46b4-bfc4-a7e1cefa4205",
+    "mode": "publication",
+    "started_at": "2026-10-24T02:12:10.278583+00:00",
+    "finished_at": "2026-10-24T02:13:39.491846+00:00",
+    "status": "complete",
+    "details": {
+      "bins": [
+        "000740001307",
+        "020240002363",
+        "020440003656",
+        "030440003698",
+        "050740004819",
+        "051040005150",
+        "100140011059",
+        "120940001946",
+        "140340016539",
+        "150540000186",
+        "171041003124",
+        "210240019348",
+        "210240033968",
+        "210941010761",
+        "230740013340",
+        "231040023028",
+        "780140000023",
+        "900640000128",
+        "940740000911",
+        "940940000384",
+        "960440000220",
+        "970940001378",
+        "971040001050",
+        "980440001034",
+        "981140001551",
+        "990340005977",
+        "990740002243"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "window_utc": [
+        "2026-10-21T02:12:10.278583+00:00",
+        "2026-10-24T02:12:10.278583+00:00"
+      ],
+      "source_window": [
+        "2026-10-21 07:12:10",
+        "2026-10-24 07:12:10"
+      ],
+      "source_offset_minutes": 300,
+      "scanned": 19381,
+      "matched": 139,
+      "matched_ids": [
+        17860285,
+        17859909,
+        17859837,
+        17859773,
+        17859517,
+        17859484,
+        17859470,
+        17859451,
+        17859285,
+        17858996,
+        17858878,
+        17858602,
+        17858117,
+        17857629,
+        17857603,
+        17857491,
+        17857440,
+        17857405,
+        17857362,
+        17857324,
+        17857227,
+        17856933,
+        17856412,
+        17856384,
+        17856188,
+        17855938,
+        17855867,
+        17855730,
+        17855502,
+        17855378,
+        17855004,
+        17854942,
+        17854666,
+        17854665,
+        17854663,
+        17854662,
+        17854658,
+        17854655,
+        17854652,
+        17854569,
+        17854239,
+        17853163,
+        17853095,
+        17852791,
+        17852777,
+        17852706,
+        17852655,
+        17852630,
+        17852501,
+        17852082,
+        17851529,
+        17851473,
+        17851239,
+        17851003,
+        17850897,
+        17850034,
+        17848880,
+        17848447,
+        17848079,
+        17847624,
+        17847250,
+        17847026,
+        17846772,
+        17846252,
+        17845971,
+        17845946,
+        17845891,
+        17845887,
+        17845840,
+        17845159,
+        17844926,
+        17844916,
+        17844912,
+        17844911,
+        17844852,
+        17844766,
+        17844722,
+        17844172,
+        17844140,
+        17844092,
+        17843999,
+        17843961,
+        17843774,
+        17843742,
+        17843648,
+        17843645,
+        17843643,
+        17843641,
+        17843566,
+        17843563,
+        17843394,
+        17843346,
+        17842834,
+        17842664,
+        17841992,
+        17841929,
+        17841634,
+        17841619,
+        17840621,
+        17840619,
+        17840540,
+        17840476,
+        17840310,
+        17840272,
+        17840217,
+        17840035,
+        17839880,
+        17839656,
+        17839433,
+        17839007,
+        17838841,
+        17838828,
+        17838718,
+        17838705,
+        17838704,
+        17838615,
+        17838613,
+        17838608,
+        17838606,
+        17838604,
+        17838603,
+        17838600,
+        17838451,
+        17838024,
+        17837549,
+        17836609,
+        17835840,
+        17833314,
+        17832573,
+        17831561,
+        17830978,
+        17830397,
+        17824074,
+        17823923,
+        17823808,
+        17823744,
+        17822702,
+        17762846,
+        17758569
+      ],
+      "source_total": 19381,
+      "pages": 194,
+      "complete": true
+    }
+  },
+  "partitions": [
+    {
+      "entity": "Plans",
+      "bin": "000740001307",
+      "year": 2024,
+      "complete": true,
+      "rows": 311,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "000740001307",
+      "year": 2024,
+      "complete": true,
+      "rows": 215,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "000740001307",
+      "year": 2025,
+      "complete": true,
+      "rows": 469,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "000740001307",
+      "year": 2025,
+      "complete": true,
+      "rows": 198,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "000740001307",
+      "year": 2026,
+      "complete": true,
+      "rows": 298,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "000740001307",
+      "year": 2026,
+      "complete": true,
+      "rows": 168,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "020240002363",
+      "year": 2024,
+      "complete": true,
+      "rows": 47,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "020240002363",
+      "year": 2024,
+      "complete": true,
+      "rows": 56,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "020240002363",
+      "year": 2025,
+      "complete": true,
+      "rows": 28,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "020240002363",
+      "year": 2025,
+      "complete": true,
+      "rows": 22,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "020240002363",
+      "year": 2026,
+      "complete": true,
+      "rows": 26,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "020240002363",
+      "year": 2026,
+      "complete": true,
+      "rows": 20,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "020440003656",
+      "year": 2024,
+      "complete": true,
+      "rows": 2652,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "020440003656",
+      "year": 2024,
+      "complete": true,
+      "rows": 775,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "020440003656",
+      "year": 2025,
+      "complete": true,
+      "rows": 2734,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "020440003656",
+      "year": 2025,
+      "complete": true,
+      "rows": 771,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "020440003656",
+      "year": 2026,
+      "complete": true,
+      "rows": 998,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "020440003656",
+      "year": 2026,
+      "complete": true,
+      "rows": 635,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "030440003698",
+      "year": 2024,
+      "complete": true,
+      "rows": 2174,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "030440003698",
+      "year": 2024,
+      "complete": true,
+      "rows": 694,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "030440003698",
+      "year": 2025,
+      "complete": true,
+      "rows": 1875,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "030440003698",
+      "year": 2025,
+      "complete": true,
+      "rows": 812,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "030440003698",
+      "year": 2026,
+      "complete": true,
+      "rows": 1654,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "030440003698",
+      "year": 2026,
+      "complete": true,
+      "rows": 830,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "050740004819",
+      "year": 2024,
+      "complete": true,
+      "rows": 209,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "050740004819",
+      "year": 2024,
+      "complete": true,
+      "rows": 170,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "050740004819",
+      "year": 2025,
+      "complete": true,
+      "rows": 260,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "050740004819",
+      "year": 2025,
+      "complete": true,
+      "rows": 173,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "050740004819",
+      "year": 2026,
+      "complete": true,
+      "rows": 144,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "050740004819",
+      "year": 2026,
+      "complete": true,
+      "rows": 147,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "051040005150",
+      "year": 2024,
+      "complete": true,
+      "rows": 2167,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "051040005150",
+      "year": 2024,
+      "complete": true,
+      "rows": 1391,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "051040005150",
+      "year": 2025,
+      "complete": true,
+      "rows": 1718,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "051040005150",
+      "year": 2025,
+      "complete": true,
+      "rows": 1265,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "051040005150",
+      "year": 2026,
+      "complete": true,
+      "rows": 49,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "051040005150",
+      "year": 2026,
+      "complete": true,
+      "rows": 317,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "100140011059",
+      "year": 2024,
+      "complete": true,
+      "rows": 1965,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "100140011059",
+      "year": 2024,
+      "complete": true,
+      "rows": 959,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "100140011059",
+      "year": 2025,
+      "complete": true,
+      "rows": 1709,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "100140011059",
+      "year": 2025,
+      "complete": true,
+      "rows": 755,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "100140011059",
+      "year": 2026,
+      "complete": true,
+      "rows": 1846,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "100140011059",
+      "year": 2026,
+      "complete": true,
+      "rows": 691,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "120940001946",
+      "year": 2024,
+      "complete": true,
+      "rows": 88,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "120940001946",
+      "year": 2024,
+      "complete": true,
+      "rows": 111,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "120940001946",
+      "year": 2025,
+      "complete": true,
+      "rows": 123,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "120940001946",
+      "year": 2025,
+      "complete": true,
+      "rows": 126,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "120940001946",
+      "year": 2026,
+      "complete": true,
+      "rows": 71,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "120940001946",
+      "year": 2026,
+      "complete": true,
+      "rows": 99,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "140340016539",
+      "year": 2024,
+      "complete": true,
+      "rows": 184,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "140340016539",
+      "year": 2024,
+      "complete": true,
+      "rows": 103,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "140340016539",
+      "year": 2025,
+      "complete": true,
+      "rows": 175,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "140340016539",
+      "year": 2025,
+      "complete": true,
+      "rows": 94,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "140340016539",
+      "year": 2026,
+      "complete": true,
+      "rows": 167,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "140340016539",
+      "year": 2026,
+      "complete": true,
+      "rows": 130,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "150540000186",
+      "year": 2024,
+      "complete": true,
+      "rows": 509,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "150540000186",
+      "year": 2024,
+      "complete": true,
+      "rows": 323,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "150540000186",
+      "year": 2025,
+      "complete": true,
+      "rows": 311,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "150540000186",
+      "year": 2025,
+      "complete": true,
+      "rows": 129,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "150540000186",
+      "year": 2026,
+      "complete": true,
+      "rows": 156,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "150540000186",
+      "year": 2026,
+      "complete": true,
+      "rows": 154,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "171041003124",
+      "year": 2024,
+      "complete": true,
+      "rows": 1521,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "171041003124",
+      "year": 2024,
+      "complete": true,
+      "rows": 724,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "171041003124",
+      "year": 2025,
+      "complete": true,
+      "rows": 1502,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "171041003124",
+      "year": 2025,
+      "complete": true,
+      "rows": 808,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "171041003124",
+      "year": 2026,
+      "complete": true,
+      "rows": 1149,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "171041003124",
+      "year": 2026,
+      "complete": true,
+      "rows": 546,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "210240019348",
+      "year": 2024,
+      "complete": true,
+      "rows": 68,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "210240019348",
+      "year": 2024,
+      "complete": true,
+      "rows": 56,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "210240019348",
+      "year": 2025,
+      "complete": true,
+      "rows": 24,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "210240019348",
+      "year": 2025,
+      "complete": true,
+      "rows": 21,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "210240019348",
+      "year": 2026,
+      "complete": true,
+      "rows": 18,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "210240019348",
+      "year": 2026,
+      "complete": true,
+      "rows": 16,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "210240033968",
+      "year": 2024,
+      "complete": true,
+      "rows": 474,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "210240033968",
+      "year": 2024,
+      "complete": true,
+      "rows": 459,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "210240033968",
+      "year": 2025,
+      "complete": true,
+      "rows": 453,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "210240033968",
+      "year": 2025,
+      "complete": true,
+      "rows": 450,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "210240033968",
+      "year": 2026,
+      "complete": true,
+      "rows": 204,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "210240033968",
+      "year": 2026,
+      "complete": true,
+      "rows": 350,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "210941010761",
+      "year": 2024,
+      "complete": true,
+      "rows": 888,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "210941010761",
+      "year": 2024,
+      "complete": true,
+      "rows": 251,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "210941010761",
+      "year": 2025,
+      "complete": true,
+      "rows": 921,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "210941010761",
+      "year": 2025,
+      "complete": true,
+      "rows": 496,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "210941010761",
+      "year": 2026,
+      "complete": true,
+      "rows": 1271,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "210941010761",
+      "year": 2026,
+      "complete": true,
+      "rows": 132,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "230740013340",
+      "year": 2024,
+      "complete": true,
+      "rows": 274,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "230740013340",
+      "year": 2024,
+      "complete": true,
+      "rows": 196,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "230740013340",
+      "year": 2025,
+      "complete": true,
+      "rows": 325,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "230740013340",
+      "year": 2025,
+      "complete": true,
+      "rows": 200,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "230740013340",
+      "year": 2026,
+      "complete": true,
+      "rows": 210,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "230740013340",
+      "year": 2026,
+      "complete": true,
+      "rows": 272,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "231040023028",
+      "year": 2024,
+      "complete": true,
+      "rows": 2654,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "231040023028",
+      "year": 2024,
+      "complete": true,
+      "rows": 1342,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "231040023028",
+      "year": 2025,
+      "complete": true,
+      "rows": 2257,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "231040023028",
+      "year": 2025,
+      "complete": true,
+      "rows": 1205,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "231040023028",
+      "year": 2026,
+      "complete": true,
+      "rows": 1279,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "231040023028",
+      "year": 2026,
+      "complete": true,
+      "rows": 712,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "780140000023",
+      "year": 2024,
+      "complete": true,
+      "rows": 871,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "780140000023",
+      "year": 2024,
+      "complete": true,
+      "rows": 615,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "780140000023",
+      "year": 2025,
+      "complete": true,
+      "rows": 799,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "780140000023",
+      "year": 2025,
+      "complete": true,
+      "rows": 534,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "780140000023",
+      "year": 2026,
+      "complete": true,
+      "rows": 474,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "780140000023",
+      "year": 2026,
+      "complete": true,
+      "rows": 425,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "900640000128",
+      "year": 2024,
+      "complete": true,
+      "rows": 11,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "900640000128",
+      "year": 2024,
+      "complete": true,
+      "rows": 5,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "900640000128",
+      "year": 2025,
+      "complete": true,
+      "rows": 23,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "900640000128",
+      "year": 2025,
+      "complete": true,
+      "rows": 20,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "900640000128",
+      "year": 2026,
+      "complete": true,
+      "rows": 6,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "900640000128",
+      "year": 2026,
+      "complete": true,
+      "rows": 6,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "940740000911",
+      "year": 2024,
+      "complete": true,
+      "rows": 528,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "940740000911",
+      "year": 2024,
+      "complete": true,
+      "rows": 319,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "940740000911",
+      "year": 2025,
+      "complete": true,
+      "rows": 588,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "940740000911",
+      "year": 2025,
+      "complete": true,
+      "rows": 375,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "940740000911",
+      "year": 2026,
+      "complete": true,
+      "rows": 337,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "940740000911",
+      "year": 2026,
+      "complete": true,
+      "rows": 326,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "940940000384",
+      "year": 2024,
+      "complete": true,
+      "rows": 348,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "940940000384",
+      "year": 2024,
+      "complete": true,
+      "rows": 248,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "940940000384",
+      "year": 2025,
+      "complete": true,
+      "rows": 272,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "940940000384",
+      "year": 2025,
+      "complete": true,
+      "rows": 234,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "940940000384",
+      "year": 2026,
+      "complete": true,
+      "rows": 93,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "940940000384",
+      "year": 2026,
+      "complete": true,
+      "rows": 191,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "960440000220",
+      "year": 2024,
+      "complete": true,
+      "rows": 7,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "960440000220",
+      "year": 2024,
+      "complete": true,
+      "rows": 10,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "960440000220",
+      "year": 2025,
+      "complete": true,
+      "rows": 9,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "960440000220",
+      "year": 2025,
+      "complete": true,
+      "rows": 13,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "960440000220",
+      "year": 2026,
+      "complete": true,
+      "rows": 5,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "960440000220",
+      "year": 2026,
+      "complete": true,
+      "rows": 16,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "970940001378",
+      "year": 2024,
+      "complete": true,
+      "rows": 1201,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "970940001378",
+      "year": 2024,
+      "complete": true,
+      "rows": 492,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "970940001378",
+      "year": 2025,
+      "complete": true,
+      "rows": 1903,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "970940001378",
+      "year": 2025,
+      "complete": true,
+      "rows": 466,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "970940001378",
+      "year": 2026,
+      "complete": true,
+      "rows": 911,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "970940001378",
+      "year": 2026,
+      "complete": true,
+      "rows": 401,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "971040001050",
+      "year": 2024,
+      "complete": true,
+      "rows": 1409,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "971040001050",
+      "year": 2024,
+      "complete": true,
+      "rows": 697,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "971040001050",
+      "year": 2025,
+      "complete": true,
+      "rows": 1039,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "971040001050",
+      "year": 2025,
+      "complete": true,
+      "rows": 650,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "971040001050",
+      "year": 2026,
+      "complete": true,
+      "rows": 1146,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "971040001050",
+      "year": 2026,
+      "complete": true,
+      "rows": 924,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "980440001034",
+      "year": 2024,
+      "complete": true,
+      "rows": 654,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "980440001034",
+      "year": 2024,
+      "complete": true,
+      "rows": 441,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "980440001034",
+      "year": 2025,
+      "complete": true,
+      "rows": 730,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "980440001034",
+      "year": 2025,
+      "complete": true,
+      "rows": 372,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "980440001034",
+      "year": 2026,
+      "complete": true,
+      "rows": 502,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "980440001034",
+      "year": 2026,
+      "complete": true,
+      "rows": 371,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "981140001551",
+      "year": 2024,
+      "complete": true,
+      "rows": 1004,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "981140001551",
+      "year": 2024,
+      "complete": true,
+      "rows": 671,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "981140001551",
+      "year": 2025,
+      "complete": true,
+      "rows": 520,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "981140001551",
+      "year": 2025,
+      "complete": true,
+      "rows": 405,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "981140001551",
+      "year": 2026,
+      "complete": true,
+      "rows": 384,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "981140001551",
+      "year": 2026,
+      "complete": true,
+      "rows": 232,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "990340005977",
+      "year": 2024,
+      "complete": true,
+      "rows": 124,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "990340005977",
+      "year": 2024,
+      "complete": true,
+      "rows": 73,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "990340005977",
+      "year": 2025,
+      "complete": true,
+      "rows": 5,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "990340005977",
+      "year": 2025,
+      "complete": true,
+      "rows": 4,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "990340005977",
+      "year": 2026,
+      "complete": true,
+      "rows": 0,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "990340005977",
+      "year": 2026,
+      "complete": true,
+      "rows": 0,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "990740002243",
+      "year": 2024,
+      "complete": true,
+      "rows": 5289,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "990740002243",
+      "year": 2024,
+      "complete": true,
+      "rows": 3160,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "990740002243",
+      "year": 2025,
+      "complete": true,
+      "rows": 5288,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "990740002243",
+      "year": 2025,
+      "complete": true,
+      "rows": 2586,
+      "error": null
+    },
+    {
+      "entity": "Plans",
+      "bin": "990740002243",
+      "year": 2026,
+      "complete": true,
+      "rows": 2677,
+      "error": null
+    },
+    {
+      "entity": "Contract",
+      "bin": "990740002243",
+      "year": 2026,
+      "complete": true,
+      "rows": 1973,
+      "error": null
+    }
+  ],
+  "complete_partitions": 162,
+  "total_partitions": 162,
+  "partition_definition": "Configured BIN/year Plans and Contract backfill partitions; lot/link hydration is tracked separately.",
+  "last_successful_run": {
+    "id": "f0141ccf-d0e9-4e29-9d02-1c294b262a4c",
+    "mode": "backfill",
+    "started_at": "2026-10-24T02:11:39.452714+00:00",
+    "finished_at": "2026-10-24T02:12:09.961079+00:00",
+    "status": "complete",
+    "details": {
+      "bins": [
+        "000740001307",
+        "020240002363",
+        "020440003656",
+        "030440003698",
+        "050740004819",
+        "051040005150",
+        "100140011059",
+        "120940001946",
+        "140340016539",
+        "150540000186",
+        "171041003124",
+        "210240019348",
+        "210240033968",
+        "210941010761",
+        "230740013340",
+        "231040023028",
+        "780140000023",
+        "900640000128",
+        "940740000911",
+        "940940000384",
+        "960440000220",
+        "970940001378",
+        "971040001050",
+        "980440001034",
+        "981140001551",
+        "990340005977",
+        "990740002243"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "jobs": [
+        {
+          "entity": "Plans",
+          "bin": "000740001307",
+          "year": 2024,
+          "rows": 311,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "000740001307",
+          "year": 2024,
+          "rows": 215,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "000740001307",
+          "year": 2025,
+          "rows": 469,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "000740001307",
+          "year": 2025,
+          "rows": 198,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "000740001307",
+          "year": 2026,
+          "rows": 298,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "000740001307",
+          "year": 2026,
+          "rows": 168,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 117,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 53,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 105,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 105,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 27,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 87,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 95,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 31,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 52,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 69,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 101,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "000740001307",
+          "rows": 130,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "020240002363",
+          "year": 2024,
+          "rows": 47,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "020240002363",
+          "year": 2024,
+          "rows": 56,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "020240002363",
+          "year": 2025,
+          "rows": 28,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "020240002363",
+          "year": 2025,
+          "rows": 22,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "020240002363",
+          "year": 2026,
+          "rows": 26,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "020240002363",
+          "year": 2026,
+          "rows": 20,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020240002363",
+          "rows": 113,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020240002363",
+          "rows": 8,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "020440003656",
+          "year": 2024,
+          "rows": 2652,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "020440003656",
+          "year": 2024,
+          "rows": 775,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "020440003656",
+          "year": 2025,
+          "rows": 2734,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "020440003656",
+          "year": 2025,
+          "rows": 771,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "020440003656",
+          "year": 2026,
+          "rows": 998,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "020440003656",
+          "year": 2026,
+          "rows": 635,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 129,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 8,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 17,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 27,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 19,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 26,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 40,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 20,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 17,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 12,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 24,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 27,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 27,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 34,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 16,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 22,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 62,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 54,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 65,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 78,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 16,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 55,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 81,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 65,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 67,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 62,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 18,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 56,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 14,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 11,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 29,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 33,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 34,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 43,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 33,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 26,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 9,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 19,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 9,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 7,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 19,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 13,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 117,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 81,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 52,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 70,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 56,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 49,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 108,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 65,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 59,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 84,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 107,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 57,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 103,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 162,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 25,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 21,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 39,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 16,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 68,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 67,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 65,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 29,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 42,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 105,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 60,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 84,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 71,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 92,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 9,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 34,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 24,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 19,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 29,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 43,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 10,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 13,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 26,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 45,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 91,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 83,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 127,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 47,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "020440003656",
+          "rows": 26,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "030440003698",
+          "year": 2024,
+          "rows": 2174,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "030440003698",
+          "year": 2024,
+          "rows": 694,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "030440003698",
+          "year": 2025,
+          "rows": 1875,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "030440003698",
+          "year": 2025,
+          "rows": 812,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "030440003698",
+          "year": 2026,
+          "rows": 1654,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "030440003698",
+          "year": 2026,
+          "rows": 830,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 74,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 5,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 11,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 14,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 24,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 22,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 35,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 21,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 42,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 21,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 39,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 35,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 45,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 36,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 40,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 64,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 29,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 15,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 35,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 23,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 15,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 17,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 30,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 63,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 59,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 77,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 118,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 42,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 69,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 74,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 28,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 140,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 341,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 117,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 117,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 70,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 43,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 100,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 199,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 84,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 106,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 68,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 53,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 42,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 24,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 107,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 197,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 58,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 60,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 115,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 239,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 173,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 156,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 183,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 235,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 132,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 184,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 108,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 195,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 205,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "030440003698",
+          "rows": 26,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "050740004819",
+          "year": 2024,
+          "rows": 209,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "050740004819",
+          "year": 2024,
+          "rows": 170,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "050740004819",
+          "year": 2025,
+          "rows": 260,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "050740004819",
+          "year": 2025,
+          "rows": 173,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "050740004819",
+          "year": 2026,
+          "rows": 144,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "050740004819",
+          "year": 2026,
+          "rows": 147,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "050740004819",
+          "rows": 139,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "050740004819",
+          "rows": 67,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "050740004819",
+          "rows": 184,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "050740004819",
+          "rows": 181,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "050740004819",
+          "rows": 146,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "050740004819",
+          "rows": 102,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "050740004819",
+          "rows": 86,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "051040005150",
+          "year": 2024,
+          "rows": 2167,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "051040005150",
+          "year": 2024,
+          "rows": 1391,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "051040005150",
+          "year": 2025,
+          "rows": 1718,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "051040005150",
+          "year": 2025,
+          "rows": 1265,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "051040005150",
+          "year": 2026,
+          "rows": 49,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "051040005150",
+          "year": 2026,
+          "rows": 317,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 127,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 140,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 106,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 114,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 177,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 148,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 110,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 71,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 109,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 97,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 139,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 144,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 125,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 103,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 142,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 109,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 97,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 144,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 119,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 119,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 53,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 133,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 185,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 135,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 132,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 193,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 2,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 151,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 161,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 138,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 154,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 146,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 208,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 201,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 166,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 140,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 134,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 92,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 166,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 131,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 113,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "051040005150",
+          "rows": 9,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "100140011059",
+          "year": 2024,
+          "rows": 1965,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "100140011059",
+          "year": 2024,
+          "rows": 959,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "100140011059",
+          "year": 2025,
+          "rows": 1709,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "100140011059",
+          "year": 2025,
+          "rows": 755,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "100140011059",
+          "year": 2026,
+          "rows": 1846,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "100140011059",
+          "year": 2026,
+          "rows": 691,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 167,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 133,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 218,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 161,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 189,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 181,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 152,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 115,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 65,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 117,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 163,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 150,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 46,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 182,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 94,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 111,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 66,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 140,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 134,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 177,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 138,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 151,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 165,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 192,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 134,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 114,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 205,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 38,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 12,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 134,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 156,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 150,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 185,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 23,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 217,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 208,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 202,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 192,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 171,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 174,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 97,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 150,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 153,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 188,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 198,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 96,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 71,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 146,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 145,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 147,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 190,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 178,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 304,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 222,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 271,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 266,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 230,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 281,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 158,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 48,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "100140011059",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "120940001946",
+          "year": 2024,
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "120940001946",
+          "year": 2024,
+          "rows": 111,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "120940001946",
+          "year": 2025,
+          "rows": 123,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "120940001946",
+          "year": 2025,
+          "rows": 126,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "120940001946",
+          "year": 2026,
+          "rows": 71,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "120940001946",
+          "year": 2026,
+          "rows": 99,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "120940001946",
+          "rows": 107,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "120940001946",
+          "rows": 155,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "120940001946",
+          "rows": 135,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "120940001946",
+          "rows": 48,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "140340016539",
+          "year": 2024,
+          "rows": 184,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "140340016539",
+          "year": 2024,
+          "rows": 103,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "140340016539",
+          "year": 2025,
+          "rows": 175,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "140340016539",
+          "year": 2025,
+          "rows": 94,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "140340016539",
+          "year": 2026,
+          "rows": 167,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "140340016539",
+          "year": 2026,
+          "rows": 130,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "140340016539",
+          "rows": 70,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "140340016539",
+          "rows": 236,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "140340016539",
+          "rows": 163,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "140340016539",
+          "rows": 151,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "140340016539",
+          "rows": 111,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "140340016539",
+          "rows": 57,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "150540000186",
+          "year": 2024,
+          "rows": 509,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "150540000186",
+          "year": 2024,
+          "rows": 323,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "150540000186",
+          "year": 2025,
+          "rows": 311,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "150540000186",
+          "year": 2025,
+          "rows": 129,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "150540000186",
+          "year": 2026,
+          "rows": 156,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "150540000186",
+          "year": 2026,
+          "rows": 154,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 36,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 64,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 114,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 138,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 90,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 57,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 117,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 73,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 177,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 205,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 235,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 162,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "150540000186",
+          "rows": 66,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "171041003124",
+          "year": 2024,
+          "rows": 1521,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "171041003124",
+          "year": 2024,
+          "rows": 724,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "171041003124",
+          "year": 2025,
+          "rows": 1502,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "171041003124",
+          "year": 2025,
+          "rows": 808,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "171041003124",
+          "year": 2026,
+          "rows": 1149,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "171041003124",
+          "year": 2026,
+          "rows": 546,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 42,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 79,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 78,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 127,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 60,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 155,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 47,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 11,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 53,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 75,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 95,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 141,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 190,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 109,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 3,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 17,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 156,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 66,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 274,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 129,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 54,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 243,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 216,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 219,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 203,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 158,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 217,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 209,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 131,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 56,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 52,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 2,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 159,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 81,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 155,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 248,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 207,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 215,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 153,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 200,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 157,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "171041003124",
+          "rows": 120,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "210240019348",
+          "year": 2024,
+          "rows": 68,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "210240019348",
+          "year": 2024,
+          "rows": 56,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "210240019348",
+          "year": 2025,
+          "rows": 24,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "210240019348",
+          "year": 2025,
+          "rows": 21,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "210240019348",
+          "year": 2026,
+          "rows": 18,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "210240019348",
+          "year": 2026,
+          "rows": 16,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240019348",
+          "rows": 72,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240019348",
+          "rows": 15,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "210240033968",
+          "year": 2024,
+          "rows": 474,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "210240033968",
+          "year": 2024,
+          "rows": 459,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "210240033968",
+          "year": 2025,
+          "rows": 453,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "210240033968",
+          "year": 2025,
+          "rows": 450,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "210240033968",
+          "year": 2026,
+          "rows": 204,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "210240033968",
+          "year": 2026,
+          "rows": 350,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 138,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 122,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 148,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 140,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 152,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 189,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 118,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 164,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 149,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 141,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 144,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 112,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210240033968",
+          "rows": 52,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "210941010761",
+          "year": 2024,
+          "rows": 888,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "210941010761",
+          "year": 2024,
+          "rows": 251,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "210941010761",
+          "year": 2025,
+          "rows": 921,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "210941010761",
+          "year": 2025,
+          "rows": 496,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "210941010761",
+          "year": 2026,
+          "rows": 1271,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "210941010761",
+          "year": 2026,
+          "rows": 132,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 35,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 28,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 45,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 13,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 39,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 69,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 21,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 55,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 73,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 48,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 125,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 151,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 203,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 191,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 276,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 181,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 140,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 43,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 46,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 68,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 26,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 33,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 6,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 41,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 4,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 25,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 32,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 18,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 47,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 38,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "210941010761",
+          "rows": 7,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "230740013340",
+          "year": 2024,
+          "rows": 274,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "230740013340",
+          "year": 2024,
+          "rows": 196,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "230740013340",
+          "year": 2025,
+          "rows": 325,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "230740013340",
+          "year": 2025,
+          "rows": 200,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "230740013340",
+          "year": 2026,
+          "rows": 210,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "230740013340",
+          "year": 2026,
+          "rows": 272,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "230740013340",
+          "rows": 41,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "230740013340",
+          "rows": 70,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "230740013340",
+          "rows": 89,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "230740013340",
+          "rows": 50,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "230740013340",
+          "rows": 126,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "230740013340",
+          "rows": 63,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "230740013340",
+          "rows": 64,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "230740013340",
+          "rows": 94,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "230740013340",
+          "rows": 52,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "231040023028",
+          "year": 2024,
+          "rows": 2654,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "231040023028",
+          "year": 2024,
+          "rows": 1342,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "231040023028",
+          "year": 2025,
+          "rows": 2257,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "231040023028",
+          "year": 2025,
+          "rows": 1205,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "231040023028",
+          "year": 2026,
+          "rows": 1279,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "231040023028",
+          "year": 2026,
+          "rows": 712,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 105,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 35,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 163,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 173,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 101,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 147,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 171,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 133,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 195,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 161,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 140,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 183,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 134,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 245,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 34,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 36,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 106,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 165,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 156,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 142,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 71,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 105,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 106,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 150,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 178,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 150,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 129,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 64,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 192,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 191,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 179,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 157,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 10,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 40,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 55,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 101,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 37,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 52,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 169,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 150,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 195,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 229,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 124,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 197,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 156,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 139,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 185,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 181,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 178,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 211,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 43,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 63,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 195,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 215,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 195,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 11,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 17,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 43,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 38,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 113,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 182,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 87,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 142,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 117,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 113,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 122,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 154,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 185,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 128,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 29,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "231040023028",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "780140000023",
+          "year": 2024,
+          "rows": 871,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "780140000023",
+          "year": 2024,
+          "rows": 615,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "780140000023",
+          "year": 2025,
+          "rows": 799,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "780140000023",
+          "year": 2025,
+          "rows": 534,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "780140000023",
+          "year": 2026,
+          "rows": 474,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "780140000023",
+          "year": 2026,
+          "rows": 425,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 125,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 136,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 25,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 100,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 129,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 152,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 136,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 123,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 124,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 157,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 167,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 166,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 124,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 227,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 177,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 197,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 160,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 190,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 121,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 207,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 151,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 196,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 157,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 170,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 99,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "780140000023",
+          "rows": 37,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "900640000128",
+          "year": 2024,
+          "rows": 11,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "900640000128",
+          "year": 2024,
+          "rows": 5,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "900640000128",
+          "year": 2025,
+          "rows": 23,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "900640000128",
+          "year": 2025,
+          "rows": 20,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "900640000128",
+          "year": 2026,
+          "rows": 6,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "900640000128",
+          "year": 2026,
+          "rows": 6,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "900640000128",
+          "rows": 26,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "940740000911",
+          "year": 2024,
+          "rows": 528,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "940740000911",
+          "year": 2024,
+          "rows": 319,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "940740000911",
+          "year": 2025,
+          "rows": 588,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "940740000911",
+          "year": 2025,
+          "rows": 375,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "940740000911",
+          "year": 2026,
+          "rows": 337,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "940740000911",
+          "year": 2026,
+          "rows": 326,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 134,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 124,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 133,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 109,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 135,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 173,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 101,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 107,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 122,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 163,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 148,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 149,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 135,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 93,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 79,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940740000911",
+          "rows": 42,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "940940000384",
+          "year": 2024,
+          "rows": 348,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "940940000384",
+          "year": 2024,
+          "rows": 248,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "940940000384",
+          "year": 2025,
+          "rows": 272,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "940940000384",
+          "year": 2025,
+          "rows": 234,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "940940000384",
+          "year": 2026,
+          "rows": 93,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "940940000384",
+          "year": 2026,
+          "rows": 191,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940940000384",
+          "rows": 99,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940940000384",
+          "rows": 241,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940940000384",
+          "rows": 66,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940940000384",
+          "rows": 83,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940940000384",
+          "rows": 131,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940940000384",
+          "rows": 163,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940940000384",
+          "rows": 107,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "940940000384",
+          "rows": 79,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "960440000220",
+          "year": 2024,
+          "rows": 7,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "960440000220",
+          "year": 2024,
+          "rows": 10,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "960440000220",
+          "year": 2025,
+          "rows": 9,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "960440000220",
+          "year": 2025,
+          "rows": 13,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "960440000220",
+          "year": 2026,
+          "rows": 5,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "960440000220",
+          "year": 2026,
+          "rows": 16,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "960440000220",
+          "rows": 7,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "970940001378",
+          "year": 2024,
+          "rows": 1201,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "970940001378",
+          "year": 2024,
+          "rows": 492,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "970940001378",
+          "year": 2025,
+          "rows": 1903,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "970940001378",
+          "year": 2025,
+          "rows": 466,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "970940001378",
+          "year": 2026,
+          "rows": 911,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "970940001378",
+          "year": 2026,
+          "rows": 401,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 69,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 12,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 38,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 56,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 15,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 31,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 41,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 90,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 61,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 104,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 61,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 5,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 25,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 53,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 35,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 53,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 7,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 24,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 9,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 20,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 15,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 106,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 79,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 23,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 31,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 5,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 32,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 32,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 22,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 23,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 52,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 18,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 31,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 62,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 27,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 7,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 105,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 8,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 20,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 22,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 27,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 34,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 81,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "970940001378",
+          "rows": 6,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "971040001050",
+          "year": 2024,
+          "rows": 1409,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "971040001050",
+          "year": 2024,
+          "rows": 697,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "971040001050",
+          "year": 2025,
+          "rows": 1039,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "971040001050",
+          "year": 2025,
+          "rows": 650,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "971040001050",
+          "year": 2026,
+          "rows": 1146,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "971040001050",
+          "year": 2026,
+          "rows": 924,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 106,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 108,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 110,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 90,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 97,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 130,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 135,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 112,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 128,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 138,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 157,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 131,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 109,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 160,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 8,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 52,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 133,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 102,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 150,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 218,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 156,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 170,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 191,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 201,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 176,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 145,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 174,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 135,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 154,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 42,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 83,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 139,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 207,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 203,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 212,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 187,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 202,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 181,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 132,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 126,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 171,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 236,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 172,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 160,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 116,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 127,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 188,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 152,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 183,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 154,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 84,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 156,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 106,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "971040001050",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "980440001034",
+          "year": 2024,
+          "rows": 654,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "980440001034",
+          "year": 2024,
+          "rows": 441,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "980440001034",
+          "year": 2025,
+          "rows": 730,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "980440001034",
+          "year": 2025,
+          "rows": 372,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "980440001034",
+          "year": 2026,
+          "rows": 502,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "980440001034",
+          "year": 2026,
+          "rows": 371,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 69,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 45,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 57,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 34,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 75,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 87,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 78,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 65,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 41,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 44,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 32,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 67,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 78,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 97,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 71,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 47,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 39,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 61,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 73,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 56,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 54,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "980440001034",
+          "rows": 16,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "981140001551",
+          "year": 2024,
+          "rows": 1004,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "981140001551",
+          "year": 2024,
+          "rows": 671,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "981140001551",
+          "year": 2025,
+          "rows": 520,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "981140001551",
+          "year": 2025,
+          "rows": 405,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "981140001551",
+          "year": 2026,
+          "rows": 384,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "981140001551",
+          "year": 2026,
+          "rows": 232,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 103,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 41,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 57,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 71,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 79,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 71,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 92,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 38,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 3,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 6,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 9,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 72,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 64,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 28,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 62,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 96,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 16,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "981140001551",
+          "rows": 6,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "990340005977",
+          "year": 2024,
+          "rows": 124,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "990340005977",
+          "year": 2024,
+          "rows": 73,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "990340005977",
+          "year": 2025,
+          "rows": 5,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "990340005977",
+          "year": 2025,
+          "rows": 4,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "990340005977",
+          "year": 2026,
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "990340005977",
+          "year": 2026,
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990340005977",
+          "rows": 126,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990340005977",
+          "rows": 42,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "990740002243",
+          "year": 2024,
+          "rows": 5289,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "990740002243",
+          "year": 2024,
+          "rows": 3160,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "990740002243",
+          "year": 2025,
+          "rows": 5288,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "990740002243",
+          "year": 2025,
+          "rows": 2586,
+          "complete": true
+        },
+        {
+          "entity": "Plans",
+          "bin": "990740002243",
+          "year": 2026,
+          "rows": 2677,
+          "complete": true
+        },
+        {
+          "entity": "Contract",
+          "bin": "990740002243",
+          "year": 2026,
+          "rows": 1973,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 143,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 36,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 29,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 156,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 139,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 103,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 77,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 107,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 154,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 173,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 137,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 140,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 118,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 100,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 138,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 80,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 101,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 102,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 146,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 112,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 112,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 168,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 129,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 65,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 111,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 108,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 124,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 152,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 132,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 130,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 4,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 22,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 103,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 114,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 98,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 124,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 88,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 124,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 108,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 60,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 129,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 80,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 31,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 84,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 124,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 97,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 10,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 130,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 87,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 92,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 146,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 139,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 91,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 49,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 13,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 0,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 23,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 78,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 123,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 118,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 45,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 55,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 99,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 6,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 20,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 108,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 65,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 158,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 200,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 149,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 200,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 171,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 235,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 160,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 45,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 8,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 41,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 141,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 143,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 190,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 169,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 169,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 163,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 101,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 122,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 51,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 223,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 136,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 162,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 75,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 135,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 169,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 190,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 161,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 153,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 111,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 115,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 73,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 139,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 105,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 127,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 144,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 76,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 126,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 101,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 137,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 101,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 92,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 175,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 72,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 154,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 127,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 119,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 107,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 63,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 80,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 64,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 11,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 140,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 180,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 72,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 62,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 9,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 75,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 64,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 50,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 111,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 10,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 186,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 230,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 371,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 237,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 299,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 76,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 4,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 84,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 162,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 207,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 72,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 179,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 253,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 177,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 230,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 246,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 166,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 200,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 201,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 166,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 160,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 208,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 207,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 159,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 159,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 13,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 4,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 74,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 197,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 224,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 147,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 92,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 130,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 158,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 117,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 175,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 169,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 74,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 111,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 207,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 71,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 101,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 130,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 14,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 225,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 216,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 153,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 106,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 30,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 224,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 151,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 107,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 144,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 135,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 66,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 54,
+          "complete": true
+        },
+        {
+          "entity": "Lots",
+          "bin": "990740002243",
+          "rows": 16,
+          "complete": true
+        }
+      ],
+      "warnings": [
+        "Some item links remain unresolved in the source; see unresolved_links_after and quality report."
+      ],
+      "link_requests": {
+        "plans": 1944,
+        "lots": 0
+      },
+      "unresolved_links_after": {
+        "plan_ids": 1944,
+        "lot_ids": 0
+      },
+      "kato_parents": {
+        "fetched": 0,
+        "source_absent": 6
+      }
+    }
+  },
+  "freshness_seconds": 138.976894,
+  "stale": false,
+  "latest_run": {
+    "id": "a028d0dd-6b6c-4f9c-b6ac-251cc733c6c8",
+    "mode": "incremental",
+    "started_at": "2026-10-24T02:12:10.030706+00:00",
+    "finished_at": null,
+    "status": "running",
+    "details": {
+      "bins": [
+        "000740001307",
+        "020240002363",
+        "020440003656",
+        "030440003698",
+        "050740004819",
+        "051040005150",
+        "100140011059",
+        "120940001946",
+        "140340016539",
+        "150540000186",
+        "171041003124",
+        "210240019348",
+        "210240033968",
+        "210941010761",
+        "230740013340",
+        "231040023028",
+        "780140000023",
+        "900640000128",
+        "940740000911",
+        "940940000384",
+        "960440000220",
+        "970940001378",
+        "971040001050",
+        "980440001034",
+        "981140001551",
+        "990340005977",
+        "990740002243"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    }
+  },
+  "backlog": {
+    "incomplete_jobs": 0,
+    "error_jobs": 0,
+    "historical_incomplete_jobs": 32,
+    "peer_incomplete_jobs": 0,
+    "link_lookup_incomplete_jobs": 2
+  },
+  "job_errors": [
+    {
+      "key": "Plans:1f84164b96442f4090a5b63181f426d1",
+      "entity": "Plans",
+      "error": "Plans: expected a list, refusing to advance cursor"
+    }
+  ],
+  "latest_source_index_dates": {
+    "plans": "2026-10-24 00:01:10",
+    "lots": "2026-10-23 19:40:04",
+    "contracts": "2026-10-23T21:00:11.701",
+    "contract_items": "2026-10-23T21:00:19.302"
+  },
+  "source_index_lag_seconds": {
+    "plans": 7998.937973,
+    "lots": 23664.937973,
+    "contracts": 18857.236973,
+    "contract_items": 18849.635973
+  },
+  "source_index_note": "Database-wide source index dates and lag describe indexed source records, not a publication SLA or proof that all recent publications are available.",
+  "announcement_publication_lag": {
+    "status": "observed_only",
+    "sla_confirmed": false,
+    "coverage": "already_ingested_announcements_only",
+    "source_utc_offset_minutes": 300,
+    "window_start": "2026-10-23T09:37:38.322412+00:00",
+    "window_end": "2026-10-24T02:14:28.937973+00:00",
+    "n_announcements": 19,
+    "median_hours": 0.8162654052777778,
+    "max_hours": 2.5683813969444445,
+    "over_24h": 0,
+    "negative_lag_examples": [
+      {
+        "id": 17854652,
+        "hours": -2.6109043352777777
+      },
+      {
+        "id": 17856933,
+        "hours": -2.5878569480555558
+      },
+      {
+        "id": 17857227,
+        "hours": -0.1056919686111111
+      },
+      {
+        "id": 17856384,
+        "hours": -0.526792705
+      },
+      {
+        "id": 17858602,
+        "hours": -0.17413252444444444
+      },
+      {
+        "id": 17858117,
+        "hours": -0.9991253769444445
+      }
+    ],
+    "excluded_published_before_reliable_window": 672,
+    "excluded_no_reliable_first_seen_time": 0,
+    "excluded_unknown_timezone": 0,
+    "excluded_invalid_timestamp": 0,
+    "excluded_negative_lag": 6,
+    "excluded_future_publication": 0,
+    "excluded_future_first_seen": 0
+  },
+  "announcement_publication_lag_note": "Observed hours from first_seen.seen_at minus publishDate, only after backfill and first_seen_epoch within the recent window. Naive publication times are excluded unless OWS_PUBLICATION_UTC_OFFSET_MINUTES is explicitly configured after source verification. Negative delays are excluded and exposed, never clamped to zero. Unknown-timezone exclusions count all selected stored announcements because their absolute window is unknown. This is not an SLA certification: only already-ingested announcements are visible, never-ingested publications are absent, and plans/contracts/lots have no equivalent publication timestamp."
+}

@@ -101,6 +101,9 @@ def test_incremental_fetches_changed_lot_without_new_plan_chunk(engine, monkeypa
     seen=[]
     class Source:
         def query(self, query, variables):
+            if 'TrdBuy(filter:' in query:
+                return {'data':{'TrdBuy':[]},'extensions':{'pageInfo':{
+                    'totalCount':0,'hasNextPage':False,'lastId':0}}}
             entity=next(name for name in ('Plans','Contract','Lots') if f'{{ {name}(' in query)
             filters=variables['filter']
             seen.append((entity,filters))

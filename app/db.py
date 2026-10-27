@@ -10,6 +10,24 @@ raw = Table('raw_objects', metadata,
     Column('key', String(160), primary_key=True), Column('entity', String(40), index=True),
     Column('source_id', BigInteger, index=True), Column('hash', String(64)),
     Column('payload', JSON), Column('fetched_at', String(40)))
+# Distinct from raw_objects.fetched_at, which is overwritten whenever unchanged content is
+# refetched (same (entity, source_id, hash) key -> same row). seen_at is written once per
+# (entity, source_id) via INSERT ... ON CONFLICT DO NOTHING and never updated afterward.
+# IMPORTANT: this only guarantees a true first-ever-observed timestamp for an (entity,
+# source_id) that had NO row in raw_objects before this table existed. For a record ingested
+# before this fix shipped, the first INSERT into this (then-empty) table happens on its next
+# ordinary refetch, which looks identical to a genuine first sighting but isn't one. Callers
+# MUST gate on first_seen_epoch (below) -- e.g. only trust seen_at for records whose own
+# publish/creation time is after the later of first_seen_epoch.started_at and any relevant
+# backfill-completion marker -- rather than reading seen_at on its own.
+first_seen = Table('first_seen', metadata,
+    Column('entity', String(40), primary_key=True), Column('source_id', BigInteger, primary_key=True),
+    Column('seen_at', String(40)))
+# Single-row marker of when this database started populating first_seen accurately for
+# previously-unknown records (see caveat above). Written once, at schema init, and never
+# updated -- so even across restarts/redeploys it keeps pointing at the original rollout.
+first_seen_epoch = Table('first_seen_epoch', metadata,
+    Column('id', Integer, primary_key=True), Column('started_at', String(40)))
 refs = Table('reference_values', metadata,
     Column('kind', String(50), primary_key=True), Column('code', String(100), primary_key=True),
     Column('name_ru', Text), Column('name_kz', Text), Column('payload', JSON))
@@ -45,6 +63,9 @@ lots = Table('lots', metadata,
 lot_plans = Table('lot_plans', metadata,
     Column('lot_id', BigInteger, ForeignKey('lots.id'), primary_key=True),
     Column('plan_id', BigInteger, ForeignKey('plans.id'), primary_key=True))
+lot_delivery_codes = Table('lot_delivery_codes', metadata,
+    Column('lot_id', BigInteger, ForeignKey('lots.id'), primary_key=True),
+    Column('kato', String(20), primary_key=True))
 contracts = Table('contracts', metadata,
     Column('id', BigInteger, primary_key=True), Column('root_id', BigInteger, index=True),
     Column('parent_id', BigInteger), Column('number', String(120)),
@@ -101,6 +122,8 @@ def init_db(eng=engine):
     if 'v_contract_prices' not in inspect(eng).get_view_names():
         with eng.begin() as conn:
             conn.execute(text(Path(__file__).with_name('views.sql').read_text(encoding='utf-8')))
+    with eng.begin() as conn:
+        insert_once(conn, first_seen_epoch, dict(id=1, started_at=now()))
 
 
 def upsert(conn, table, values):
@@ -112,3 +135,16 @@ def upsert(conn, table, values):
     updates = {k: getattr(stmt.excluded, k) for k in values if k not in keys}
     stmt = stmt.on_conflict_do_update(index_elements=keys, set_=updates) if updates else stmt.on_conflict_do_nothing(index_elements=keys)
     conn.execute(stmt)
+
+
+def insert_once(conn, table, values):
+    """Like upsert, but a pre-existing row is left completely untouched on conflict,
+    regardless of how many non-key columns are given. Used where a column must capture a
+    true first-write timestamp (e.g. first_seen.seen_at) that unrelated re-fetches must not
+    be able to overwrite."""
+    from sqlalchemy.dialects.sqlite import insert as sqlite_insert
+    from sqlalchemy.dialects.postgresql import insert as pg_insert
+    insert = sqlite_insert if conn.dialect.name == 'sqlite' else pg_insert
+    stmt = insert(table).values(**values)
+    keys = [c.name for c in table.primary_key]
+    conn.execute(stmt.on_conflict_do_nothing(index_elements=keys))

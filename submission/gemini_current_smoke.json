@@ -1,0 +1,1425 @@
+{
+  "label": "Development acceptance set on real data, with expected values separately recomputed from local raw payloads/SQL; questions and renderer are developed against this same set, so this is not a blind holdout or certification. Only annotated required facts are scored; unannotated extra claims and OWS source truth are not exhaustively checked.",
+  "dataset": "C:\\Users\\ASUS\\udp\\submission\\factual_smoke_dataset.json",
+  "dataset_sha256": "f0d33749f6418a26b1f34c7dd1f9b298ff4ec175cbaa3febe9a9f358e7cce01d",
+  "provider": "gemini",
+  "model": "gemini-3.8-flash",
+  "started_at": "2026-10-24T03:51:34.667321+00:00",
+  "complete": true,
+  "details": [
+    {
+      "id": "search_lot_milk_ru",
+      "language": "ru",
+      "intent": "search",
+      "question": "Покажи договорную позицию по лоту 38693950 за 2026 год",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "years": true,
+        "lot_id": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_selected",
+          "expected": 1,
+          "actual": 1,
+          "source": "SQL v_contract_prices WHERE lot_id=38693950; effective target contract 24155641",
+          "answer_text": "N = 1",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.item_id",
+          "expected": 54747313,
+          "actual": 54747313,
+          "source": "raw_objects key Contract:24155641:*; ContractUnits.id, plus SQL v_contract_prices",
+          "answer_text": "ID 54747313",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.contract_id",
+          "expected": 24155641,
+          "actual": 24155641,
+          "source": "raw_objects key Contract:24155641:*",
+          "answer_text": "ID 24155641",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.price_net",
+          "expected": 360,
+          "actual": 360.0,
+          "source": "raw_objects key Contract:24155641:*; ContractUnits.itemPrice",
+          "answer_text": "360",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.quantity",
+          "expected": 1916,
+          "actual": 1916.0,
+          "source": "raw_objects key Contract:24155641:*; ContractUnits.quantity",
+          "answer_text": "1 916.00",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.customer_bin",
+          "expected": "980440001034",
+          "actual": "980440001034",
+          "source": "raw_objects key Contract:24155641:*; Contract.customerBin",
+          "answer_text": "980440001034",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.contract_url",
+          "expected": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641",
+          "actual": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641",
+          "source": "URL constructed from source Contract ID 24155641 in raw_objects key Contract:24155641:*; format matches app.analytics.evidence contract_url",
+          "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 7,
+      "fact_total": 7,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "numeric",
+      "actual_outcome": "numeric",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "9d68fee1-c174-49f8-aee1-54e2cdb30734",
+      "answer": "Краткий вывод\nПроанализировано 1 позиций; найдено результатов: 1.\n\nИспользованные данные\nГоды: 2026\nБИН (цель): 000740001307, 020240002363, 020440003656, 030440003698, 050740004819, 051040005150, 100140011059, 120940001946, 140340016539, 150540000186, 171041003124, 210240019348, 210240033968, 210941010761, 230740013340, 231040023028, 780140000023, 900640000128, 940740000911, 940940000384, 960440000220, 970940001378, 971040001050, 980440001034, 981140001551, 990340005977, 990740002243 (не указан — по умолчанию настроенный охват из 27 БИН, а не всё загруженное)\nЕНСТРУ: —; КАТО: —; N = 1\nЛот: 38693950; Название: —\nДаты: — … —\nЦены в KZT без НДС.\n\nСравнение и метрика\nПоиск по действующим версиям подписанных договоров.\n\nОграничения и уверенность\nУверенность: ограниченная\n• Позиции без доступного плана исключены.\n\nПримеры и источники\n• Молоко натуральное | ID 24155641 | цена 360.00 KZT; количество 1 916.00\n  Позиция ID 54747313; дата подписания 2026-01-12 15:05:39; БИН заказчика 980440001034; КАТО 711510000\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641\n\nID: 9d68fee1-c174-49f8-aee1-54e2cdb30734 | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "search",
+        "language": "ru",
+        "bins": [],
+        "years": [
+          2026
+        ],
+        "enstru": null,
+        "kato": null,
+        "text": null,
+        "lot_id": 38693950,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "both",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "search_lot_milk_kk",
+      "language": "kk",
+      "intent": "search",
+      "question": "2026 жылы 38693950 лоты бойынша шарт позициясын көрсет",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "years": true,
+        "lot_id": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_selected",
+          "expected": 1,
+          "actual": 1,
+          "source": "SQL v_contract_prices WHERE lot_id=38693950; effective target contract 24155641",
+          "answer_text": "N = 1",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.item_id",
+          "expected": 54747313,
+          "actual": 54747313,
+          "source": "raw_objects key Contract:24155641:*; ContractUnits.id, plus SQL v_contract_prices",
+          "answer_text": "ID 54747313",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.contract_id",
+          "expected": 24155641,
+          "actual": 24155641,
+          "source": "raw_objects key Contract:24155641:*",
+          "answer_text": "ID 24155641",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.price_net",
+          "expected": 360,
+          "actual": 360.0,
+          "source": "raw_objects key Contract:24155641:*; ContractUnits.itemPrice",
+          "answer_text": "360",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.quantity",
+          "expected": 1916,
+          "actual": 1916.0,
+          "source": "raw_objects key Contract:24155641:*; ContractUnits.quantity",
+          "answer_text": "1 916.00",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.customer_bin",
+          "expected": "980440001034",
+          "actual": "980440001034",
+          "source": "raw_objects key Contract:24155641:*; Contract.customerBin",
+          "answer_text": "980440001034",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.contract_url",
+          "expected": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641",
+          "actual": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641",
+          "source": "URL constructed from source Contract ID 24155641 in raw_objects key Contract:24155641:*; format matches app.analytics.evidence contract_url",
+          "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 7,
+      "fact_total": 7,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "numeric",
+      "actual_outcome": "numeric",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "3d3a76af-41cf-476b-afce-6bac53807efa",
+      "answer": "Қысқаша қорытынды\n1 позиция талданды; нәтижелер саны: 1.\n\nҚолданылған деректер\nЖылдар: 2026\nБСН (мақсат): 000740001307, 020240002363, 020440003656, 030440003698, 050740004819, 051040005150, 100140011059, 120940001946, 140340016539, 150540000186, 171041003124, 210240019348, 210240033968, 210941010761, 230740013340, 231040023028, 780140000023, 900640000128, 940740000911, 940940000384, 960440000220, 970940001378, 971040001050, 980440001034, 981140001551, 990340005977, 990740002243 (көрсетілмеген — әдепкі бойынша 27 БСН-нан тұратын теңшелген қамту, барлық жүктелген емес)\nЕНСТРУ: —; КАТО: —; N = 1\nЛот: 38693950; Атауы: —\nКүндер: — … —\nБағалар KZT, ҚҚС-сыз.\n\nСалыстыру және метрика\nҚол қойылған шарттардың қолданыстағы нұсқалары бойынша іздеу.\n\nШектеулер және сенімділік\nСенімділік: шектеулі\n• Қолжетімді жоспары жоқ позициялар есепке алынбады.\n\nМысалдар және дереккөздер\n• Табиғи сүт | ID 24155641 | баға 360.00 KZT; саны 1 916.00\n  Позиция ID 54747313; қол қойылған күні 2026-01-12 15:05:39; тапсырыс беруші БСН 980440001034; КАТО 711510000\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641\n\nID: 3d3a76af-41cf-476b-afce-6bac53807efa | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "search",
+        "language": "kk",
+        "bins": [],
+        "years": [
+          2026
+        ],
+        "enstru": null,
+        "kato": null,
+        "text": null,
+        "lot_id": 38693950,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "both",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "summary_milk_2026_ru",
+      "language": "ru",
+      "intent": "summary",
+      "question": "Подведи итог по молоку ЕНС ТРУ 105111.410.000000 у БИН 980440001034 за 2026 год",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "bins": true,
+        "years": true,
+        "enstru": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_selected",
+          "expected": 1,
+          "actual": 1,
+          "source": "Independent SQL sum/count over v_contract_prices, filtered BIN/code/year",
+          "answer_text": "N = 1",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.amount_net",
+          "expected": 689760,
+          "actual": 689760.0,
+          "source": "Independent SQL SUM(price*quantity) over v_contract_prices filtered BIN/code/year",
+          "answer_text": "689 760.00 KZT",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.n_items",
+          "expected": 1,
+          "actual": 1,
+          "source": "Independent SQL COUNT(*) grouped by contract year",
+          "answer_text": "позиций 1",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.quantity",
+          "expected": 1916,
+          "actual": 1916.0,
+          "source": "Independent SQL SUM(quantity) over v_contract_prices filtered BIN/code/year",
+          "answer_text": "1 916.00",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.weighted_price",
+          "expected": 360,
+          "actual": 360.0,
+          "source": "Independent SQL SUM(price*quantity)/SUM(quantity)",
+          "answer_text": "360.00",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 5,
+      "fact_total": 5,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "numeric",
+      "actual_outcome": "numeric",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "e290fbbc-5086-4cf9-b793-7e7ba806459f",
+      "answer": "Краткий вывод\nПроанализировано 1 позиций; найдено результатов: 1.\n\nИспользованные данные\nГоды: 2026\nБИН (цель): 980440001034\nЕНСТРУ: 105111.410.000000; КАТО: —; N = 1\nЛот: —; Название: —\nДаты: — … —\nЦены в KZT без НДС.\n\nСравнение и метрика\nСуммы и цены сгруппированы по ЕНСТРУ, единице измерения и месту поставки.\nОбщая сумма: 689 760.00 KZT\n• 2026 | 105111.410.000000 | 112 | N=1 | сумма 689 760.00 KZT; количество 1 916.00; средневзвешенная цена 360.00\n\nОграничения и уверенность\nУверенность: ограниченная\n• Суммы рассчитаны по позициям договоров, не по платежам.\n• Позиции без доступного плана исключены.\n\nПримеры и источники\n• Молоко натуральное | ID 24155641 | цена 360.00 KZT; количество 1 916.00\n  Позиция ID 54747313; дата подписания 2026-01-12 15:05:39; БИН заказчика 980440001034; КАТО 711510000\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641\n\nID: e290fbbc-5086-4cf9-b793-7e7ba806459f | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "summary",
+        "language": "ru",
+        "bins": [
+          "980440001034"
+        ],
+        "years": [
+          2026
+        ],
+        "enstru": "105111.410.000000",
+        "kato": null,
+        "text": null,
+        "lot_id": null,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "both",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "summary_milk_2026_kk",
+      "language": "kk",
+      "intent": "summary",
+      "question": "980440001034 БСН бойынша 2026 жылғы 105111.410.000000 сүт ЕНС ТРУ қорытындысын бер",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "bins": true,
+        "years": true,
+        "enstru": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_selected",
+          "expected": 1,
+          "actual": 1,
+          "source": "Independent SQL sum/count over v_contract_prices, filtered BIN/code/year",
+          "answer_text": "N = 1",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.amount_net",
+          "expected": 689760,
+          "actual": 689760.0,
+          "source": "Independent SQL SUM(price*quantity) over v_contract_prices filtered BIN/code/year",
+          "answer_text": "689 760.00 KZT",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.n_items",
+          "expected": 1,
+          "actual": 1,
+          "source": "Independent SQL COUNT(*) grouped by contract year",
+          "answer_text": "позиций 1",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.quantity",
+          "expected": 1916,
+          "actual": 1916.0,
+          "source": "Independent SQL SUM(quantity) over v_contract_prices filtered BIN/code/year",
+          "answer_text": "1 916.00",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.weighted_price",
+          "expected": 360,
+          "actual": 360.0,
+          "source": "Independent SQL SUM(price*quantity)/SUM(quantity)",
+          "answer_text": "360.00",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 5,
+      "fact_total": 5,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "numeric",
+      "actual_outcome": "numeric",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "07c18e89-91c6-4714-9eed-8855824284fc",
+      "answer": "Қысқаша қорытынды\n1 позиция талданды; нәтижелер саны: 1.\n\nҚолданылған деректер\nЖылдар: 2026\nБСН (мақсат): 980440001034\nЕНСТРУ: 105111.410.000000; КАТО: —; N = 1\nЛот: —; Атауы: —\nКүндер: — … —\nБағалар KZT, ҚҚС-сыз.\n\nСалыстыру және метрика\nСомалар мен бағалар ЕНСТРУ, өлшем бірлігі және жеткізу орны бойынша топтастырылған.\nЖалпы сома: 689 760.00 KZT\n• 2026 | 105111.410.000000 | 112 | N=1 | сома 689 760.00 KZT; саны 1 916.00; орташа өлшенген баға 360.00\n\nШектеулер және сенімділік\nСенімділік: шектеулі\n• Сомалар төлемдер емес, шарт позициялары бойынша есептелген.\n• Қолжетімді жоспары жоқ позициялар есепке алынбады.\n\nМысалдар және дереккөздер\n• Табиғи сүт | ID 24155641 | баға 360.00 KZT; саны 1 916.00\n  Позиция ID 54747313; қол қойылған күні 2026-01-12 15:05:39; тапсырыс беруші БСН 980440001034; КАТО 711510000\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641\n\nID: 07c18e89-91c6-4714-9eed-8855824284fc | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "summary",
+        "language": "kk",
+        "bins": [
+          "980440001034"
+        ],
+        "years": [
+          2026
+        ],
+        "enstru": "105111.410.000000",
+        "kato": null,
+        "text": null,
+        "lot_id": null,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "both",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "compare_milk_years_ru",
+      "language": "ru",
+      "intent": "compare",
+      "question": "Сравни договорные объемы и средневзвешенную цену молока 105111.410.000000 у БИН 980440001034 за 2024, 2025 и 2026 годы",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "bins": true,
+        "years": true,
+        "enstru": true,
+        "group_by": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_groups",
+          "expected": 3,
+          "actual": 3,
+          "source": "Independent SQL GROUP BY contract year from v_contract_prices filtered BIN/code",
+          "answer_text": "найдено результатов: 3",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.group",
+          "expected": "2026",
+          "actual": "2026",
+          "source": "Independent annual groups sorted by amount descending from SQL",
+          "answer_text": "2026",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.weighted_price",
+          "expected": 360,
+          "actual": 360.0,
+          "source": "Independent SQL annual weighted price",
+          "answer_text": "360.00",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.1.group",
+          "expected": "2024",
+          "actual": "2024",
+          "source": "Independent annual groups sorted by amount descending",
+          "answer_text": "2024",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.1.weighted_price",
+          "expected": 322.5,
+          "actual": 322.5,
+          "source": "Independent SQL annual weighted price",
+          "answer_text": "322.50",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.2.group",
+          "expected": "2025",
+          "actual": "2025",
+          "source": "Independent annual groups sorted by amount descending",
+          "answer_text": "2025",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.2.weighted_price",
+          "expected": 330.36,
+          "actual": 330.36,
+          "source": "Independent SQL annual weighted price",
+          "answer_text": "330.36",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 7,
+      "fact_total": 7,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "numeric",
+      "actual_outcome": "numeric",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "b5819b16-9eb4-493f-9e8e-7ba024635416",
+      "answer": "Краткий вывод\nПроанализировано 3 позиций; найдено результатов: 3.\n\nИспользованные данные\nГоды: 2024, 2025, 2026\nБИН (цель): 980440001034\nЕНСТРУ: 105111.410.000000; КАТО: —; N = 3\nЛот: —; Название: —\nДаты: — … —\nЦены в KZT без НДС.\n\nСравнение и метрика\nСуммы и цены сгруппированы по ЕНСТРУ, единице измерения и месту поставки.\nОбщая сумма: 1 659 367.38 KZT\n• 2026 | 105111.410.000000 | 112 | N=1 | сумма 689 760.00 KZT; количество 1 916.00; средневзвешенная цена 360.00\n• 2024 | 105111.410.000000 | 112 | N=1 | сумма 487 942.50 KZT; количество 1 513.00; средневзвешенная цена 322.50\n• 2025 | 105111.410.000000 | 112 | N=1 | сумма 481 664.88 KZT; количество 1 458.00; средневзвешенная цена 330.36\n\nОграничения и уверенность\nУверенность: ограниченная\n• Суммы рассчитаны по позициям договоров, не по платежам.\n• Позиции без доступного плана исключены.\n\nПримеры и источники\n• Молоко натуральное | ID 21503715 | цена 322.50 KZT; количество 1 513.00\n  Позиция ID 49338635; дата подписания 2024-12-09 09:35:01; БИН заказчика 980440001034; КАТО —\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21503715\n• Молоко натуральное | ID 23785340 | цена 330.36 KZT; количество 1 458.00\n  Позиция ID 53941931; дата подписания 2025-11-18 11:28:50; БИН заказчика 980440001034; КАТО —\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23785340\n• Молоко натуральное | ID 24155641 | цена 360.00 KZT; количество 1 916.00\n  Позиция ID 54747313; дата подписания 2026-01-12 15:05:39; БИН заказчика 980440001034; КАТО 711510000\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641\n\nID: b5819b16-9eb4-493f-9e8e-7ba024635416 | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "compare",
+        "language": "ru",
+        "bins": [
+          "980440001034"
+        ],
+        "years": [
+          2024,
+          2025,
+          2026
+        ],
+        "enstru": "105111.410.000000",
+        "kato": null,
+        "text": null,
+        "lot_id": null,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "both",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "compare_milk_years_kk",
+      "language": "kk",
+      "intent": "compare",
+      "question": "980440001034 БСН бойынша 105111.410.000000 сүтінің шарттық көлемі мен орташа өлшенген бағасын 2024, 2025 және 2026 жылдарда салыстыр",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "bins": true,
+        "years": true,
+        "enstru": true,
+        "group_by": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_groups",
+          "expected": 3,
+          "actual": 3,
+          "source": "Independent SQL GROUP BY contract year from v_contract_prices filtered BIN/code",
+          "answer_text": "найдено результатов: 3",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.group",
+          "expected": "2026",
+          "actual": "2026",
+          "source": "Independent annual groups sorted by amount descending from SQL",
+          "answer_text": "2026",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.0.weighted_price",
+          "expected": 360,
+          "actual": 360.0,
+          "source": "Independent SQL annual weighted price",
+          "answer_text": "360.00",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.1.group",
+          "expected": "2024",
+          "actual": "2024",
+          "source": "Independent annual groups sorted by amount descending",
+          "answer_text": "2024",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.1.weighted_price",
+          "expected": 322.5,
+          "actual": 322.5,
+          "source": "Independent SQL annual weighted price",
+          "answer_text": "322.50",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.2.group",
+          "expected": "2025",
+          "actual": "2025",
+          "source": "Independent annual groups sorted by amount descending",
+          "answer_text": "2025",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.groups.2.weighted_price",
+          "expected": 330.36,
+          "actual": 330.36,
+          "source": "Independent SQL annual weighted price",
+          "answer_text": "330.36",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 7,
+      "fact_total": 7,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "numeric",
+      "actual_outcome": "numeric",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "e54c9521-5931-47a1-9918-5aa6bc1c6727",
+      "answer": "Қысқаша қорытынды\n3 позиция талданды; нәтижелер саны: 3.\n\nҚолданылған деректер\nЖылдар: 2024, 2025, 2026\nБСН (мақсат): 980440001034\nЕНСТРУ: 105111.410.000000; КАТО: —; N = 3\nЛот: —; Атауы: —\nКүндер: — … —\nБағалар KZT, ҚҚС-сыз.\n\nСалыстыру және метрика\nСомалар мен бағалар ЕНСТРУ, өлшем бірлігі және жеткізу орны бойынша топтастырылған.\nЖалпы сома: 1 659 367.38 KZT\n• 2026 | 105111.410.000000 | 112 | N=1 | сома 689 760.00 KZT; саны 1 916.00; орташа өлшенген баға 360.00\n• 2024 | 105111.410.000000 | 112 | N=1 | сома 487 942.50 KZT; саны 1 513.00; орташа өлшенген баға 322.50\n• 2025 | 105111.410.000000 | 112 | N=1 | сома 481 664.88 KZT; саны 1 458.00; орташа өлшенген баға 330.36\n\nШектеулер және сенімділік\nСенімділік: шектеулі\n• Сомалар төлемдер емес, шарт позициялары бойынша есептелген.\n• Қолжетімді жоспары жоқ позициялар есепке алынбады.\n\nМысалдар және дереккөздер\n• Табиғи сүт | ID 21503715 | баға 322.50 KZT; саны 1 513.00\n  Позиция ID 49338635; қол қойылған күні 2024-12-09 09:35:01; тапсырыс беруші БСН 980440001034; КАТО —\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21503715\n• Табиғи сүт | ID 23785340 | баға 330.36 KZT; саны 1 458.00\n  Позиция ID 53941931; қол қойылған күні 2025-11-18 11:28:50; тапсырыс беруші БСН 980440001034; КАТО —\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23785340\n• Табиғи сүт | ID 24155641 | баға 360.00 KZT; саны 1 916.00\n  Позиция ID 54747313; қол қойылған күні 2026-01-12 15:05:39; тапсырыс беруші БСН 980440001034; КАТО 711510000\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641\n\nID: e54c9521-5931-47a1-9918-5aa6bc1c6727 | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "compare",
+        "language": "kk",
+        "bins": [
+          "980440001034"
+        ],
+        "years": [
+          2024,
+          2025,
+          2026
+        ],
+        "enstru": "105111.410.000000",
+        "kato": null,
+        "text": null,
+        "lot_id": null,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "both",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "price_anomaly_below_ru",
+      "language": "ru",
+      "intent": "price_anomaly",
+      "question": "Найди за 2024–2026 годы отклонения цены ниже средневзвешенной более чем на 30% по ЕНС ТРУ 292040.100.000003 и КАТО 711210000 у БИН 020240002363",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "bins": true,
+        "years": true,
+        "enstru": true,
+        "kato": true,
+        "direction": true,
+        "threshold_pct": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.examples.0.item_id",
+          "expected": 55501573,
+          "actual": 55501573,
+          "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+          "answer_text": "ID 55501573",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.contract_id",
+          "expected": 24547526,
+          "actual": 24547526,
+          "source": "raw_objects key Contract:24547526:*",
+          "answer_text": "ID 24547526",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.reference_price",
+          "expected": 2615989.6637500003,
+          "actual": 2615989.6637500003,
+          "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+          "answer_text": "2 615 989.66 KZT",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.deviation_pct",
+          "expected": -80.92500108,
+          "actual": -80.92500108,
+          "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+          "answer_text": "-80.93%",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.n_peers",
+          "expected": 15,
+          "actual": 15,
+          "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+          "answer_text": "договоров-аналогов: 15",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.contract_url",
+          "expected": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526",
+          "actual": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526",
+          "source": "URL constructed from source Contract ID 24547526 in raw_objects key Contract:24547526:*; format matches app.analytics.evidence contract_url",
+          "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 6,
+      "fact_total": 6,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "numeric",
+      "actual_outcome": "numeric",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "002f0f35-3605-43d9-8750-f91591a09449",
+      "answer": "Краткий вывод\nПроанализировано 2 позиций; найдено результатов: 2.\n\nИспользованные данные\nГоды: 2024, 2025, 2026\nБИН (цель): 020240002363\nБИН (аналоги): не ограничены целевым списком; см. ограничение loaded_comparison_universe ниже\nЕНСТРУ: 292040.100.000003; КАТО: 711210000; N = 2\nЛот: —; Название: —\nДаты: — … —\nЦены в KZT без НДС.\n\nСравнение и метрика\nОтклонение = (цена / средневзвешенная цена аналогов − 1) × 100%. Целевой договор исключен из аналогов.\nПорог: 30.00%; направление: ниже\nНедостаточно аналогов для позиций: 0\n\nОграничения и уверенность\nУверенность: ограниченная\n• Совпадение ЕНСТРУ не гарантирует идентичность характеристик.\n• Пороговый анализ использует номинальные цены без временной корректировки.\n• Отклонение — повод для проверки, а не доказательство нарушения.\n• Аналоги ограничены загруженными заказчиками и договорами; это не весь рынок.\n• Позиции без доступного плана исключены.\n\nПримеры и источники\n• Услуги по техническому сопровождению автотранспортных средств и спецтехники | ID 24547526 | цена 499 000.00 KZT; количество 1.00\n  Позиция ID 55501573; дата подписания 2026-02-10 09:19:32; БИН заказчика 020240002363; КАТО 711210000\n  Отклонение: -80.93%; N=15\n  Цена аналогов для сравнения: 2 615 989.66 KZT\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526\n  Договоры сравнения (первые 3):\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19196126\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22504948\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22504955\n• Услуги по техническому сопровождению автотранспортных средств и спецтехники | ID 19196126 | цена 725 000.00 KZT; количество 1.00\n  Позиция ID 44673477; дата подписания 2024-01-04 12:14:20; БИН заказчика 020240002363; КАТО 711210000\n  Отклонение: -72.14%; N=15\n  Цена аналогов для сравнения: 2 601 864.66 KZT\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19196126\n  Договоры сравнения (первые 3):\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22504948\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22504955\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23386404\n\nID: 002f0f35-3605-43d9-8750-f91591a09449 | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "price_anomaly",
+        "language": "ru",
+        "bins": [
+          "020240002363"
+        ],
+        "years": [
+          2024,
+          2025,
+          2026
+        ],
+        "enstru": "292040.100.000003",
+        "kato": "711210000",
+        "text": null,
+        "lot_id": null,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "below",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "price_anomaly_below_kk",
+      "language": "kk",
+      "intent": "price_anomaly",
+      "question": "020240002363 БСН үшін 2024–2026 жылдардағы 292040.100.000003 ЕНС ТРУ және 711210000 КАТО бойынша орташа өлшенген бағадан 30%-дан төмен ауытқуды тап",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "bins": true,
+        "years": true,
+        "enstru": true,
+        "kato": true,
+        "direction": true,
+        "threshold_pct": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.examples.0.item_id",
+          "expected": 55501573,
+          "actual": 55501573,
+          "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+          "answer_text": "ID 55501573",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.contract_id",
+          "expected": 24547526,
+          "actual": 24547526,
+          "source": "raw_objects key Contract:24547526:*",
+          "answer_text": "ID 24547526",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.reference_price",
+          "expected": 2615989.6637500003,
+          "actual": 2615989.6637500003,
+          "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+          "answer_text": "2 615 989.66 KZT",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.deviation_pct",
+          "expected": -80.92500108,
+          "actual": -80.92500108,
+          "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+          "answer_text": "-80.93%",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.n_peers",
+          "expected": 15,
+          "actual": 15,
+          "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+          "answer_text": "договоров-аналогов: 15",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.contract_url",
+          "expected": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526",
+          "actual": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526",
+          "source": "URL constructed from source Contract ID 24547526 in raw_objects key Contract:24547526:*; format matches app.analytics.evidence contract_url",
+          "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 6,
+      "fact_total": 6,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "numeric",
+      "actual_outcome": "numeric",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "1f0da335-9cb7-4bf2-a3ac-61a14a194c4a",
+      "answer": "Қысқаша қорытынды\n2 позиция талданды; нәтижелер саны: 2.\n\nҚолданылған деректер\nЖылдар: 2024, 2025, 2026\nБСН (мақсат): 020240002363\nБСН (баламалар): мақсатты тізіммен шектелмеген; төмендегі loaded_comparison_universe шектеуін қараңыз\nЕНСТРУ: 292040.100.000003; КАТО: 711210000; N = 2\nЛот: —; Атауы: —\nКүндер: — … —\nБағалар KZT, ҚҚС-сыз.\n\nСалыстыру және метрика\nАуытқу = (баға / баламалардың орташа өлшенген бағасы − 1) × 100%. Мақсатты шарт баламалардан шығарылған.\nШек: 30.00%; бағыт: төмен\nБаламалары жеткіліксіз позициялар: 0\n\nШектеулер және сенімділік\nСенімділік: шектеулі\n• ЕНСТРУ сәйкестігі сипаттамалардың бірдей екенін кепілдемейді.\n• Шекті талдау уақыт түзетуінсіз номиналды бағаларды қолданады.\n• Ауытқу тексеруге негіз болады, бұзушылықтың дәлелі емес.\n• Баламалар жүктелген тапсырыс берушілер мен шарттармен шектелген; бүкіл нарық қамтылмаған.\n• Қолжетімді жоспары жоқ позициялар есепке алынбады.\n\nМысалдар және дереккөздер\n• Автокөлік құралдары және арнайы техниканы техникалық қолдау бойынша қызмет көрсетулер | ID 24547526 | баға 499 000.00 KZT; саны 1.00\n  Позиция ID 55501573; қол қойылған күні 2026-02-10 09:19:32; тапсырыс беруші БСН 020240002363; КАТО 711210000\n  Ауытқу: -80.93%; N=15\n  Салыстыру үшін балама баға: 2 615 989.66 KZT\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526\n  Салыстыру шарттары (алғашқы 3):\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19196126\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22504948\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22504955\n• Автокөлік құралдары және арнайы техниканы техникалық қолдау бойынша қызмет көрсетулер | ID 19196126 | баға 725 000.00 KZT; саны 1.00\n  Позиция ID 44673477; қол қойылған күні 2024-01-04 12:14:20; тапсырыс беруші БСН 020240002363; КАТО 711210000\n  Ауытқу: -72.14%; N=15\n  Салыстыру үшін балама баға: 2 601 864.66 KZT\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19196126\n  Салыстыру шарттары (алғашқы 3):\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22504948\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22504955\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23386404\n\nID: 1f0da335-9cb7-4bf2-a3ac-61a14a194c4a | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "price_anomaly",
+        "language": "kk",
+        "bins": [
+          "020240002363"
+        ],
+        "years": [
+          2024,
+          2025,
+          2026
+        ],
+        "enstru": "292040.100.000003",
+        "kato": "711210000",
+        "text": null,
+        "lot_id": null,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "below",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "fair_price_milk_insufficient_ru",
+      "language": "ru",
+      "intent": "fair_price",
+      "question": "Оцени Fair Price лота 38693950 за 2026 год по другим заказчикам в том же месте поставки",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "years": true,
+        "lot_id": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_matches",
+          "expected": 0,
+          "actual": 0,
+          "source": "Independent SQL exact peer scan: no other-customer/root record with identical description, product/unit/type, exact KATO, prior date and 0.5–2x batch size",
+          "answer_text": "найдено результатов: 0",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.status",
+          "expected": "insufficient_peers",
+          "actual": "insufficient_peers",
+          "source": "Independent SQL exact peer scan for target effective item 54747313, contract 24155641, lot 38693950",
+          "answer_text": "Недостаточно сопоставимых договоров",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.n_peers",
+          "expected": 0,
+          "actual": 0,
+          "source": "Independent SQL exact peer scan for the target above",
+          "answer_text": "договоров-аналогов: 0",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.kato",
+          "expected": "711510000",
+          "actual": "711510000",
+          "source": "raw_objects key Contract:24155641:*; nested Plans.PlansKato.refKatoCode",
+          "answer_text": "КАТО: 711510000",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.city_code",
+          "expected": "710000000",
+          "actual": "710000000",
+          "source": "Current frozen local snapshot: analytics.snapshot joins RefKato parent hierarchy; RefKato 711510000/711210000 parentCode=710000000; RefKato 710000000 name_ru=г.Астана",
+          "answer_text": "710000000",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 5,
+      "fact_total": 5,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "insufficient",
+      "actual_outcome": "insufficient",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "fa39b0f3-c774-42f2-9de9-209e75886787",
+      "answer": "Краткий вывод\nПроанализировано 1 позиций; найдено результатов: 0.\n\nИспользованные данные\nГоды: 2026\nБИН (цель): 000740001307, 020240002363, 020440003656, 030440003698, 050740004819, 051040005150, 100140011059, 120940001946, 140340016539, 150540000186, 171041003124, 210240019348, 210240033968, 210941010761, 230740013340, 231040023028, 780140000023, 900640000128, 940740000911, 940940000384, 960440000220, 970940001378, 971040001050, 980440001034, 981140001551, 990340005977, 990740002243 (не указан — по умолчанию настроенный охват из 27 БИН, а не всё загруженное)\nБИН (аналоги): не ограничены целевым списком; см. ограничение loaded_comparison_universe ниже\nЕНСТРУ: —; КАТО: —; N = 1\nЛот: 38693950; Название: —\nДаты: — … —\nЦены в KZT без НДС.\n\nСравнение и метрика\nМедиана цен аналогичных позиций других заказчиков в том же месте поставки.\n\nОграничения и уверенность\nУверенность: ограниченная\n• Аналоги отобраны по одинаковому описанию и объему партии от 0,5 до 2 размеров целевой партии.\n• Временная модель требует 24 месяцев; иначе используется тот же квартал и предварительная оценка.\n• Справедливая цена — статистический ориентир, не норматив или оценка законности.\n• Аналоги ограничены загруженными заказчиками и договорами; это не весь рынок.\n• Позиции без доступного плана исключены.\n\nПримеры и источники\n• Молоко натуральное | ID 24155641 | цена 360.00 KZT; количество 1 916.00\n  Позиция ID 54747313; дата подписания 2026-01-12 15:05:39; БИН заказчика 980440001034; КАТО 711510000\n  Недостаточно сопоставимых договоров; договоров-аналогов: 0\n  Подтвержденный город (КАТО): 710000000\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641\n\nID: fa39b0f3-c774-42f2-9de9-209e75886787 | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "fair_price",
+        "language": "ru",
+        "bins": [],
+        "years": [
+          2026
+        ],
+        "enstru": null,
+        "kato": null,
+        "text": null,
+        "lot_id": 38693950,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "both",
+        "top_k": 10,
+        "group_by": "customer_bin",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "fair_price_milk_insufficient_kk",
+      "language": "kk",
+      "intent": "fair_price",
+      "question": "38693950 лотының 2026 жылғы Fair Price бағасын сол жеткізу орнындағы басқа тапсырыс берушілермен бағала",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "years": true,
+        "lot_id": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_matches",
+          "expected": 0,
+          "actual": 0,
+          "source": "Independent SQL exact peer scan: no other-customer/root record with identical description, product/unit/type, exact KATO, prior date and 0.5–2x batch size",
+          "answer_text": "найдено результатов: 0",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.status",
+          "expected": "insufficient_peers",
+          "actual": "insufficient_peers",
+          "source": "Independent SQL exact peer scan for target effective item 54747313, contract 24155641, lot 38693950",
+          "answer_text": "Недостаточно сопоставимых договоров",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.n_peers",
+          "expected": 0,
+          "actual": 0,
+          "source": "Independent SQL exact peer scan for the target above",
+          "answer_text": "договоров-аналогов: 0",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.kato",
+          "expected": "711510000",
+          "actual": "711510000",
+          "source": "raw_objects key Contract:24155641:*; nested Plans.PlansKato.refKatoCode",
+          "answer_text": "КАТО: 711510000",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.examples.0.city_code",
+          "expected": "710000000",
+          "actual": "710000000",
+          "source": "Current frozen local snapshot: analytics.snapshot joins RefKato parent hierarchy; RefKato 711510000/711210000 parentCode=710000000; RefKato 710000000 name_ru=г.Астана",
+          "answer_text": "710000000",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 5,
+      "fact_total": 5,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "insufficient",
+      "actual_outcome": "insufficient",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "d17fd0a5-0b4d-4327-bdf6-d3e6fccafcf4",
+      "answer": "Қысқаша қорытынды\n1 позиция талданды; нәтижелер саны: 0.\n\nҚолданылған деректер\nЖылдар: 2026\nБСН (мақсат): 000740001307, 020240002363, 020440003656, 030440003698, 050740004819, 051040005150, 100140011059, 120940001946, 140340016539, 150540000186, 171041003124, 210240019348, 210240033968, 210941010761, 230740013340, 231040023028, 780140000023, 900640000128, 940740000911, 940940000384, 960440000220, 970940001378, 971040001050, 980440001034, 981140001551, 990340005977, 990740002243 (көрсетілмеген — әдепкі бойынша 27 БСН-нан тұратын теңшелген қамту, барлық жүктелген емес)\nБСН (баламалар): мақсатты тізіммен шектелмеген; төмендегі loaded_comparison_universe шектеуін қараңыз\nЕНСТРУ: —; КАТО: —; N = 1\nЛот: 38693950; Атауы: —\nКүндер: — … —\nБағалар KZT, ҚҚС-сыз.\n\nСалыстыру және метрика\nСол жеткізу орнындағы басқа тапсырыс берушілердің ұқсас позициялары бағаларының медианасы.\n\nШектеулер және сенімділік\nСенімділік: шектеулі\n• Баламалар бірдей сипаттама және мақсатты партияның 0,5–2 көлемі бойынша таңдалды.\n• Уақыт моделі үшін 24 ай қажет; әйтпесе сол тоқсан бойынша алдын ала баға беріледі.\n• Әділ баға — статистикалық бағдар, заңдылық бағасы емес.\n• Баламалар жүктелген тапсырыс берушілер мен шарттармен шектелген; бүкіл нарық қамтылмаған.\n• Қолжетімді жоспары жоқ позициялар есепке алынбады.\n\nМысалдар және дереккөздер\n• Табиғи сүт | ID 24155641 | баға 360.00 KZT; саны 1 916.00\n  Позиция ID 54747313; қол қойылған күні 2026-01-12 15:05:39; тапсырыс беруші БСН 980440001034; КАТО 711510000\n  Салыстырмалы шарттар жеткіліксіз; балама шарттар: 0\n  Расталған қала (КАТО): 710000000\n  https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641\n\nID: d17fd0a5-0b4d-4327-bdf6-d3e6fccafcf4 | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "fair_price",
+        "language": "kk",
+        "bins": [],
+        "years": [
+          2026
+        ],
+        "enstru": null,
+        "kato": null,
+        "text": null,
+        "lot_id": 38693950,
+        "lot_number": null,
+        "threshold_pct": 30.0,
+        "direction": "both",
+        "top_k": 10,
+        "group_by": "customer_bin",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "quantity_milk_growth_ru",
+      "language": "ru",
+      "intent": "quantity_anomaly",
+      "question": "Проверь рост договорного объема молока по БИН 980440001034 и ЕНС ТРУ 105111.410.000000 за 2024–2026 годы при пороге 20%",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "bins": true,
+        "years": true,
+        "enstru": true,
+        "threshold_pct": true,
+        "direction": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_matches",
+          "expected": 0,
+          "actual": 0,
+          "source": "Independent check: the only 2024 (Contract:21503715, signed 2024-12-09) and 2025 (Contract:23785340, signed 2025-11-18) contracts for this BIN/code are both signed after the Oct cutoff used for the in-progress target year 2026, so neither counts toward the equal-window history; only one year (2026, Contract:24155641, signed 2026-01-12) remains and 2+ prior years are required",
+          "answer_text": "найдено результатов: 0",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.n_selected",
+          "expected": 3,
+          "actual": 3,
+          "source": "Independent SQL count for BIN/code across all requested years: Contract:21503715, Contract:23785340, Contract:24155641",
+          "answer_text": "N = 3",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 2,
+      "fact_total": 2,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "insufficient",
+      "actual_outcome": "insufficient",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "425dfaca-fdd3-4c4a-909b-0290054986a7",
+      "answer": "Краткий вывод\nПроанализировано 0 групп заказчик/код/единица; найдено результатов: 0.\nНедостаточно подходящих данных для вывода.\n\nИспользованные данные\nГоды: 2024, 2025, 2026\nБИН (цель): 980440001034\nЕНСТРУ: 105111.410.000000; КАТО: —; N = 3\nЛот: —; Название: —\nДаты: — … —\nЦены в KZT без НДС.\n\nСравнение и метрика\nРост количества относительно медианы минимум двух прошлых лет за одинаковый период.\nПорог: 20.00%; направление: выше\n\nОграничения и уверенность\nУверенность: недостаточно данных\n• Сравниваются договорные объемы, а не фактическое потребление.\n• Отсутствие записей не считается нулевым объемом; нужны как минимум два предыдущих года.\n• Рост объема сам по себе не доказывает завышение потребности.\n• Позиции без доступного плана исключены.\n\nПримеры и источники\n\nID: 425dfaca-fdd3-4c4a-909b-0290054986a7 | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "quantity_anomaly",
+        "language": "ru",
+        "bins": [
+          "980440001034"
+        ],
+        "years": [
+          2024,
+          2025,
+          2026
+        ],
+        "enstru": "105111.410.000000",
+        "kato": null,
+        "text": null,
+        "lot_id": null,
+        "lot_number": null,
+        "threshold_pct": 20.0,
+        "direction": "above",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    },
+    {
+      "id": "quantity_milk_growth_kk",
+      "language": "kk",
+      "intent": "quantity_anomaly",
+      "question": "980440001034 БСН бойынша 105111.410.000000 сүтінің 2024–2026 жылдардағы шарттық көлем өсімін 20% шегімен тексер",
+      "route_fields": {
+        "intent": true,
+        "language": true,
+        "bins": true,
+        "years": true,
+        "enstru": true,
+        "threshold_pct": true,
+        "direction": true,
+        "top_k": true
+      },
+      "route_correct": true,
+      "facts": [
+        {
+          "path": "result.n_matches",
+          "expected": 0,
+          "actual": 0,
+          "source": "Independent check: the only 2024 (Contract:21503715, signed 2024-12-09) and 2025 (Contract:23785340, signed 2025-11-18) contracts for this BIN/code are both signed after the Oct cutoff used for the in-progress target year 2026, so neither counts toward the equal-window history; only one year (2026, Contract:24155641, signed 2026-01-12) remains and 2+ prior years are required",
+          "answer_text": "найдено результатов: 0",
+          "present_in_answer": true,
+          "correct": true
+        },
+        {
+          "path": "result.n_selected",
+          "expected": 3,
+          "actual": 3,
+          "source": "Independent SQL count for BIN/code across all requested years: Contract:21503715, Contract:23785340, Contract:24155641",
+          "answer_text": "N = 3",
+          "present_in_answer": true,
+          "correct": true
+        }
+      ],
+      "visible_checks": [],
+      "forbidden_checks": [],
+      "fact_correct": 2,
+      "fact_total": 2,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "expected_outcome": "insufficient",
+      "actual_outcome": "insufficient",
+      "outcome_correct": true,
+      "exact": true,
+      "error": null,
+      "report_id": "7cc51545-168c-46e7-9189-3f338fd60047",
+      "answer": "Қысқаша қорытынды\n0 тапсырыс беруші/код/өлшем бірлігі топтары талданды; нәтижелер саны: 0.\nҚорытынды жасауға жарамды деректер жеткіліксіз.\n\nҚолданылған деректер\nЖылдар: 2024, 2025, 2026\nБСН (мақсат): 980440001034\nЕНСТРУ: 105111.410.000000; КАТО: —; N = 3\nЛот: —; Атауы: —\nКүндер: — … —\nБағалар KZT, ҚҚС-сыз.\n\nСалыстыру және метрика\nБірдей кезеңдегі кемінде екі өткен жылдың медианасымен салыстырғандағы көлем өсімі.\nШек: 20.00%; бағыт: жоғары\n\nШектеулер және сенімділік\nСенімділік: деректер жеткіліксіз\n• Шарттағы көлемдер салыстырылады, нақты тұтыну емес.\n• Жазбалардың болмауы нөлдік көлем емес; кемінде екі алдыңғы жыл қажет.\n• Көлемнің өсуі қажеттіліктің артық көрсетілгенін өздігінен дәлелдемейді.\n• Қолжетімді жоспары жоқ позициялар есепке алынбады.\n\nМысалдар және дереккөздер\n\nID: 7cc51545-168c-46e7-9189-3f338fd60047 | v1.2.0 | snapshot: b34d638cb3c5",
+      "actual_request": {
+        "intent": "quantity_anomaly",
+        "language": "kk",
+        "bins": [
+          "980440001034"
+        ],
+        "years": [
+          2024,
+          2025,
+          2026
+        ],
+        "enstru": "105111.410.000000",
+        "kato": null,
+        "text": null,
+        "lot_id": null,
+        "lot_number": null,
+        "threshold_pct": 20.0,
+        "direction": "above",
+        "top_k": 10,
+        "group_by": "year",
+        "date_from": null,
+        "date_to": null
+      }
+    }
+  ],
+  "expected_cases": 12,
+  "workers": 3,
+  "code_sha256": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "acceptance.py": "696ac78d92490921b5936e962a7f31932ee58e3e9c019e2106fbbca78520eb64",
+    "agent.py": "6b1b7b778fdc50ca7aa0267227a93b3ee5cc8cfd5a34b811ac59f37562996246",
+    "analytics.py": "1cadd23330cc4736f0d07cbc1f550f7e6b2bc6c742cda737609137f6e5244515",
+    "cli.py": "1997e8cc3ade58fcdd9eec29a7783caaf452de4c0066ececdc4e4f20ea8f207b",
+    "db.py": "bed5dd14b1fbb9add51faffe888548e49efbb962c580a53fc7659668014f365f",
+    "fair_model.py": "3caef422dd2bd2658f2e02d3745e91931835806a86c1915f003d5947f5668320",
+    "ingest.py": "35bfcbe267558d4c6ea8f45c3ac6adfda29f1af7830ae6fd0dc7ae4428acb88a",
+    "main.py": "689ef1d24ff3b4fd1f01fdd44dc628fb79792e3197f6f0217a225d06fc6bbc00",
+    "normalize.py": "529a7c6d227d55ee1d03f68ecce120603237b7adce0191d54ba0e2a7ad564139",
+    "ows.py": "b85a65d390fd2d01f186a702456380d952b2ae6ed12c6fc618eeae397d6baf34",
+    "publication.py": "09523cffec3687c75a489ecf9f158bc14c8902e5bdabcd4ed31b69ffc22b12bb",
+    "quality.py": "f3ddbc1530aaa3a5f06e0c665f63958a3e68cd806dcf0dbeff171532ad43909d",
+    "schemas.py": "5a3e44b6c1c90accdc335c2b686497d0a43958a595c94f40cb3b157b25edb846",
+    "settings.py": "49ca6c68f6bd467b0cb5d5875f7ef5d13ce6726ccfc4ac4f7af04978e8287c1b"
+  },
+  "updated_at": "2026-10-24T03:52:39.825793+00:00",
+  "snapshot_sha256": "b34d638cb3c5ed3f5f488f5d1df602d4886d0be1dbb9c2e1586e7a34148928fd",
+  "scores": {
+    "overall": {
+      "cases": 12,
+      "exact_cases": 12,
+      "route_correct": 12,
+      "fact_correct": 64,
+      "fact_total": 64,
+      "fact_accuracy": 1.0,
+      "visible_correct": 0,
+      "visible_total": 0,
+      "visible_accuracy": 0,
+      "forbidden_correct": 0,
+      "forbidden_total": 0,
+      "outcome_correct": 12,
+      "outcome_total": 12,
+      "numeric_answers": 8,
+      "insufficient_answers": 4,
+      "failures": 0
+    },
+    "by_language": {
+      "ru": {
+        "cases": 6,
+        "exact_cases": 6,
+        "route_correct": 6,
+        "fact_correct": 32,
+        "fact_total": 32,
+        "fact_accuracy": 1.0,
+        "visible_correct": 0,
+        "visible_total": 0,
+        "visible_accuracy": 0,
+        "forbidden_correct": 0,
+        "forbidden_total": 0,
+        "outcome_correct": 6,
+        "outcome_total": 6,
+        "numeric_answers": 4,
+        "insufficient_answers": 2,
+        "failures": 0
+      },
+      "kk": {
+        "cases": 6,
+        "exact_cases": 6,
+        "route_correct": 6,
+        "fact_correct": 32,
+        "fact_total": 32,
+        "fact_accuracy": 1.0,
+        "visible_correct": 0,
+        "visible_total": 0,
+        "visible_accuracy": 0,
+        "forbidden_correct": 0,
+        "forbidden_total": 0,
+        "outcome_correct": 6,
+        "outcome_total": 6,
+        "numeric_answers": 4,
+        "insufficient_answers": 2,
+        "failures": 0
+      }
+    },
+    "by_intent": {
+      "compare": {
+        "cases": 2,
+        "exact_cases": 2,
+        "route_correct": 2,
+        "fact_correct": 14,
+        "fact_total": 14,
+        "fact_accuracy": 1.0,
+        "visible_correct": 0,
+        "visible_total": 0,
+        "visible_accuracy": 0,
+        "forbidden_correct": 0,
+        "forbidden_total": 0,
+        "outcome_correct": 2,
+        "outcome_total": 2,
+        "numeric_answers": 2,
+        "insufficient_answers": 0,
+        "failures": 0
+      },
+      "fair_price": {
+        "cases": 2,
+        "exact_cases": 2,
+        "route_correct": 2,
+        "fact_correct": 10,
+        "fact_total": 10,
+        "fact_accuracy": 1.0,
+        "visible_correct": 0,
+        "visible_total": 0,
+        "visible_accuracy": 0,
+        "forbidden_correct": 0,
+        "forbidden_total": 0,
+        "outcome_correct": 2,
+        "outcome_total": 2,
+        "numeric_answers": 0,
+        "insufficient_answers": 2,
+        "failures": 0
+      },
+      "price_anomaly": {
+        "cases": 2,
+        "exact_cases": 2,
+        "route_correct": 2,
+        "fact_correct": 12,
+        "fact_total": 12,
+        "fact_accuracy": 1.0,
+        "visible_correct": 0,
+        "visible_total": 0,
+        "visible_accuracy": 0,
+        "forbidden_correct": 0,
+        "forbidden_total": 0,
+        "outcome_correct": 2,
+        "outcome_total": 2,
+        "numeric_answers": 2,
+        "insufficient_answers": 0,
+        "failures": 0
+      },
+      "quantity_anomaly": {
+        "cases": 2,
+        "exact_cases": 2,
+        "route_correct": 2,
+        "fact_correct": 4,
+        "fact_total": 4,
+        "fact_accuracy": 1.0,
+        "visible_correct": 0,
+        "visible_total": 0,
+        "visible_accuracy": 0,
+        "forbidden_correct": 0,
+        "forbidden_total": 0,
+        "outcome_correct": 2,
+        "outcome_total": 2,
+        "numeric_answers": 0,
+        "insufficient_answers": 2,
+        "failures": 0
+      },
+      "search": {
+        "cases": 2,
+        "exact_cases": 2,
+        "route_correct": 2,
+        "fact_correct": 14,
+        "fact_total": 14,
+        "fact_accuracy": 1.0,
+        "visible_correct": 0,
+        "visible_total": 0,
+        "visible_accuracy": 0,
+        "forbidden_correct": 0,
+        "forbidden_total": 0,
+        "outcome_correct": 2,
+        "outcome_total": 2,
+        "numeric_answers": 2,
+        "insufficient_answers": 0,
+        "failures": 0
+      },
+      "summary": {
+        "cases": 2,
+        "exact_cases": 2,
+        "route_correct": 2,
+        "fact_correct": 10,
+        "fact_total": 10,
+        "fact_accuracy": 1.0,
+        "visible_correct": 0,
+        "visible_total": 0,
+        "visible_accuracy": 0,
+        "forbidden_correct": 0,
+        "forbidden_total": 0,
+        "outcome_correct": 2,
+        "outcome_total": 2,
+        "numeric_answers": 2,
+        "insufficient_answers": 0,
+        "failures": 0
+      }
+    }
+  },
+  "completed_cases": 12
+}

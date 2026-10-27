@@ -44,6 +44,16 @@ def test_missing_lot_gives_actionable_error(api):
     assert r.status_code==422 and 'No usable' in r.json()['detail']
 
 
+def test_readiness_requires_gemini_key(api,monkeypatch):
+    from app import settings
+    assert api.get('/api/ready').status_code==503
+    monkeypatch.setattr(settings,'LLM_PROVIDER','gemini')
+    monkeypatch.setattr(settings,'GOOGLE_API_KEY','')
+    assert api.get('/api/ready').status_code==503
+    monkeypatch.setattr(settings,'GOOGLE_API_KEY','test-key')
+    assert api.get('/api/ready').json()['planner']=='gemini'
+
+
 def test_quality_and_status_report_current_scope_without_success(api):
     response=api.get('/api/quality')
     assert response.status_code==200

@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-10-24T03:51:41.262658+00:00",
+  "project": "qazprocure-audit-a1e02f45",
+  "steps": {
+    "startup": true,
+    "model_readiness": {
+      "status": "ready",
+      "planner": "gemini"
+    },
+    "ows_ingestion": {
+      "bounded": true,
+      "counts": {
+        "plans": 5,
+        "lots": 5,
+        "contracts": 5,
+        "contract_items": 7,
+        "announcements": 9,
+        "organizations": 6
+      },
+      "partial_expected": true
+    },
+    "restart_persistence": {
+      "passed": true,
+      "counts": {
+        "plans": 5,
+        "lots": 5,
+        "contracts": 5,
+        "contract_items": 7,
+        "announcements": 9,
+        "organizations": 6
+      }
+    }
+  },
+  "complete": true,
+  "cleanup": true,
+  "finished_at": "2026-10-24T03:52:32.261408+00:00"
+}

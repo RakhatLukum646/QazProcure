@@ -1,0 +1,6068 @@
+[
+  {
+    "id": "search_lot_milk_ru",
+    "question": "Покажи договорную позицию по лоту 38693950 за 2026 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 38693950,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=38693950; effective target contract 24155641",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 54747313,
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.id, plus SQL v_contract_prices",
+        "answer_text": "ID 54747313"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24155641,
+        "source": "raw_objects key Contract:24155641:*",
+        "answer_text": "ID 24155641"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 360,
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.itemPrice",
+        "answer_text": "360"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1916,
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.quantity",
+        "answer_text": "1 916.00"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "980440001034",
+        "source": "raw_objects key Contract:24155641:*; Contract.customerBin",
+        "answer_text": "980440001034"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641",
+        "source": "URL constructed from source Contract ID 24155641 in raw_objects key Contract:24155641:*; format matches app.analytics.evidence contract_url",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "search_lot_milk_kk",
+    "question": "2026 жылы 38693950 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 38693950,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=38693950; effective target contract 24155641",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 54747313,
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.id, plus SQL v_contract_prices",
+        "answer_text": "ID 54747313"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24155641,
+        "source": "raw_objects key Contract:24155641:*",
+        "answer_text": "ID 24155641"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 360,
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.itemPrice",
+        "answer_text": "360"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1916,
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.quantity",
+        "answer_text": "1 916.00"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "980440001034",
+        "source": "raw_objects key Contract:24155641:*; Contract.customerBin",
+        "answer_text": "980440001034"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641",
+        "source": "URL constructed from source Contract ID 24155641 in raw_objects key Contract:24155641:*; format matches app.analytics.evidence contract_url",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24155641"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "search_code_milk_ru",
+    "question": "Найди закупки молока по ЕНС ТРУ 105111.410.000000 для БИН 980440001034 за 2026 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE customer_bin=980440001034 AND enstru=105111.410.000000 AND year=2026",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24155641,
+        "source": "raw_objects key Contract:24155641:*",
+        "answer_text": "ID 24155641"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-01-12 15:05:39",
+        "source": "raw_objects key Contract:24155641:*; Contract.signDate",
+        "answer_text": "2026-01-12 15:05:39"
+      },
+      {
+        "path": "result.examples.0.enstru",
+        "value": "105111.410.000000",
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.Plans.refEnstruCode",
+        "answer_text": "105111.410.000000"
+      },
+      {
+        "path": "result.examples.0.kato",
+        "value": "711510000",
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.Plans.PlansKato.refKatoCode",
+        "answer_text": "КАТО: 711510000"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "search_code_milk_kk",
+    "question": "980440001034 БСН бойынша 2026 жылғы 105111.410.000000 ЕНС ТРУ сүтіне қатысты сатып алуларды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE customer_bin=980440001034 AND enstru=105111.410.000000 AND year=2026",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24155641,
+        "source": "raw_objects key Contract:24155641:*",
+        "answer_text": "ID 24155641"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-01-12 15:05:39",
+        "source": "raw_objects key Contract:24155641:*; Contract.signDate",
+        "answer_text": "2026-01-12 15:05:39"
+      },
+      {
+        "path": "result.examples.0.enstru",
+        "value": "105111.410.000000",
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.Plans.refEnstruCode",
+        "answer_text": "105111.410.000000"
+      },
+      {
+        "path": "result.examples.0.kato",
+        "value": "711510000",
+        "source": "raw_objects key Contract:24155641:*; ContractUnits.Plans.PlansKato.refKatoCode",
+        "answer_text": "КАТО: 711510000"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "summary_milk_2026_ru",
+    "question": "Подведи итог по молоку ЕНС ТРУ 105111.410.000000 у БИН 980440001034 за 2026 год",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "Independent SQL sum/count over v_contract_prices, filtered BIN/code/year",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 689760,
+        "source": "Independent SQL SUM(price*quantity) over v_contract_prices filtered BIN/code/year",
+        "answer_text": "689 760.00 KZT"
+      },
+      {
+        "path": "result.groups.0.n_items",
+        "value": 1,
+        "source": "Independent SQL COUNT(*) grouped by contract year",
+        "answer_text": "позиций 1"
+      },
+      {
+        "path": "result.groups.0.quantity",
+        "value": 1916,
+        "source": "Independent SQL SUM(quantity) over v_contract_prices filtered BIN/code/year",
+        "answer_text": "1 916.00"
+      },
+      {
+        "path": "result.groups.0.weighted_price",
+        "value": 360,
+        "source": "Independent SQL SUM(price*quantity)/SUM(quantity)",
+        "answer_text": "360.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "summary_milk_2026_kk",
+    "question": "980440001034 БСН бойынша 2026 жылғы 105111.410.000000 сүт ЕНС ТРУ қорытындысын бер",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "Independent SQL sum/count over v_contract_prices, filtered BIN/code/year",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 689760,
+        "source": "Independent SQL SUM(price*quantity) over v_contract_prices filtered BIN/code/year",
+        "answer_text": "689 760.00 KZT"
+      },
+      {
+        "path": "result.groups.0.n_items",
+        "value": 1,
+        "source": "Independent SQL COUNT(*) grouped by contract year",
+        "answer_text": "позиций 1"
+      },
+      {
+        "path": "result.groups.0.quantity",
+        "value": 1916,
+        "source": "Independent SQL SUM(quantity) over v_contract_prices filtered BIN/code/year",
+        "answer_text": "1 916.00"
+      },
+      {
+        "path": "result.groups.0.weighted_price",
+        "value": 360,
+        "source": "Independent SQL SUM(price*quantity)/SUM(quantity)",
+        "answer_text": "360.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "summary_milk_3y_ru",
+    "question": "Подведи итог суммам и объемам закупок молока ЕНС ТРУ 105111.410.000000 у БИН 980440001034 за 2024–2026 годы",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) over v_contract_prices filtered BIN/code/year in 2024-2026",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 1659367.38,
+        "source": "Independent SQL SUM(price*quantity) over v_contract_prices; annual sums 487942.50 + 481664.88 + 689760",
+        "answer_text": "1 659 367.38 KZT"
+      },
+      {
+        "path": "result.groups.0.quantity",
+        "value": 1916,
+        "source": "Independent SQL annual quantities: 2024 1513; 2025 1458; 2026 1916; groups sorted by amount descending",
+        "answer_text": "1 916.00"
+      },
+      {
+        "path": "result.groups.1.quantity",
+        "value": 1513,
+        "source": "Same independent annual aggregation; compare sorted groups by amount descending",
+        "answer_text": "1 513.00"
+      },
+      {
+        "path": "result.groups.2.quantity",
+        "value": 1458,
+        "source": "Same independent annual aggregation; compare sorted groups by amount descending",
+        "answer_text": "1 458.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "summary_milk_3y_kk",
+    "question": "980440001034 БСН бойынша 2024–2026 жылдардағы 105111.410.000000 сүт сатып алуының сомасы мен көлемін қорытындыла",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) over v_contract_prices filtered BIN/code/year in 2024-2026",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 1659367.38,
+        "source": "Independent SQL SUM(price*quantity) over v_contract_prices; annual sums 487942.50 + 481664.88 + 689760",
+        "answer_text": "1 659 367.38 KZT"
+      },
+      {
+        "path": "result.groups.0.quantity",
+        "value": 1916,
+        "source": "Independent SQL annual quantities: 2024 1513; 2025 1458; 2026 1916; groups sorted by amount descending",
+        "answer_text": "1 916.00"
+      },
+      {
+        "path": "result.groups.1.quantity",
+        "value": 1513,
+        "source": "Same independent annual aggregation; compare sorted groups by amount descending",
+        "answer_text": "1 513.00"
+      },
+      {
+        "path": "result.groups.2.quantity",
+        "value": 1458,
+        "source": "Same independent annual aggregation; compare sorted groups by amount descending",
+        "answer_text": "1 458.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "compare_milk_years_ru",
+    "question": "Сравни договорные объемы и средневзвешенную цену молока 105111.410.000000 у БИН 980440001034 за 2024, 2025 и 2026 годы",
+    "request": {
+      "intent": "compare",
+      "language": "ru",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "group_by": "year",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_groups",
+        "value": 3,
+        "source": "Independent SQL GROUP BY contract year from v_contract_prices filtered BIN/code",
+        "answer_text": "найдено результатов: 3"
+      },
+      {
+        "path": "result.groups.0.group",
+        "value": "2026",
+        "source": "Independent annual groups sorted by amount descending from SQL",
+        "answer_text": "2026"
+      },
+      {
+        "path": "result.groups.0.weighted_price",
+        "value": 360,
+        "source": "Independent SQL annual weighted price",
+        "answer_text": "360.00"
+      },
+      {
+        "path": "result.groups.1.group",
+        "value": "2024",
+        "source": "Independent annual groups sorted by amount descending",
+        "answer_text": "2024"
+      },
+      {
+        "path": "result.groups.1.weighted_price",
+        "value": 322.5,
+        "source": "Independent SQL annual weighted price",
+        "answer_text": "322.50"
+      },
+      {
+        "path": "result.groups.2.group",
+        "value": "2025",
+        "source": "Independent annual groups sorted by amount descending",
+        "answer_text": "2025"
+      },
+      {
+        "path": "result.groups.2.weighted_price",
+        "value": 330.36,
+        "source": "Independent SQL annual weighted price",
+        "answer_text": "330.36"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "compare_milk_years_kk",
+    "question": "980440001034 БСН бойынша 105111.410.000000 сүтінің шарттық көлемі мен орташа өлшенген бағасын 2024, 2025 және 2026 жылдарда салыстыр",
+    "request": {
+      "intent": "compare",
+      "language": "kk",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "group_by": "year",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_groups",
+        "value": 3,
+        "source": "Independent SQL GROUP BY contract year from v_contract_prices filtered BIN/code",
+        "answer_text": "найдено результатов: 3"
+      },
+      {
+        "path": "result.groups.0.group",
+        "value": "2026",
+        "source": "Independent annual groups sorted by amount descending from SQL",
+        "answer_text": "2026"
+      },
+      {
+        "path": "result.groups.0.weighted_price",
+        "value": 360,
+        "source": "Independent SQL annual weighted price",
+        "answer_text": "360.00"
+      },
+      {
+        "path": "result.groups.1.group",
+        "value": "2024",
+        "source": "Independent annual groups sorted by amount descending",
+        "answer_text": "2024"
+      },
+      {
+        "path": "result.groups.1.weighted_price",
+        "value": 322.5,
+        "source": "Independent SQL annual weighted price",
+        "answer_text": "322.50"
+      },
+      {
+        "path": "result.groups.2.group",
+        "value": "2025",
+        "source": "Independent annual groups sorted by amount descending",
+        "answer_text": "2025"
+      },
+      {
+        "path": "result.groups.2.weighted_price",
+        "value": 330.36,
+        "source": "Independent SQL annual weighted price",
+        "answer_text": "330.36"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "price_anomaly_below_ru",
+    "question": "Найди за 2024–2026 годы отклонения цены ниже средневзвешенной более чем на 30% по ЕНС ТРУ 292040.100.000003 и КАТО 711210000 у БИН 020240002363",
+    "request": {
+      "intent": "price_anomaly",
+      "language": "ru",
+      "bins": [
+        "020240002363"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "292040.100.000003",
+      "kato": "711210000",
+      "direction": "below",
+      "threshold_pct": 30,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.examples.0.item_id",
+        "value": 55501573,
+        "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+        "answer_text": "ID 55501573"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24547526,
+        "source": "raw_objects key Contract:24547526:*",
+        "answer_text": "ID 24547526"
+      },
+      {
+        "path": "result.examples.0.reference_price",
+        "value": 2615989.6637500003,
+        "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+        "answer_text": "2 615 989.66 KZT"
+      },
+      {
+        "path": "result.examples.0.deviation_pct",
+        "value": -80.92500108,
+        "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+        "answer_text": "-80.93%"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 15,
+        "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+        "answer_text": "договоров-аналогов: 15"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526",
+        "source": "URL constructed from source Contract ID 24547526 in raw_objects key Contract:24547526:*; format matches app.analytics.evidence contract_url",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "price_anomaly_below_kk",
+    "question": "020240002363 БСН үшін 2024–2026 жылдардағы 292040.100.000003 ЕНС ТРУ және 711210000 КАТО бойынша орташа өлшенген бағадан 30%-дан төмен ауытқуды тап",
+    "request": {
+      "intent": "price_anomaly",
+      "language": "kk",
+      "bins": [
+        "020240002363"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "292040.100.000003",
+      "kato": "711210000",
+      "direction": "below",
+      "threshold_pct": 30,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.examples.0.item_id",
+        "value": 55501573,
+        "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+        "answer_text": "ID 55501573"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24547526,
+        "source": "raw_objects key Contract:24547526:*",
+        "answer_text": "ID 24547526"
+      },
+      {
+        "path": "result.examples.0.reference_price",
+        "value": 2615989.6637500003,
+        "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+        "answer_text": "2 615 989.66 KZT"
+      },
+      {
+        "path": "result.examples.0.deviation_pct",
+        "value": -80.92500108,
+        "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+        "answer_text": "-80.93%"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 15,
+        "source": "Independent SQL over v_contract_prices; exact cohort ENSTRU/unit/type/KATO; target contract family excluded; target BIN 020240002363, all available years",
+        "answer_text": "договоров-аналогов: 15"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526",
+        "source": "URL constructed from source Contract ID 24547526 in raw_objects key Contract:24547526:*; format matches app.analytics.evidence contract_url",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24547526"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "price_anomaly_above_none_ru",
+    "question": "Проверь за 2024–2026 годы превышение более 30% по ЕНС ТРУ 292040.100.000003 и КАТО 711210000 у БИН 020240002363",
+    "request": {
+      "intent": "price_anomaly",
+      "language": "ru",
+      "bins": [
+        "020240002363"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "292040.100.000003",
+      "kato": "711210000",
+      "direction": "above",
+      "threshold_pct": 30,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 0,
+        "source": "Independent SQL recomputation on the same exact cohort, target BIN, and above-30% predicate",
+        "answer_text": "найдено результатов: 0"
+      },
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL count for BIN/code/KATO; items 44673477 and 55501573",
+        "answer_text": "N = 2"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "price_anomaly_above_none_kk",
+    "question": "020240002363 БСН үшін 2024–2026 жылдары 292040.100.000003 ЕНС ТРУ және 711210000 КАТО бойынша 30%-дан асатын қымбаттауды тексер",
+    "request": {
+      "intent": "price_anomaly",
+      "language": "kk",
+      "bins": [
+        "020240002363"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "292040.100.000003",
+      "kato": "711210000",
+      "direction": "above",
+      "threshold_pct": 30,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 0,
+        "source": "Independent SQL recomputation on the same exact cohort, target BIN, and above-30% predicate",
+        "answer_text": "найдено результатов: 0"
+      },
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL count for BIN/code/KATO; items 44673477 and 55501573",
+        "answer_text": "N = 2"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "fair_price_milk_insufficient_ru",
+    "question": "Оцени Fair Price лота 38693950 за 2026 год по другим заказчикам в том же месте поставки",
+    "request": {
+      "intent": "fair_price",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 38693950,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 0,
+        "source": "Independent SQL exact peer scan: no other-customer/root record with identical description, product/unit/type, exact KATO, prior date and 0.5–2x batch size",
+        "answer_text": "найдено результатов: 0"
+      },
+      {
+        "path": "result.examples.0.status",
+        "value": "insufficient_peers",
+        "source": "Independent SQL exact peer scan for target effective item 54747313, contract 24155641, lot 38693950",
+        "answer_text": "Недостаточно сопоставимых договоров"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 0,
+        "source": "Independent SQL exact peer scan for the target above",
+        "answer_text": "договоров-аналогов: 0"
+      },
+      {
+        "path": "result.examples.0.kato",
+        "value": "711510000",
+        "source": "raw_objects key Contract:24155641:*; nested Plans.PlansKato.refKatoCode",
+        "answer_text": "КАТО: 711510000"
+      },
+      {
+        "path": "result.examples.0.city_code",
+        "value": "710000000",
+        "source": "Current frozen local snapshot: analytics.snapshot joins RefKato parent hierarchy; RefKato 711510000/711210000 parentCode=710000000; RefKato 710000000 name_ru=г.Астана",
+        "answer_text": "710000000"
+      }
+    ],
+    "expected_outcome": "insufficient"
+  },
+  {
+    "id": "fair_price_milk_insufficient_kk",
+    "question": "38693950 лотының 2026 жылғы Fair Price бағасын сол жеткізу орнындағы басқа тапсырыс берушілермен бағала",
+    "request": {
+      "intent": "fair_price",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 38693950,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 0,
+        "source": "Independent SQL exact peer scan: no other-customer/root record with identical description, product/unit/type, exact KATO, prior date and 0.5–2x batch size",
+        "answer_text": "найдено результатов: 0"
+      },
+      {
+        "path": "result.examples.0.status",
+        "value": "insufficient_peers",
+        "source": "Independent SQL exact peer scan for target effective item 54747313, contract 24155641, lot 38693950",
+        "answer_text": "Недостаточно сопоставимых договоров"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 0,
+        "source": "Independent SQL exact peer scan for the target above",
+        "answer_text": "договоров-аналогов: 0"
+      },
+      {
+        "path": "result.examples.0.kato",
+        "value": "711510000",
+        "source": "raw_objects key Contract:24155641:*; nested Plans.PlansKato.refKatoCode",
+        "answer_text": "КАТО: 711510000"
+      },
+      {
+        "path": "result.examples.0.city_code",
+        "value": "710000000",
+        "source": "Current frozen local snapshot: analytics.snapshot joins RefKato parent hierarchy; RefKato 711510000/711210000 parentCode=710000000; RefKato 710000000 name_ru=г.Астана",
+        "answer_text": "710000000"
+      }
+    ],
+    "expected_outcome": "insufficient"
+  },
+  {
+    "id": "fair_price_petrol_insufficient_ru",
+    "question": "Оцени Fair Price лота 43414220 за 2026 год относительно идентичных поставок в том же КАТО",
+    "request": {
+      "intent": "fair_price",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 43414220,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 0,
+        "source": "Independent SQL exact peer scan for contract 25921637/item 58286016; exact description and 0.5–2x batch criteria leave fewer than five other-customer families",
+        "answer_text": "найдено результатов: 0"
+      },
+      {
+        "path": "result.examples.0.status",
+        "value": "insufficient_peers",
+        "source": "Independent SQL exact peer scan for signed target contract 25921637/item 58286016/lot 43414220",
+        "answer_text": "Недостаточно сопоставимых договоров"
+      },
+      {
+        "path": "result.examples.0.kato",
+        "value": "711210000",
+        "source": "raw_objects key Contract:25921637:*; nested plan delivery KATO",
+        "answer_text": "КАТО: 711210000"
+      },
+      {
+        "path": "result.examples.0.city_code",
+        "value": "710000000",
+        "source": "Current frozen local snapshot: analytics.snapshot joins RefKato parent hierarchy; RefKato 711510000/711210000 parentCode=710000000; RefKato 710000000 name_ru=г.Астана",
+        "answer_text": "710000000"
+      }
+    ],
+    "expected_outcome": "insufficient"
+  },
+  {
+    "id": "fair_price_petrol_insufficient_kk",
+    "question": "43414220 лотының 2026 жылғы Fair Price бағасын сол КАТО бойынша бірдей жеткізілімдермен салыстырып бағала",
+    "request": {
+      "intent": "fair_price",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 43414220,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 0,
+        "source": "Independent SQL exact peer scan for contract 25921637/item 58286016; exact description and 0.5–2x batch criteria leave fewer than five other-customer families",
+        "answer_text": "найдено результатов: 0"
+      },
+      {
+        "path": "result.examples.0.status",
+        "value": "insufficient_peers",
+        "source": "Independent SQL exact peer scan for signed target contract 25921637/item 58286016/lot 43414220",
+        "answer_text": "Недостаточно сопоставимых договоров"
+      },
+      {
+        "path": "result.examples.0.kato",
+        "value": "711210000",
+        "source": "raw_objects key Contract:25921637:*; nested plan delivery KATO",
+        "answer_text": "КАТО: 711210000"
+      },
+      {
+        "path": "result.examples.0.city_code",
+        "value": "710000000",
+        "source": "Current frozen local snapshot: analytics.snapshot joins RefKato parent hierarchy; RefKato 711510000/711210000 parentCode=710000000; RefKato 710000000 name_ru=г.Астана",
+        "answer_text": "710000000"
+      }
+    ],
+    "expected_outcome": "insufficient"
+  },
+  {
+    "id": "quantity_milk_growth_ru",
+    "question": "Проверь рост договорного объема молока по БИН 980440001034 и ЕНС ТРУ 105111.410.000000 за 2024–2026 годы при пороге 20%",
+    "request": {
+      "intent": "quantity_anomaly",
+      "language": "ru",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "threshold_pct": 20,
+      "direction": "above",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 0,
+        "source": "Independent check: the only 2024 (Contract:21503715, signed 2024-12-09) and 2025 (Contract:23785340, signed 2025-11-18) contracts for this BIN/code are both signed after the Oct cutoff used for the in-progress target year 2026, so neither counts toward the equal-window history; only one year (2026, Contract:24155641, signed 2026-01-12) remains and 2+ prior years are required",
+        "answer_text": "найдено результатов: 0"
+      },
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL count for BIN/code across all requested years: Contract:21503715, Contract:23785340, Contract:24155641",
+        "answer_text": "N = 3"
+      }
+    ],
+    "expected_outcome": "insufficient"
+  },
+  {
+    "id": "quantity_milk_growth_kk",
+    "question": "980440001034 БСН бойынша 105111.410.000000 сүтінің 2024–2026 жылдардағы шарттық көлем өсімін 20% шегімен тексер",
+    "request": {
+      "intent": "quantity_anomaly",
+      "language": "kk",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "105111.410.000000",
+      "threshold_pct": 20,
+      "direction": "above",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 0,
+        "source": "Independent check: the only 2024 (Contract:21503715, signed 2024-12-09) and 2025 (Contract:23785340, signed 2025-11-18) contracts for this BIN/code are both signed after the Oct cutoff used for the in-progress target year 2026, so neither counts toward the equal-window history; only one year (2026, Contract:24155641, signed 2026-01-12) remains and 2+ prior years are required",
+        "answer_text": "найдено результатов: 0"
+      },
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL count for BIN/code across all requested years: Contract:21503715, Contract:23785340, Contract:24155641",
+        "answer_text": "N = 3"
+      }
+    ],
+    "expected_outcome": "insufficient"
+  },
+  {
+    "id": "fair_price_audit_estimated_ru",
+    "question": "Оцени Fair Price лота 40202186 за 2026 год по другим заказчикам в том же месте поставки",
+    "request": {
+      "intent": "fair_price",
+      "language": "ru",
+      "lot_id": 40202186,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 1,
+        "source": "Independent re-derivation directly from contracts/items/plans/deliveries tables (not via app.analytics.fair_price): target item 56156037/contract 24858274, enstru 692010.000.000002, unit 5114, city 710000000 (г.Астана), signed 2026-03-13",
+        "answer_text": "найдено результатов: 1"
+      },
+      {
+        "path": "result.examples.0.fair_price",
+        "value": 302700.0,
+        "source": "Independent median of 34 same-city/same-description/same-quarter(2026 Q1) peer items from 33 distinct contract families, quantity 0.5-2x target",
+        "answer_text": "302 700.00"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 33,
+        "source": "Independent count of distinct peer contract_root values after the same filters",
+        "answer_text": "N=33"
+      },
+      {
+        "path": "result.examples.0.deviation_pct",
+        "value": 81.69805087545426,
+        "source": "Independent calculation 100*(550000/302700-1)",
+        "answer_text": "81.70"
+      },
+      {
+        "path": "result.examples.0.q25",
+        "value": 181666.0,
+        "source": "Independent 25th percentile of the same 34 peer item prices",
+        "answer_text": "181 666.00"
+      },
+      {
+        "path": "result.examples.0.q75",
+        "value": 652500.0,
+        "source": "Independent 75th percentile of the same 34 peer item prices",
+        "answer_text": "652 500.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "fair_price_audit_estimated_kk",
+    "question": "40202186 лотының 2026 жылғы Fair Price бағасын сол жеткізу орнындағы басқа тапсырыс берушілермен бағала",
+    "request": {
+      "intent": "fair_price",
+      "language": "kk",
+      "lot_id": 40202186,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 1,
+        "source": "Independent re-derivation directly from contracts/items/plans/deliveries tables (not via app.analytics.fair_price): target item 56156037/contract 24858274, enstru 692010.000.000002, unit 5114, city 710000000 (г.Астана), signed 2026-03-13",
+        "answer_text": "найдено результатов: 1"
+      },
+      {
+        "path": "result.examples.0.fair_price",
+        "value": 302700.0,
+        "source": "Independent median of 34 same-city/same-description/same-quarter(2026 Q1) peer items from 33 distinct contract families, quantity 0.5-2x target",
+        "answer_text": "302 700.00"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 33,
+        "source": "Independent count of distinct peer contract_root values after the same filters",
+        "answer_text": "N=33"
+      },
+      {
+        "path": "result.examples.0.deviation_pct",
+        "value": 81.69805087545426,
+        "source": "Independent calculation 100*(550000/302700-1)",
+        "answer_text": "81.70"
+      },
+      {
+        "path": "result.examples.0.q25",
+        "value": 181666.0,
+        "source": "Independent 25th percentile of the same 34 peer item prices",
+        "answer_text": "181 666.00"
+      },
+      {
+        "path": "result.examples.0.q75",
+        "value": 652500.0,
+        "source": "Independent 75th percentile of the same 34 peer item prices",
+        "answer_text": "652 500.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "fair_price_audit_small_ru",
+    "question": "Оцени Fair Price лота 41029081 за 2026 год по другим заказчикам в том же месте поставки",
+    "request": {
+      "intent": "fair_price",
+      "language": "ru",
+      "lot_id": 41029081,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 1,
+        "source": "Independent re-derivation directly from contracts/items/plans/deliveries tables (not via app.analytics.fair_price): target item 56506276/contract 25015278, enstru 692010.000.000002, unit 5114, city 710000000 (г.Астана), signed 2026-04-14",
+        "answer_text": "найдено результатов: 1"
+      },
+      {
+        "path": "result.examples.0.fair_price",
+        "value": 150000.0,
+        "source": "Independent median of 5 same-city/same-description/same-quarter(2026 Q2) peer items from 5 distinct contract families, quantity 0.5-2x target",
+        "answer_text": "150 000.00"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 5,
+        "source": "Independent count of distinct peer contract_root values after the same filters",
+        "answer_text": "N=5"
+      },
+      {
+        "path": "result.examples.0.deviation_pct",
+        "value": -19.999999999999996,
+        "source": "Independent calculation 100*(120000/150000-1)",
+        "answer_text": "-20.00"
+      },
+      {
+        "path": "result.examples.0.q25",
+        "value": 130000.0,
+        "source": "Independent 25th percentile of the same 5 peer item prices",
+        "answer_text": "130 000.00"
+      },
+      {
+        "path": "result.examples.0.q75",
+        "value": 390000.0,
+        "source": "Independent 75th percentile of the same 5 peer item prices",
+        "answer_text": "390 000.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "fair_price_audit_small_kk",
+    "question": "41029081 лотының 2026 жылғы Fair Price бағасын сол жеткізу орнындағы басқа тапсырыс берушілермен бағала",
+    "request": {
+      "intent": "fair_price",
+      "language": "kk",
+      "lot_id": 41029081,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_matches",
+        "value": 1,
+        "source": "Independent re-derivation directly from contracts/items/plans/deliveries tables (not via app.analytics.fair_price): target item 56506276/contract 25015278, enstru 692010.000.000002, unit 5114, city 710000000 (г.Астана), signed 2026-04-14",
+        "answer_text": "найдено результатов: 1"
+      },
+      {
+        "path": "result.examples.0.fair_price",
+        "value": 150000.0,
+        "source": "Independent median of 5 same-city/same-description/same-quarter(2026 Q2) peer items from 5 distinct contract families, quantity 0.5-2x target",
+        "answer_text": "150 000.00"
+      },
+      {
+        "path": "result.examples.0.n_peers",
+        "value": 5,
+        "source": "Independent count of distinct peer contract_root values after the same filters",
+        "answer_text": "N=5"
+      },
+      {
+        "path": "result.examples.0.deviation_pct",
+        "value": -19.999999999999996,
+        "source": "Independent calculation 100*(120000/150000-1)",
+        "answer_text": "-20.00"
+      },
+      {
+        "path": "result.examples.0.q25",
+        "value": 130000.0,
+        "source": "Independent 25th percentile of the same 5 peer item prices",
+        "answer_text": "130 000.00"
+      },
+      {
+        "path": "result.examples.0.q75",
+        "value": 390000.0,
+        "source": "Independent 75th percentile of the same 5 peer item prices",
+        "answer_text": "390 000.00"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45420855_ru",
+    "language": "ru",
+    "question": "Покажи договорную позицию по лоту 28683835 за 2024 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 28683835,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=28683835; cross-checked against raw_objects Contract:19578861",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45420855,
+        "source": "raw_objects Contract:19578861; ContractUnits.id",
+        "answer_text": "ID 45420855"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19578861,
+        "source": "raw_objects Contract:19578861",
+        "answer_text": "ID 19578861"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 13770,
+        "source": "raw_objects Contract:19578861; ContractUnits.itemPrice",
+        "answer_text": "13 770"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 5,
+        "source": "raw_objects Contract:19578861; ContractUnits.quantity",
+        "answer_text": "5"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "980440001034",
+        "source": "raw_objects Contract:19578861; Contract.customerBin",
+        "answer_text": "980440001034"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-02-13 14:00:02",
+        "source": "raw_objects Contract:19578861; Contract.signDate",
+        "answer_text": "2024-02-13 14:00:02"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19578861",
+        "source": "URL constructed from Contract ID 19578861",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19578861"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45420855_kk",
+    "language": "kk",
+    "question": "2024 жылы 28683835 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 28683835,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=28683835; cross-checked against raw_objects Contract:19578861",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45420855,
+        "source": "raw_objects Contract:19578861; ContractUnits.id",
+        "answer_text": "ID 45420855"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19578861,
+        "source": "raw_objects Contract:19578861",
+        "answer_text": "ID 19578861"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 13770,
+        "source": "raw_objects Contract:19578861; ContractUnits.itemPrice",
+        "answer_text": "13 770"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 5,
+        "source": "raw_objects Contract:19578861; ContractUnits.quantity",
+        "answer_text": "5"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "980440001034",
+        "source": "raw_objects Contract:19578861; Contract.customerBin",
+        "answer_text": "980440001034"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-02-13 14:00:02",
+        "source": "raw_objects Contract:19578861; Contract.signDate",
+        "answer_text": "2024-02-13 14:00:02"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19578861",
+        "source": "URL constructed from Contract ID 19578861",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19578861"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_52812625_ru",
+    "language": "ru",
+    "question": "Найди закупку по лоту номер 37425179 за 2025 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 37425179,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=37425179; cross-checked against raw_objects Contract:23207713",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 52812625,
+        "source": "raw_objects Contract:23207713; ContractUnits.id",
+        "answer_text": "ID 52812625"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23207713,
+        "source": "raw_objects Contract:23207713",
+        "answer_text": "ID 23207713"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 500,
+        "source": "raw_objects Contract:23207713; ContractUnits.itemPrice",
+        "answer_text": "500"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 50,
+        "source": "raw_objects Contract:23207713; ContractUnits.quantity",
+        "answer_text": "50"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "210941010761",
+        "source": "raw_objects Contract:23207713; Contract.customerBin",
+        "answer_text": "210941010761"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-07-29 08:05:18",
+        "source": "raw_objects Contract:23207713; Contract.signDate",
+        "answer_text": "2025-07-29 08:05:18"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23207713",
+        "source": "URL constructed from Contract ID 23207713",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23207713"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_52812625_kk",
+    "language": "kk",
+    "question": "37425179 лоты бойынша 2025 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 37425179,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=37425179; cross-checked against raw_objects Contract:23207713",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 52812625,
+        "source": "raw_objects Contract:23207713; ContractUnits.id",
+        "answer_text": "ID 52812625"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23207713,
+        "source": "raw_objects Contract:23207713",
+        "answer_text": "ID 23207713"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 500,
+        "source": "raw_objects Contract:23207713; ContractUnits.itemPrice",
+        "answer_text": "500"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 50,
+        "source": "raw_objects Contract:23207713; ContractUnits.quantity",
+        "answer_text": "50"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "210941010761",
+        "source": "raw_objects Contract:23207713; Contract.customerBin",
+        "answer_text": "210941010761"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-07-29 08:05:18",
+        "source": "raw_objects Contract:23207713; Contract.signDate",
+        "answer_text": "2025-07-29 08:05:18"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23207713",
+        "source": "URL constructed from Contract ID 23207713",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23207713"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_49571923_ru",
+    "language": "ru",
+    "question": "Какая цена и количество по лоту 33439794 в 2025 году?",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 33439794,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=33439794; cross-checked against raw_objects Contract:21613182",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 49571923,
+        "source": "raw_objects Contract:21613182; ContractUnits.id",
+        "answer_text": "ID 49571923"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 21613182,
+        "source": "raw_objects Contract:21613182",
+        "answer_text": "ID 21613182"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 73000,
+        "source": "raw_objects Contract:21613182; ContractUnits.itemPrice",
+        "answer_text": "73 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:21613182; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "100140011059",
+        "source": "raw_objects Contract:21613182; Contract.customerBin",
+        "answer_text": "100140011059"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-12-26 20:27:24",
+        "source": "raw_objects Contract:21613182; Contract.signDate",
+        "answer_text": "2024-12-26 20:27:24"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21613182",
+        "source": "URL constructed from Contract ID 21613182",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21613182"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_49571923_kk",
+    "language": "kk",
+    "question": "2025 жылғы 33439794 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 33439794,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=33439794; cross-checked against raw_objects Contract:21613182",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 49571923,
+        "source": "raw_objects Contract:21613182; ContractUnits.id",
+        "answer_text": "ID 49571923"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 21613182,
+        "source": "raw_objects Contract:21613182",
+        "answer_text": "ID 21613182"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 73000,
+        "source": "raw_objects Contract:21613182; ContractUnits.itemPrice",
+        "answer_text": "73 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:21613182; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "100140011059",
+        "source": "raw_objects Contract:21613182; Contract.customerBin",
+        "answer_text": "100140011059"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-12-26 20:27:24",
+        "source": "raw_objects Contract:21613182; Contract.signDate",
+        "answer_text": "2024-12-26 20:27:24"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21613182",
+        "source": "URL constructed from Contract ID 21613182",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21613182"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_53729197_ru",
+    "language": "ru",
+    "question": "Выведи детали договора по лоту 34557741 за 2025",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 34557741,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=34557741; cross-checked against raw_objects Contract:23679526",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 53729197,
+        "source": "raw_objects Contract:23679526; ContractUnits.id",
+        "answer_text": "ID 53729197"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23679526,
+        "source": "raw_objects Contract:23679526",
+        "answer_text": "ID 23679526"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 244102.68,
+        "source": "raw_objects Contract:23679526; ContractUnits.itemPrice",
+        "answer_text": "244 102.68"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 5,
+        "source": "raw_objects Contract:23679526; ContractUnits.quantity",
+        "answer_text": "5"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:23679526; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-10-30 17:42:34",
+        "source": "raw_objects Contract:23679526; Contract.signDate",
+        "answer_text": "2025-10-30 17:42:34"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23679526",
+        "source": "URL constructed from Contract ID 23679526",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23679526"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_53729197_kk",
+    "language": "kk",
+    "question": "2025 жылы 34557741 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 34557741,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=34557741; cross-checked against raw_objects Contract:23679526",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 53729197,
+        "source": "raw_objects Contract:23679526; ContractUnits.id",
+        "answer_text": "ID 53729197"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23679526,
+        "source": "raw_objects Contract:23679526",
+        "answer_text": "ID 23679526"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 244102.68,
+        "source": "raw_objects Contract:23679526; ContractUnits.itemPrice",
+        "answer_text": "244 102.68"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 5,
+        "source": "raw_objects Contract:23679526; ContractUnits.quantity",
+        "answer_text": "5"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:23679526; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-10-30 17:42:34",
+        "source": "raw_objects Contract:23679526; Contract.signDate",
+        "answer_text": "2025-10-30 17:42:34"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23679526",
+        "source": "URL constructed from Contract ID 23679526",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23679526"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45231848_ru",
+    "language": "ru",
+    "question": "Покажи договорную позицию по лоту 29080495 за 2024 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 29080495,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29080495; cross-checked against raw_objects Contract:19477986",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45231848,
+        "source": "raw_objects Contract:19477986; ContractUnits.id",
+        "answer_text": "ID 45231848"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19477986,
+        "source": "raw_objects Contract:19477986",
+        "answer_text": "ID 19477986"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 440000,
+        "source": "raw_objects Contract:19477986; ContractUnits.itemPrice",
+        "answer_text": "440 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:19477986; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:19477986; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-02-01 15:26:55",
+        "source": "raw_objects Contract:19477986; Contract.signDate",
+        "answer_text": "2024-02-01 15:26:55"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19477986",
+        "source": "URL constructed from Contract ID 19477986",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19477986"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45231848_kk",
+    "language": "kk",
+    "question": "29080495 лоты бойынша 2024 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 29080495,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29080495; cross-checked against raw_objects Contract:19477986",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45231848,
+        "source": "raw_objects Contract:19477986; ContractUnits.id",
+        "answer_text": "ID 45231848"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19477986,
+        "source": "raw_objects Contract:19477986",
+        "answer_text": "ID 19477986"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 440000,
+        "source": "raw_objects Contract:19477986; ContractUnits.itemPrice",
+        "answer_text": "440 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:19477986; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:19477986; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-02-01 15:26:55",
+        "source": "raw_objects Contract:19477986; Contract.signDate",
+        "answer_text": "2024-02-01 15:26:55"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19477986",
+        "source": "URL constructed from Contract ID 19477986",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19477986"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_58359665_ru",
+    "language": "ru",
+    "question": "Найди закупку по лоту номер 41818271 за 2026 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 41818271,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=41818271; cross-checked against raw_objects Contract:25962177",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 58359665,
+        "source": "raw_objects Contract:25962177; ContractUnits.id",
+        "answer_text": "ID 58359665"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 25962177,
+        "source": "raw_objects Contract:25962177",
+        "answer_text": "ID 25962177"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 11000,
+        "source": "raw_objects Contract:25962177; ContractUnits.itemPrice",
+        "answer_text": "11 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 14,
+        "source": "raw_objects Contract:25962177; ContractUnits.quantity",
+        "answer_text": "14"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "210240033968",
+        "source": "raw_objects Contract:25962177; Contract.customerBin",
+        "answer_text": "210240033968"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-10-16 10:52:33",
+        "source": "raw_objects Contract:25962177; Contract.signDate",
+        "answer_text": "2026-10-16 10:52:33"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25962177",
+        "source": "URL constructed from Contract ID 25962177",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25962177"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_58359665_kk",
+    "language": "kk",
+    "question": "2026 жылғы 41818271 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 41818271,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=41818271; cross-checked against raw_objects Contract:25962177",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 58359665,
+        "source": "raw_objects Contract:25962177; ContractUnits.id",
+        "answer_text": "ID 58359665"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 25962177,
+        "source": "raw_objects Contract:25962177",
+        "answer_text": "ID 25962177"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 11000,
+        "source": "raw_objects Contract:25962177; ContractUnits.itemPrice",
+        "answer_text": "11 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 14,
+        "source": "raw_objects Contract:25962177; ContractUnits.quantity",
+        "answer_text": "14"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "210240033968",
+        "source": "raw_objects Contract:25962177; Contract.customerBin",
+        "answer_text": "210240033968"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-10-16 10:52:33",
+        "source": "raw_objects Contract:25962177; Contract.signDate",
+        "answer_text": "2026-10-16 10:52:33"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25962177",
+        "source": "URL constructed from Contract ID 25962177",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25962177"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_51936505_ru",
+    "language": "ru",
+    "question": "Какая цена и количество по лоту 36253244 в 2025 году?",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 36253244,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=36253244; cross-checked against raw_objects Contract:22756964",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 51936505,
+        "source": "raw_objects Contract:22756964; ContractUnits.id",
+        "answer_text": "ID 51936505"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 22756964,
+        "source": "raw_objects Contract:22756964",
+        "answer_text": "ID 22756964"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 21098,
+        "source": "raw_objects Contract:22756964; ContractUnits.itemPrice",
+        "answer_text": "21 098"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 4,
+        "source": "raw_objects Contract:22756964; ContractUnits.quantity",
+        "answer_text": "4"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:22756964; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-05-06 09:51:55",
+        "source": "raw_objects Contract:22756964; Contract.signDate",
+        "answer_text": "2025-05-06 09:51:55"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22756964",
+        "source": "URL constructed from Contract ID 22756964",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22756964"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_51936505_kk",
+    "language": "kk",
+    "question": "2025 жылы 36253244 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 36253244,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=36253244; cross-checked against raw_objects Contract:22756964",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 51936505,
+        "source": "raw_objects Contract:22756964; ContractUnits.id",
+        "answer_text": "ID 51936505"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 22756964,
+        "source": "raw_objects Contract:22756964",
+        "answer_text": "ID 22756964"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 21098,
+        "source": "raw_objects Contract:22756964; ContractUnits.itemPrice",
+        "answer_text": "21 098"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 4,
+        "source": "raw_objects Contract:22756964; ContractUnits.quantity",
+        "answer_text": "4"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:22756964; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-05-06 09:51:55",
+        "source": "raw_objects Contract:22756964; Contract.signDate",
+        "answer_text": "2025-05-06 09:51:55"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22756964",
+        "source": "URL constructed from Contract ID 22756964",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22756964"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_52634929_ru",
+    "language": "ru",
+    "question": "Выведи детали договора по лоту 36231194 за 2025",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 36231194,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=36231194; cross-checked against raw_objects Contract:23112937",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 52634929,
+        "source": "raw_objects Contract:23112937; ContractUnits.id",
+        "answer_text": "ID 52634929"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23112937,
+        "source": "raw_objects Contract:23112937",
+        "answer_text": "ID 23112937"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 42560,
+        "source": "raw_objects Contract:23112937; ContractUnits.itemPrice",
+        "answer_text": "42 560"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 2,
+        "source": "raw_objects Contract:23112937; ContractUnits.quantity",
+        "answer_text": "2"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "780140000023",
+        "source": "raw_objects Contract:23112937; Contract.customerBin",
+        "answer_text": "780140000023"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-07-04 12:48:30",
+        "source": "raw_objects Contract:23112937; Contract.signDate",
+        "answer_text": "2025-07-04 12:48:30"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23112937",
+        "source": "URL constructed from Contract ID 23112937",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23112937"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_52634929_kk",
+    "language": "kk",
+    "question": "36231194 лоты бойынша 2025 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 36231194,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=36231194; cross-checked against raw_objects Contract:23112937",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 52634929,
+        "source": "raw_objects Contract:23112937; ContractUnits.id",
+        "answer_text": "ID 52634929"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23112937,
+        "source": "raw_objects Contract:23112937",
+        "answer_text": "ID 23112937"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 42560,
+        "source": "raw_objects Contract:23112937; ContractUnits.itemPrice",
+        "answer_text": "42 560"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 2,
+        "source": "raw_objects Contract:23112937; ContractUnits.quantity",
+        "answer_text": "2"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "780140000023",
+        "source": "raw_objects Contract:23112937; Contract.customerBin",
+        "answer_text": "780140000023"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-07-04 12:48:30",
+        "source": "raw_objects Contract:23112937; Contract.signDate",
+        "answer_text": "2025-07-04 12:48:30"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23112937",
+        "source": "URL constructed from Contract ID 23112937",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23112937"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_56114783_ru",
+    "language": "ru",
+    "question": "Покажи договорную позицию по лоту 40502844 за 2026 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 40502844,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=40502844; cross-checked against raw_objects Contract:24839192",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 56114783,
+        "source": "raw_objects Contract:24839192; ContractUnits.id",
+        "answer_text": "ID 56114783"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24839192,
+        "source": "raw_objects Contract:24839192",
+        "answer_text": "ID 24839192"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 18000,
+        "source": "raw_objects Contract:24839192; ContractUnits.itemPrice",
+        "answer_text": "18 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 20,
+        "source": "raw_objects Contract:24839192; ContractUnits.quantity",
+        "answer_text": "20"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:24839192; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-13 00:16:45",
+        "source": "raw_objects Contract:24839192; Contract.signDate",
+        "answer_text": "2026-03-13 00:16:45"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24839192",
+        "source": "URL constructed from Contract ID 24839192",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24839192"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_56114783_kk",
+    "language": "kk",
+    "question": "2026 жылғы 40502844 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 40502844,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=40502844; cross-checked against raw_objects Contract:24839192",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 56114783,
+        "source": "raw_objects Contract:24839192; ContractUnits.id",
+        "answer_text": "ID 56114783"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24839192,
+        "source": "raw_objects Contract:24839192",
+        "answer_text": "ID 24839192"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 18000,
+        "source": "raw_objects Contract:24839192; ContractUnits.itemPrice",
+        "answer_text": "18 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 20,
+        "source": "raw_objects Contract:24839192; ContractUnits.quantity",
+        "answer_text": "20"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:24839192; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-13 00:16:45",
+        "source": "raw_objects Contract:24839192; Contract.signDate",
+        "answer_text": "2026-03-13 00:16:45"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24839192",
+        "source": "URL constructed from Contract ID 24839192",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24839192"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_55891490_ru",
+    "language": "ru",
+    "question": "Найди закупку по лоту номер 39783455 за 2026 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 39783455,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=39783455; cross-checked against raw_objects Contract:24740951",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 55891490,
+        "source": "raw_objects Contract:24740951; ContractUnits.id",
+        "answer_text": "ID 55891490"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24740951,
+        "source": "raw_objects Contract:24740951",
+        "answer_text": "ID 24740951"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 949000,
+        "source": "raw_objects Contract:24740951; ContractUnits.itemPrice",
+        "answer_text": "949 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:24740951; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:24740951; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-03 19:17:54",
+        "source": "raw_objects Contract:24740951; Contract.signDate",
+        "answer_text": "2026-03-03 19:17:54"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24740951",
+        "source": "URL constructed from Contract ID 24740951",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24740951"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_55891490_kk",
+    "language": "kk",
+    "question": "2026 жылы 39783455 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 39783455,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=39783455; cross-checked against raw_objects Contract:24740951",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 55891490,
+        "source": "raw_objects Contract:24740951; ContractUnits.id",
+        "answer_text": "ID 55891490"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24740951,
+        "source": "raw_objects Contract:24740951",
+        "answer_text": "ID 24740951"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 949000,
+        "source": "raw_objects Contract:24740951; ContractUnits.itemPrice",
+        "answer_text": "949 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:24740951; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:24740951; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-03 19:17:54",
+        "source": "raw_objects Contract:24740951; Contract.signDate",
+        "answer_text": "2026-03-03 19:17:54"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24740951",
+        "source": "URL constructed from Contract ID 24740951",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24740951"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_55891494_ru",
+    "language": "ru",
+    "question": "Какая цена и количество по лоту 39783452 в 2026 году?",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 39783452,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=39783452; cross-checked against raw_objects Contract:24740951",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 55891494,
+        "source": "raw_objects Contract:24740951; ContractUnits.id",
+        "answer_text": "ID 55891494"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24740951,
+        "source": "raw_objects Contract:24740951",
+        "answer_text": "ID 24740951"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 764000,
+        "source": "raw_objects Contract:24740951; ContractUnits.itemPrice",
+        "answer_text": "764 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:24740951; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:24740951; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-03 19:17:54",
+        "source": "raw_objects Contract:24740951; Contract.signDate",
+        "answer_text": "2026-03-03 19:17:54"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24740951",
+        "source": "URL constructed from Contract ID 24740951",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24740951"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_55891494_kk",
+    "language": "kk",
+    "question": "39783452 лоты бойынша 2026 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 39783452,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=39783452; cross-checked against raw_objects Contract:24740951",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 55891494,
+        "source": "raw_objects Contract:24740951; ContractUnits.id",
+        "answer_text": "ID 55891494"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24740951,
+        "source": "raw_objects Contract:24740951",
+        "answer_text": "ID 24740951"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 764000,
+        "source": "raw_objects Contract:24740951; ContractUnits.itemPrice",
+        "answer_text": "764 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:24740951; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:24740951; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-03 19:17:54",
+        "source": "raw_objects Contract:24740951; Contract.signDate",
+        "answer_text": "2026-03-03 19:17:54"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24740951",
+        "source": "URL constructed from Contract ID 24740951",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24740951"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_52804677_ru",
+    "language": "ru",
+    "question": "Выведи детали договора по лоту 37417747 за 2025",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 37417747,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=37417747; cross-checked against raw_objects Contract:23203530",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 52804677,
+        "source": "raw_objects Contract:23203530; ContractUnits.id",
+        "answer_text": "ID 52804677"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23203530,
+        "source": "raw_objects Contract:23203530",
+        "answer_text": "ID 23203530"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 8275,
+        "source": "raw_objects Contract:23203530; ContractUnits.itemPrice",
+        "answer_text": "8 275"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 6,
+        "source": "raw_objects Contract:23203530; ContractUnits.quantity",
+        "answer_text": "6"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:23203530; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-07-30 00:17:37",
+        "source": "raw_objects Contract:23203530; Contract.signDate",
+        "answer_text": "2025-07-30 00:17:37"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23203530",
+        "source": "URL constructed from Contract ID 23203530",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23203530"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_52804677_kk",
+    "language": "kk",
+    "question": "2025 жылғы 37417747 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 37417747,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=37417747; cross-checked against raw_objects Contract:23203530",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 52804677,
+        "source": "raw_objects Contract:23203530; ContractUnits.id",
+        "answer_text": "ID 52804677"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23203530,
+        "source": "raw_objects Contract:23203530",
+        "answer_text": "ID 23203530"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 8275,
+        "source": "raw_objects Contract:23203530; ContractUnits.itemPrice",
+        "answer_text": "8 275"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 6,
+        "source": "raw_objects Contract:23203530; ContractUnits.quantity",
+        "answer_text": "6"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:23203530; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-07-30 00:17:37",
+        "source": "raw_objects Contract:23203530; Contract.signDate",
+        "answer_text": "2025-07-30 00:17:37"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23203530",
+        "source": "URL constructed from Contract ID 23203530",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23203530"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_54010919_ru",
+    "language": "ru",
+    "question": "Покажи договорную позицию по лоту 38770514 за 2025 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 38770514,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=38770514; cross-checked against raw_objects Contract:23819811",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 54010919,
+        "source": "raw_objects Contract:23819811; ContractUnits.id",
+        "answer_text": "ID 54010919"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23819811,
+        "source": "raw_objects Contract:23819811",
+        "answer_text": "ID 23819811"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 400000,
+        "source": "raw_objects Contract:23819811; ContractUnits.itemPrice",
+        "answer_text": "400 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:23819811; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "210240033968",
+        "source": "raw_objects Contract:23819811; Contract.customerBin",
+        "answer_text": "210240033968"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-11-24 10:18:48",
+        "source": "raw_objects Contract:23819811; Contract.signDate",
+        "answer_text": "2025-11-24 10:18:48"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23819811",
+        "source": "URL constructed from Contract ID 23819811",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23819811"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_54010919_kk",
+    "language": "kk",
+    "question": "2025 жылы 38770514 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 38770514,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=38770514; cross-checked against raw_objects Contract:23819811",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 54010919,
+        "source": "raw_objects Contract:23819811; ContractUnits.id",
+        "answer_text": "ID 54010919"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23819811,
+        "source": "raw_objects Contract:23819811",
+        "answer_text": "ID 23819811"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 400000,
+        "source": "raw_objects Contract:23819811; ContractUnits.itemPrice",
+        "answer_text": "400 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:23819811; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "210240033968",
+        "source": "raw_objects Contract:23819811; Contract.customerBin",
+        "answer_text": "210240033968"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-11-24 10:18:48",
+        "source": "raw_objects Contract:23819811; Contract.signDate",
+        "answer_text": "2025-11-24 10:18:48"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23819811",
+        "source": "URL constructed from Contract ID 23819811",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23819811"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_48011583_ru",
+    "language": "ru",
+    "question": "Найди закупку по лоту номер 29942001 за 2024 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 29942001,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29942001; cross-checked against raw_objects Contract:20845729",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 48011583,
+        "source": "raw_objects Contract:20845729; ContractUnits.id",
+        "answer_text": "ID 48011583"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 20845729,
+        "source": "raw_objects Contract:20845729",
+        "answer_text": "ID 20845729"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 4030000,
+        "source": "raw_objects Contract:20845729; ContractUnits.itemPrice",
+        "answer_text": "4 030 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:20845729; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:20845729; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-08-20 17:27:36",
+        "source": "raw_objects Contract:20845729; Contract.signDate",
+        "answer_text": "2024-08-20 17:27:36"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20845729",
+        "source": "URL constructed from Contract ID 20845729",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20845729"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_48011583_kk",
+    "language": "kk",
+    "question": "29942001 лоты бойынша 2024 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 29942001,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29942001; cross-checked against raw_objects Contract:20845729",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 48011583,
+        "source": "raw_objects Contract:20845729; ContractUnits.id",
+        "answer_text": "ID 48011583"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 20845729,
+        "source": "raw_objects Contract:20845729",
+        "answer_text": "ID 20845729"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 4030000,
+        "source": "raw_objects Contract:20845729; ContractUnits.itemPrice",
+        "answer_text": "4 030 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:20845729; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:20845729; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-08-20 17:27:36",
+        "source": "raw_objects Contract:20845729; Contract.signDate",
+        "answer_text": "2024-08-20 17:27:36"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20845729",
+        "source": "URL constructed from Contract ID 20845729",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20845729"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45649722_ru",
+    "language": "ru",
+    "question": "Какая цена и количество по лоту 29552313 в 2024 году?",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 29552313,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29552313; cross-checked against raw_objects Contract:19697708",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45649722,
+        "source": "raw_objects Contract:19697708; ContractUnits.id",
+        "answer_text": "ID 45649722"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19697708,
+        "source": "raw_objects Contract:19697708",
+        "answer_text": "ID 19697708"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 747,
+        "source": "raw_objects Contract:19697708; ContractUnits.itemPrice",
+        "answer_text": "747"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 5,
+        "source": "raw_objects Contract:19697708; ContractUnits.quantity",
+        "answer_text": "5"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "100140011059",
+        "source": "raw_objects Contract:19697708; Contract.customerBin",
+        "answer_text": "100140011059"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-03-04 00:04:49",
+        "source": "raw_objects Contract:19697708; Contract.signDate",
+        "answer_text": "2024-03-04 00:04:49"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19697708",
+        "source": "URL constructed from Contract ID 19697708",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19697708"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45649722_kk",
+    "language": "kk",
+    "question": "2024 жылғы 29552313 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 29552313,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29552313; cross-checked against raw_objects Contract:19697708",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45649722,
+        "source": "raw_objects Contract:19697708; ContractUnits.id",
+        "answer_text": "ID 45649722"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19697708,
+        "source": "raw_objects Contract:19697708",
+        "answer_text": "ID 19697708"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 747,
+        "source": "raw_objects Contract:19697708; ContractUnits.itemPrice",
+        "answer_text": "747"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 5,
+        "source": "raw_objects Contract:19697708; ContractUnits.quantity",
+        "answer_text": "5"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "100140011059",
+        "source": "raw_objects Contract:19697708; Contract.customerBin",
+        "answer_text": "100140011059"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-03-04 00:04:49",
+        "source": "raw_objects Contract:19697708; Contract.signDate",
+        "answer_text": "2024-03-04 00:04:49"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19697708",
+        "source": "URL constructed from Contract ID 19697708",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19697708"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_48576938_ru",
+    "language": "ru",
+    "question": "Выведи детали договора по лоту 32888202 за 2024",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 32888202,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=32888202; cross-checked against raw_objects Contract:21129540",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 48576938,
+        "source": "raw_objects Contract:21129540; ContractUnits.id",
+        "answer_text": "ID 48576938"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 21129540,
+        "source": "raw_objects Contract:21129540",
+        "answer_text": "ID 21129540"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 611,
+        "source": "raw_objects Contract:21129540; ContractUnits.itemPrice",
+        "answer_text": "611"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 500,
+        "source": "raw_objects Contract:21129540; ContractUnits.quantity",
+        "answer_text": "500"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:21129540; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-10-10 14:15:01",
+        "source": "raw_objects Contract:21129540; Contract.signDate",
+        "answer_text": "2024-10-10 14:15:01"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21129540",
+        "source": "URL constructed from Contract ID 21129540",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21129540"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_48576938_kk",
+    "language": "kk",
+    "question": "2024 жылы 32888202 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 32888202,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=32888202; cross-checked against raw_objects Contract:21129540",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 48576938,
+        "source": "raw_objects Contract:21129540; ContractUnits.id",
+        "answer_text": "ID 48576938"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 21129540,
+        "source": "raw_objects Contract:21129540",
+        "answer_text": "ID 21129540"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 611,
+        "source": "raw_objects Contract:21129540; ContractUnits.itemPrice",
+        "answer_text": "611"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 500,
+        "source": "raw_objects Contract:21129540; ContractUnits.quantity",
+        "answer_text": "500"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:21129540; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-10-10 14:15:01",
+        "source": "raw_objects Contract:21129540; Contract.signDate",
+        "answer_text": "2024-10-10 14:15:01"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21129540",
+        "source": "URL constructed from Contract ID 21129540",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21129540"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_56241148_ru",
+    "language": "ru",
+    "question": "Покажи договорную позицию по лоту 39060563 за 2026 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 39060563,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=39060563; cross-checked against raw_objects Contract:24895635",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 56241148,
+        "source": "raw_objects Contract:24895635; ContractUnits.id",
+        "answer_text": "ID 56241148"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24895635,
+        "source": "raw_objects Contract:24895635",
+        "answer_text": "ID 24895635"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 688,
+        "source": "raw_objects Contract:24895635; ContractUnits.itemPrice",
+        "answer_text": "688"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 264,
+        "source": "raw_objects Contract:24895635; ContractUnits.quantity",
+        "answer_text": "264"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:24895635; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-18 21:46:31",
+        "source": "raw_objects Contract:24895635; Contract.signDate",
+        "answer_text": "2026-03-18 21:46:31"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24895635",
+        "source": "URL constructed from Contract ID 24895635",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24895635"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_56241148_kk",
+    "language": "kk",
+    "question": "39060563 лоты бойынша 2026 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 39060563,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=39060563; cross-checked against raw_objects Contract:24895635",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 56241148,
+        "source": "raw_objects Contract:24895635; ContractUnits.id",
+        "answer_text": "ID 56241148"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24895635,
+        "source": "raw_objects Contract:24895635",
+        "answer_text": "ID 24895635"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 688,
+        "source": "raw_objects Contract:24895635; ContractUnits.itemPrice",
+        "answer_text": "688"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 264,
+        "source": "raw_objects Contract:24895635; ContractUnits.quantity",
+        "answer_text": "264"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:24895635; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-18 21:46:31",
+        "source": "raw_objects Contract:24895635; Contract.signDate",
+        "answer_text": "2026-03-18 21:46:31"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24895635",
+        "source": "URL constructed from Contract ID 24895635",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24895635"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45109869_ru",
+    "language": "ru",
+    "question": "Найди закупку по лоту номер 28897930 за 2024 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 28897930,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=28897930; cross-checked against raw_objects Contract:19410661",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45109869,
+        "source": "raw_objects Contract:19410661; ContractUnits.id",
+        "answer_text": "ID 45109869"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19410661,
+        "source": "raw_objects Contract:19410661",
+        "answer_text": "ID 19410661"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 975,
+        "source": "raw_objects Contract:19410661; ContractUnits.itemPrice",
+        "answer_text": "975"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 100,
+        "source": "raw_objects Contract:19410661; ContractUnits.quantity",
+        "answer_text": "100"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "231040023028",
+        "source": "raw_objects Contract:19410661; Contract.customerBin",
+        "answer_text": "231040023028"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-01-26 13:21:17",
+        "source": "raw_objects Contract:19410661; Contract.signDate",
+        "answer_text": "2024-01-26 13:21:17"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19410661",
+        "source": "URL constructed from Contract ID 19410661",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19410661"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45109869_kk",
+    "language": "kk",
+    "question": "2024 жылғы 28897930 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 28897930,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=28897930; cross-checked against raw_objects Contract:19410661",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45109869,
+        "source": "raw_objects Contract:19410661; ContractUnits.id",
+        "answer_text": "ID 45109869"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19410661,
+        "source": "raw_objects Contract:19410661",
+        "answer_text": "ID 19410661"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 975,
+        "source": "raw_objects Contract:19410661; ContractUnits.itemPrice",
+        "answer_text": "975"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 100,
+        "source": "raw_objects Contract:19410661; ContractUnits.quantity",
+        "answer_text": "100"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "231040023028",
+        "source": "raw_objects Contract:19410661; Contract.customerBin",
+        "answer_text": "231040023028"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-01-26 13:21:17",
+        "source": "raw_objects Contract:19410661; Contract.signDate",
+        "answer_text": "2024-01-26 13:21:17"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19410661",
+        "source": "URL constructed from Contract ID 19410661",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19410661"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45537264_ru",
+    "language": "ru",
+    "question": "Какая цена и количество по лоту 29364923 в 2024 году?",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 29364923,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29364923; cross-checked against raw_objects Contract:19640725",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45537264,
+        "source": "raw_objects Contract:19640725; ContractUnits.id",
+        "answer_text": "ID 45537264"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19640725,
+        "source": "raw_objects Contract:19640725",
+        "answer_text": "ID 19640725"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 89000,
+        "source": "raw_objects Contract:19640725; ContractUnits.itemPrice",
+        "answer_text": "89 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 11,
+        "source": "raw_objects Contract:19640725; ContractUnits.quantity",
+        "answer_text": "11"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:19640725; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-02-21 09:00:53",
+        "source": "raw_objects Contract:19640725; Contract.signDate",
+        "answer_text": "2024-02-21 09:00:53"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19640725",
+        "source": "URL constructed from Contract ID 19640725",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19640725"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_45537264_kk",
+    "language": "kk",
+    "question": "2024 жылы 29364923 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 29364923,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29364923; cross-checked against raw_objects Contract:19640725",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 45537264,
+        "source": "raw_objects Contract:19640725; ContractUnits.id",
+        "answer_text": "ID 45537264"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 19640725,
+        "source": "raw_objects Contract:19640725",
+        "answer_text": "ID 19640725"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 89000,
+        "source": "raw_objects Contract:19640725; ContractUnits.itemPrice",
+        "answer_text": "89 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 11,
+        "source": "raw_objects Contract:19640725; ContractUnits.quantity",
+        "answer_text": "11"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:19640725; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-02-21 09:00:53",
+        "source": "raw_objects Contract:19640725; Contract.signDate",
+        "answer_text": "2024-02-21 09:00:53"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19640725",
+        "source": "URL constructed from Contract ID 19640725",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/19640725"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_54391285_ru",
+    "language": "ru",
+    "question": "Выведи детали договора по лоту 38027788 за 2025",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 38027788,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=38027788; cross-checked against raw_objects Contract:24005822",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 54391285,
+        "source": "raw_objects Contract:24005822; ContractUnits.id",
+        "answer_text": "ID 54391285"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24005822,
+        "source": "raw_objects Contract:24005822",
+        "answer_text": "ID 24005822"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 1978,
+        "source": "raw_objects Contract:24005822; ContractUnits.itemPrice",
+        "answer_text": "1 978"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 100,
+        "source": "raw_objects Contract:24005822; ContractUnits.quantity",
+        "answer_text": "100"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:24005822; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-12-17 13:58:07",
+        "source": "raw_objects Contract:24005822; Contract.signDate",
+        "answer_text": "2025-12-17 13:58:07"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24005822",
+        "source": "URL constructed from Contract ID 24005822",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24005822"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_54391285_kk",
+    "language": "kk",
+    "question": "38027788 лоты бойынша 2025 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 38027788,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=38027788; cross-checked against raw_objects Contract:24005822",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 54391285,
+        "source": "raw_objects Contract:24005822; ContractUnits.id",
+        "answer_text": "ID 54391285"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24005822,
+        "source": "raw_objects Contract:24005822",
+        "answer_text": "ID 24005822"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 1978,
+        "source": "raw_objects Contract:24005822; ContractUnits.itemPrice",
+        "answer_text": "1 978"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 100,
+        "source": "raw_objects Contract:24005822; ContractUnits.quantity",
+        "answer_text": "100"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "171041003124",
+        "source": "raw_objects Contract:24005822; Contract.customerBin",
+        "answer_text": "171041003124"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-12-17 13:58:07",
+        "source": "raw_objects Contract:24005822; Contract.signDate",
+        "answer_text": "2025-12-17 13:58:07"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24005822",
+        "source": "URL constructed from Contract ID 24005822",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24005822"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_48686660_ru",
+    "language": "ru",
+    "question": "Покажи договорную позицию по лоту 32593677 за 2024 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 32593677,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=32593677; cross-checked against raw_objects Contract:21185234",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 48686660,
+        "source": "raw_objects Contract:21185234; ContractUnits.id",
+        "answer_text": "ID 48686660"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 21185234,
+        "source": "raw_objects Contract:21185234",
+        "answer_text": "ID 21185234"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 900000,
+        "source": "raw_objects Contract:21185234; ContractUnits.itemPrice",
+        "answer_text": "900 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 2,
+        "source": "raw_objects Contract:21185234; ContractUnits.quantity",
+        "answer_text": "2"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "230740013340",
+        "source": "raw_objects Contract:21185234; Contract.customerBin",
+        "answer_text": "230740013340"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-10-21 15:57:44",
+        "source": "raw_objects Contract:21185234; Contract.signDate",
+        "answer_text": "2024-10-21 15:57:44"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21185234",
+        "source": "URL constructed from Contract ID 21185234",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21185234"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_48686660_kk",
+    "language": "kk",
+    "question": "2024 жылғы 32593677 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 32593677,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=32593677; cross-checked against raw_objects Contract:21185234",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 48686660,
+        "source": "raw_objects Contract:21185234; ContractUnits.id",
+        "answer_text": "ID 48686660"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 21185234,
+        "source": "raw_objects Contract:21185234",
+        "answer_text": "ID 21185234"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 900000,
+        "source": "raw_objects Contract:21185234; ContractUnits.itemPrice",
+        "answer_text": "900 000"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 2,
+        "source": "raw_objects Contract:21185234; ContractUnits.quantity",
+        "answer_text": "2"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "230740013340",
+        "source": "raw_objects Contract:21185234; Contract.customerBin",
+        "answer_text": "230740013340"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-10-21 15:57:44",
+        "source": "raw_objects Contract:21185234; Contract.signDate",
+        "answer_text": "2024-10-21 15:57:44"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21185234",
+        "source": "URL constructed from Contract ID 21185234",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/21185234"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_52466928_ru",
+    "language": "ru",
+    "question": "Найди закупку по лоту номер 37001704 за 2025 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 37001704,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=37001704; cross-checked against raw_objects Contract:23024358",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 52466928,
+        "source": "raw_objects Contract:23024358; ContractUnits.id",
+        "answer_text": "ID 52466928"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23024358,
+        "source": "raw_objects Contract:23024358",
+        "answer_text": "ID 23024358"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 1250,
+        "source": "raw_objects Contract:23024358; ContractUnits.itemPrice",
+        "answer_text": "1 250"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 10,
+        "source": "raw_objects Contract:23024358; ContractUnits.quantity",
+        "answer_text": "10"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "940740000911",
+        "source": "raw_objects Contract:23024358; Contract.customerBin",
+        "answer_text": "940740000911"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-06-25 09:21:21",
+        "source": "raw_objects Contract:23024358; Contract.signDate",
+        "answer_text": "2025-06-25 09:21:21"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23024358",
+        "source": "URL constructed from Contract ID 23024358",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23024358"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_52466928_kk",
+    "language": "kk",
+    "question": "2025 жылы 37001704 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 37001704,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=37001704; cross-checked against raw_objects Contract:23024358",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 52466928,
+        "source": "raw_objects Contract:23024358; ContractUnits.id",
+        "answer_text": "ID 52466928"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23024358,
+        "source": "raw_objects Contract:23024358",
+        "answer_text": "ID 23024358"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 1250,
+        "source": "raw_objects Contract:23024358; ContractUnits.itemPrice",
+        "answer_text": "1 250"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 10,
+        "source": "raw_objects Contract:23024358; ContractUnits.quantity",
+        "answer_text": "10"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "940740000911",
+        "source": "raw_objects Contract:23024358; Contract.customerBin",
+        "answer_text": "940740000911"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-06-25 09:21:21",
+        "source": "raw_objects Contract:23024358; Contract.signDate",
+        "answer_text": "2025-06-25 09:21:21"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23024358",
+        "source": "URL constructed from Contract ID 23024358",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23024358"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_57892908_ru",
+    "language": "ru",
+    "question": "Какая цена и количество по лоту 41930017 в 2026 году?",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 41930017,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=41930017; cross-checked against raw_objects Contract:25712991",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 57892908,
+        "source": "raw_objects Contract:25712991; ContractUnits.id",
+        "answer_text": "ID 57892908"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 25712991,
+        "source": "raw_objects Contract:25712991",
+        "answer_text": "ID 25712991"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 2949,
+        "source": "raw_objects Contract:25712991; ContractUnits.itemPrice",
+        "answer_text": "2 949"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 6,
+        "source": "raw_objects Contract:25712991; ContractUnits.quantity",
+        "answer_text": "6"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:25712991; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-08-24 10:46:49",
+        "source": "raw_objects Contract:25712991; Contract.signDate",
+        "answer_text": "2026-08-24 10:46:49"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25712991",
+        "source": "URL constructed from Contract ID 25712991",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25712991"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_57892908_kk",
+    "language": "kk",
+    "question": "41930017 лоты бойынша 2026 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 41930017,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=41930017; cross-checked against raw_objects Contract:25712991",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 57892908,
+        "source": "raw_objects Contract:25712991; ContractUnits.id",
+        "answer_text": "ID 57892908"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 25712991,
+        "source": "raw_objects Contract:25712991",
+        "answer_text": "ID 25712991"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 2949,
+        "source": "raw_objects Contract:25712991; ContractUnits.itemPrice",
+        "answer_text": "2 949"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 6,
+        "source": "raw_objects Contract:25712991; ContractUnits.quantity",
+        "answer_text": "6"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:25712991; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-08-24 10:46:49",
+        "source": "raw_objects Contract:25712991; Contract.signDate",
+        "answer_text": "2026-08-24 10:46:49"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25712991",
+        "source": "URL constructed from Contract ID 25712991",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/25712991"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_54344890_ru",
+    "language": "ru",
+    "question": "Выведи детали договора по лоту 37326225 за 2025",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 37326225,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=37326225; cross-checked against raw_objects Contract:23983862",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 54344890,
+        "source": "raw_objects Contract:23983862; ContractUnits.id",
+        "answer_text": "ID 54344890"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23983862,
+        "source": "raw_objects Contract:23983862",
+        "answer_text": "ID 23983862"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 525,
+        "source": "raw_objects Contract:23983862; ContractUnits.itemPrice",
+        "answer_text": "525"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 300,
+        "source": "raw_objects Contract:23983862; ContractUnits.quantity",
+        "answer_text": "300"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "231040023028",
+        "source": "raw_objects Contract:23983862; Contract.customerBin",
+        "answer_text": "231040023028"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-12-17 16:05:08",
+        "source": "raw_objects Contract:23983862; Contract.signDate",
+        "answer_text": "2025-12-17 16:05:08"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23983862",
+        "source": "URL constructed from Contract ID 23983862",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23983862"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_54344890_kk",
+    "language": "kk",
+    "question": "2025 жылғы 37326225 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 37326225,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=37326225; cross-checked against raw_objects Contract:23983862",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 54344890,
+        "source": "raw_objects Contract:23983862; ContractUnits.id",
+        "answer_text": "ID 54344890"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23983862,
+        "source": "raw_objects Contract:23983862",
+        "answer_text": "ID 23983862"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 525,
+        "source": "raw_objects Contract:23983862; ContractUnits.itemPrice",
+        "answer_text": "525"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 300,
+        "source": "raw_objects Contract:23983862; ContractUnits.quantity",
+        "answer_text": "300"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "231040023028",
+        "source": "raw_objects Contract:23983862; Contract.customerBin",
+        "answer_text": "231040023028"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-12-17 16:05:08",
+        "source": "raw_objects Contract:23983862; Contract.signDate",
+        "answer_text": "2025-12-17 16:05:08"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23983862",
+        "source": "URL constructed from Contract ID 23983862",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23983862"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_56114778_ru",
+    "language": "ru",
+    "question": "Покажи договорную позицию по лоту 40503220 за 2026 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2026
+      ],
+      "lot_id": 40503220,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=40503220; cross-checked against raw_objects Contract:24839192",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 56114778,
+        "source": "raw_objects Contract:24839192; ContractUnits.id",
+        "answer_text": "ID 56114778"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24839192,
+        "source": "raw_objects Contract:24839192",
+        "answer_text": "ID 24839192"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 1500,
+        "source": "raw_objects Contract:24839192; ContractUnits.itemPrice",
+        "answer_text": "1 500"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 50,
+        "source": "raw_objects Contract:24839192; ContractUnits.quantity",
+        "answer_text": "50"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:24839192; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-13 00:16:45",
+        "source": "raw_objects Contract:24839192; Contract.signDate",
+        "answer_text": "2026-03-13 00:16:45"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24839192",
+        "source": "URL constructed from Contract ID 24839192",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24839192"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_56114778_kk",
+    "language": "kk",
+    "question": "2026 жылы 40503220 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2026
+      ],
+      "lot_id": 40503220,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=40503220; cross-checked against raw_objects Contract:24839192",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 56114778,
+        "source": "raw_objects Contract:24839192; ContractUnits.id",
+        "answer_text": "ID 56114778"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 24839192,
+        "source": "raw_objects Contract:24839192",
+        "answer_text": "ID 24839192"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 1500,
+        "source": "raw_objects Contract:24839192; ContractUnits.itemPrice",
+        "answer_text": "1 500"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 50,
+        "source": "raw_objects Contract:24839192; ContractUnits.quantity",
+        "answer_text": "50"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:24839192; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2026-03-13 00:16:45",
+        "source": "raw_objects Contract:24839192; Contract.signDate",
+        "answer_text": "2026-03-13 00:16:45"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24839192",
+        "source": "URL constructed from Contract ID 24839192",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/24839192"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_46433470_ru",
+    "language": "ru",
+    "question": "Найди закупку по лоту номер 29377670 за 2024 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 29377670,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29377670; cross-checked against raw_objects Contract:20061156",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 46433470,
+        "source": "raw_objects Contract:20061156; ContractUnits.id",
+        "answer_text": "ID 46433470"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 20061156,
+        "source": "raw_objects Contract:20061156",
+        "answer_text": "ID 20061156"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 71262,
+        "source": "raw_objects Contract:20061156; ContractUnits.itemPrice",
+        "answer_text": "71 262"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 12,
+        "source": "raw_objects Contract:20061156; ContractUnits.quantity",
+        "answer_text": "12"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "210240033968",
+        "source": "raw_objects Contract:20061156; Contract.customerBin",
+        "answer_text": "210240033968"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-04-22 15:53:01",
+        "source": "raw_objects Contract:20061156; Contract.signDate",
+        "answer_text": "2024-04-22 15:53:01"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20061156",
+        "source": "URL constructed from Contract ID 20061156",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20061156"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_46433470_kk",
+    "language": "kk",
+    "question": "29377670 лоты бойынша 2024 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 29377670,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=29377670; cross-checked against raw_objects Contract:20061156",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 46433470,
+        "source": "raw_objects Contract:20061156; ContractUnits.id",
+        "answer_text": "ID 46433470"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 20061156,
+        "source": "raw_objects Contract:20061156",
+        "answer_text": "ID 20061156"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 71262,
+        "source": "raw_objects Contract:20061156; ContractUnits.itemPrice",
+        "answer_text": "71 262"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 12,
+        "source": "raw_objects Contract:20061156; ContractUnits.quantity",
+        "answer_text": "12"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "210240033968",
+        "source": "raw_objects Contract:20061156; Contract.customerBin",
+        "answer_text": "210240033968"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-04-22 15:53:01",
+        "source": "raw_objects Contract:20061156; Contract.signDate",
+        "answer_text": "2024-04-22 15:53:01"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20061156",
+        "source": "URL constructed from Contract ID 20061156",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20061156"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_51561571_ru",
+    "language": "ru",
+    "question": "Какая цена и количество по лоту 35658212 в 2025 году?",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 35658212,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=35658212; cross-checked against raw_objects Contract:22572942",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 51561571,
+        "source": "raw_objects Contract:22572942; ContractUnits.id",
+        "answer_text": "ID 51561571"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 22572942,
+        "source": "raw_objects Contract:22572942",
+        "answer_text": "ID 22572942"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 147,
+        "source": "raw_objects Contract:22572942; ContractUnits.itemPrice",
+        "answer_text": "147"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 168,
+        "source": "raw_objects Contract:22572942; ContractUnits.quantity",
+        "answer_text": "168"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:22572942; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-04-15 09:24:11",
+        "source": "raw_objects Contract:22572942; Contract.signDate",
+        "answer_text": "2025-04-15 09:24:11"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22572942",
+        "source": "URL constructed from Contract ID 22572942",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22572942"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_51561571_kk",
+    "language": "kk",
+    "question": "2025 жылғы 35658212 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 35658212,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=35658212; cross-checked against raw_objects Contract:22572942",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 51561571,
+        "source": "raw_objects Contract:22572942; ContractUnits.id",
+        "answer_text": "ID 51561571"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 22572942,
+        "source": "raw_objects Contract:22572942",
+        "answer_text": "ID 22572942"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 147,
+        "source": "raw_objects Contract:22572942; ContractUnits.itemPrice",
+        "answer_text": "147"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 168,
+        "source": "raw_objects Contract:22572942; ContractUnits.quantity",
+        "answer_text": "168"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "971040001050",
+        "source": "raw_objects Contract:22572942; Contract.customerBin",
+        "answer_text": "971040001050"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-04-15 09:24:11",
+        "source": "raw_objects Contract:22572942; Contract.signDate",
+        "answer_text": "2025-04-15 09:24:11"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22572942",
+        "source": "URL constructed from Contract ID 22572942",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22572942"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_51765764_ru",
+    "language": "ru",
+    "question": "Выведи детали договора по лоту 35944747 за 2025",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 35944747,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=35944747; cross-checked against raw_objects Contract:22671031",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 51765764,
+        "source": "raw_objects Contract:22671031; ContractUnits.id",
+        "answer_text": "ID 51765764"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 22671031,
+        "source": "raw_objects Contract:22671031",
+        "answer_text": "ID 22671031"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 2700,
+        "source": "raw_objects Contract:22671031; ContractUnits.itemPrice",
+        "answer_text": "2 700"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 184,
+        "source": "raw_objects Contract:22671031; ContractUnits.quantity",
+        "answer_text": "184"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "030440003698",
+        "source": "raw_objects Contract:22671031; Contract.customerBin",
+        "answer_text": "030440003698"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-04-30 14:24:39",
+        "source": "raw_objects Contract:22671031; Contract.signDate",
+        "answer_text": "2025-04-30 14:24:39"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22671031",
+        "source": "URL constructed from Contract ID 22671031",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22671031"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_51765764_kk",
+    "language": "kk",
+    "question": "2025 жылы 35944747 лоты бойынша шарт позициясын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 35944747,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=35944747; cross-checked against raw_objects Contract:22671031",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 51765764,
+        "source": "raw_objects Contract:22671031; ContractUnits.id",
+        "answer_text": "ID 51765764"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 22671031,
+        "source": "raw_objects Contract:22671031",
+        "answer_text": "ID 22671031"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 2700,
+        "source": "raw_objects Contract:22671031; ContractUnits.itemPrice",
+        "answer_text": "2 700"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 184,
+        "source": "raw_objects Contract:22671031; ContractUnits.quantity",
+        "answer_text": "184"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "030440003698",
+        "source": "raw_objects Contract:22671031; Contract.customerBin",
+        "answer_text": "030440003698"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-04-30 14:24:39",
+        "source": "raw_objects Contract:22671031; Contract.signDate",
+        "answer_text": "2025-04-30 14:24:39"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22671031",
+        "source": "URL constructed from Contract ID 22671031",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/22671031"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_53767046_ru",
+    "language": "ru",
+    "question": "Покажи договорную позицию по лоту 38521668 за 2025 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2025
+      ],
+      "lot_id": 38521668,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=38521668; cross-checked against raw_objects Contract:23698774",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 53767046,
+        "source": "raw_objects Contract:23698774; ContractUnits.id",
+        "answer_text": "ID 53767046"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23698774,
+        "source": "raw_objects Contract:23698774",
+        "answer_text": "ID 23698774"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 819720,
+        "source": "raw_objects Contract:23698774; ContractUnits.itemPrice",
+        "answer_text": "819 720"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:23698774; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "231040023028",
+        "source": "raw_objects Contract:23698774; Contract.customerBin",
+        "answer_text": "231040023028"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-11-13 12:00:10",
+        "source": "raw_objects Contract:23698774; Contract.signDate",
+        "answer_text": "2025-11-13 12:00:10"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23698774",
+        "source": "URL constructed from Contract ID 23698774",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23698774"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_53767046_kk",
+    "language": "kk",
+    "question": "38521668 лоты бойынша 2025 жылғы сатып алуды тап",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2025
+      ],
+      "lot_id": 38521668,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=38521668; cross-checked against raw_objects Contract:23698774",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 53767046,
+        "source": "raw_objects Contract:23698774; ContractUnits.id",
+        "answer_text": "ID 53767046"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 23698774,
+        "source": "raw_objects Contract:23698774",
+        "answer_text": "ID 23698774"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 819720,
+        "source": "raw_objects Contract:23698774; ContractUnits.itemPrice",
+        "answer_text": "819 720"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:23698774; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "231040023028",
+        "source": "raw_objects Contract:23698774; Contract.customerBin",
+        "answer_text": "231040023028"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2025-11-13 12:00:10",
+        "source": "raw_objects Contract:23698774; Contract.signDate",
+        "answer_text": "2025-11-13 12:00:10"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23698774",
+        "source": "URL constructed from Contract ID 23698774",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/23698774"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_48280810_ru",
+    "language": "ru",
+    "question": "Найди закупку по лоту номер 32530480 за 2024 год",
+    "request": {
+      "intent": "search",
+      "language": "ru",
+      "years": [
+        2024
+      ],
+      "lot_id": 32530480,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=32530480; cross-checked against raw_objects Contract:20980914",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 48280810,
+        "source": "raw_objects Contract:20980914; ContractUnits.id",
+        "answer_text": "ID 48280810"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 20980914,
+        "source": "raw_objects Contract:20980914",
+        "answer_text": "ID 20980914"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 209322,
+        "source": "raw_objects Contract:20980914; ContractUnits.itemPrice",
+        "answer_text": "209 322"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:20980914; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:20980914; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-09-17 15:43:43",
+        "source": "raw_objects Contract:20980914; Contract.signDate",
+        "answer_text": "2024-09-17 15:43:43"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20980914",
+        "source": "URL constructed from Contract ID 20980914",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20980914"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_search_48280810_kk",
+    "language": "kk",
+    "question": "2024 жылғы 32530480 лотының бағасы мен санын көрсет",
+    "request": {
+      "intent": "search",
+      "language": "kk",
+      "years": [
+        2024
+      ],
+      "lot_id": 32530480,
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 1,
+        "source": "SQL v_contract_prices WHERE lot_id=32530480; cross-checked against raw_objects Contract:20980914",
+        "answer_text": "N = 1"
+      },
+      {
+        "path": "result.examples.0.item_id",
+        "value": 48280810,
+        "source": "raw_objects Contract:20980914; ContractUnits.id",
+        "answer_text": "ID 48280810"
+      },
+      {
+        "path": "result.examples.0.contract_id",
+        "value": 20980914,
+        "source": "raw_objects Contract:20980914",
+        "answer_text": "ID 20980914"
+      },
+      {
+        "path": "result.examples.0.price_net",
+        "value": 209322,
+        "source": "raw_objects Contract:20980914; ContractUnits.itemPrice",
+        "answer_text": "209 322"
+      },
+      {
+        "path": "result.examples.0.quantity",
+        "value": 1,
+        "source": "raw_objects Contract:20980914; ContractUnits.quantity",
+        "answer_text": "1"
+      },
+      {
+        "path": "result.examples.0.customer_bin",
+        "value": "990740002243",
+        "source": "raw_objects Contract:20980914; Contract.customerBin",
+        "answer_text": "990740002243"
+      },
+      {
+        "path": "result.examples.0.signed_at",
+        "value": "2024-09-17 15:43:43",
+        "source": "raw_objects Contract:20980914; Contract.signDate",
+        "answer_text": "2024-09-17 15:43:43"
+      },
+      {
+        "path": "result.examples.0.contract_url",
+        "value": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20980914",
+        "source": "URL constructed from Contract ID 20980914",
+        "answer_text": "https://goszakup.gov.kz/ru/egzcontract/cpublic/show/20980914"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_981140001551_274025990000000_ru",
+    "language": "ru",
+    "question": "Подведи итог закупок ЕНС ТРУ 274025.990.000000 у БИН 981140001551 за 2025 год",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "981140001551"
+      ],
+      "years": [
+        2025
+      ],
+      "enstru": "274025.990.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=981140001551 AND enstru=274025.990.000000",
+        "answer_text": "N = 2"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 2402500.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=981140001551 AND enstru=274025.990.000000",
+        "answer_text": "2 402 500 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_981140001551_274025990000000_kk",
+    "language": "kk",
+    "question": "981140001551 БСН бойынша 274025.990.000000 ЕНС ТРУ 2025 жылғы қорытындысын бер",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "981140001551"
+      ],
+      "years": [
+        2025
+      ],
+      "enstru": "274025.990.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=981140001551 AND enstru=274025.990.000000",
+        "answer_text": "N = 2"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 2402500.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=981140001551 AND enstru=274025.990.000000",
+        "answer_text": "2 402 500 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_100140011059_749020000000017_ru",
+    "language": "ru",
+    "question": "Какая общая сумма и количество по ЕНС ТРУ 749020.000.000017 у БИН 100140011059 за 2024–2025 годы?",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "100140011059"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "enstru": "749020.000.000017",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 6,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=100140011059 AND enstru=749020.000.000017",
+        "answer_text": "N = 6"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 4644454.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=100140011059 AND enstru=749020.000.000017",
+        "answer_text": "4 644 454 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_100140011059_749020000000017_kk",
+    "language": "kk",
+    "question": "100140011059 БСН және 749020.000.000017 коды бойынша 2024–2025 жылдардағы жиынтықты көрсет",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "100140011059"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "enstru": "749020.000.000017",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 6,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=100140011059 AND enstru=749020.000.000017",
+        "answer_text": "N = 6"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 4644454.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=100140011059 AND enstru=749020.000.000017",
+        "answer_text": "4 644 454 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_990740002243_289211000000007_ru",
+    "language": "ru",
+    "question": "Сводка по БИН 990740002243 и коду 289211.000.000007 за 2024–2026 годы",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "990740002243"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "289211.000.000007",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=990740002243 AND enstru=289211.000.000007",
+        "answer_text": "N = 2"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 578500.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=990740002243 AND enstru=289211.000.000007",
+        "answer_text": "578 500 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_990740002243_289211000000007_kk",
+    "language": "kk",
+    "question": "990740002243 БСН бойынша 289211.000.000007 ЕНС ТРУ 2024–2026 жылдардағы қорытындысын бер",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "990740002243"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "289211.000.000007",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=990740002243 AND enstru=289211.000.000007",
+        "answer_text": "N = 2"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 578500.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=990740002243 AND enstru=289211.000.000007",
+        "answer_text": "578 500 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_100140011059_212013990000489_ru",
+    "language": "ru",
+    "question": "Подведи итог закупок ЕНС ТРУ 212013.990.000489 у БИН 100140011059 за 2024–2026 годы",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "100140011059"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "212013.990.000489",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 5,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=100140011059 AND enstru=212013.990.000489",
+        "answer_text": "N = 5"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 25308.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=100140011059 AND enstru=212013.990.000489",
+        "answer_text": "25 308 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_100140011059_212013990000489_kk",
+    "language": "kk",
+    "question": "100140011059 БСН және 212013.990.000489 коды бойынша 2024–2026 жылдардағы жиынтықты көрсет",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "100140011059"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "212013.990.000489",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 5,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=100140011059 AND enstru=212013.990.000489",
+        "answer_text": "N = 5"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 25308.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=100140011059 AND enstru=212013.990.000489",
+        "answer_text": "25 308 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_020440003656_222129700000356_ru",
+    "language": "ru",
+    "question": "Какая общая сумма и количество по ЕНС ТРУ 222129.700.000356 у БИН 020440003656 за 2024–2026 годы?",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "020440003656"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "222129.700.000356",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 22,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=020440003656 AND enstru=222129.700.000356",
+        "answer_text": "N = 22"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 327011.2,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=020440003656 AND enstru=222129.700.000356",
+        "answer_text": "327 011.20 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_020440003656_222129700000356_kk",
+    "language": "kk",
+    "question": "020440003656 БСН бойынша 222129.700.000356 ЕНС ТРУ 2024–2026 жылдардағы қорытындысын бер",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "020440003656"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "222129.700.000356",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 22,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=020440003656 AND enstru=222129.700.000356",
+        "answer_text": "N = 22"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 327011.2,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=020440003656 AND enstru=222129.700.000356",
+        "answer_text": "327 011.20 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_980440001034_212024200000001_ru",
+    "language": "ru",
+    "question": "Сводка по БИН 980440001034 и коду 212024.200.000001 за 2024 год",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2024
+      ],
+      "enstru": "212024.200.000001",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=980440001034 AND enstru=212024.200.000001",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 45100.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=980440001034 AND enstru=212024.200.000001",
+        "answer_text": "45 100 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_980440001034_212024200000001_kk",
+    "language": "kk",
+    "question": "980440001034 БСН және 212024.200.000001 коды бойынша 2024 жылғы жиынтықты көрсет",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "980440001034"
+      ],
+      "years": [
+        2024
+      ],
+      "enstru": "212024.200.000001",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=980440001034 AND enstru=212024.200.000001",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 45100.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=980440001034 AND enstru=212024.200.000001",
+        "answer_text": "45 100 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_030440003698_262021300000016_ru",
+    "language": "ru",
+    "question": "Подведи итог закупок ЕНС ТРУ 262021.300.000016 у БИН 030440003698 за 2024–2025 годы",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "030440003698"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "enstru": "262021.300.000016",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=030440003698 AND enstru=262021.300.000016",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 1174000.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=030440003698 AND enstru=262021.300.000016",
+        "answer_text": "1 174 000 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_030440003698_262021300000016_kk",
+    "language": "kk",
+    "question": "030440003698 БСН бойынша 262021.300.000016 ЕНС ТРУ 2024–2025 жылдардағы қорытындысын бер",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "030440003698"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "enstru": "262021.300.000016",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=030440003698 AND enstru=262021.300.000016",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 1174000.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=030440003698 AND enstru=262021.300.000016",
+        "answer_text": "1 174 000 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_000740001307_293123700000001_ru",
+    "language": "ru",
+    "question": "Какая общая сумма и количество по ЕНС ТРУ 293123.700.000001 у БИН 000740001307 за 2024–2026 годы?",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "000740001307"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "293123.700.000001",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=000740001307 AND enstru=293123.700.000001",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 73000.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=000740001307 AND enstru=293123.700.000001",
+        "answer_text": "73 000 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_000740001307_293123700000001_kk",
+    "language": "kk",
+    "question": "000740001307 БСН және 293123.700.000001 коды бойынша 2024–2026 жылдардағы жиынтықты көрсет",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "000740001307"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "293123.700.000001",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=000740001307 AND enstru=293123.700.000001",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 73000.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=000740001307 AND enstru=293123.700.000001",
+        "answer_text": "73 000 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_030440003698_203024790000000_ru",
+    "language": "ru",
+    "question": "Сводка по БИН 030440003698 и коду 203024.790.000000 за 2025–2026 годы",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "030440003698"
+      ],
+      "years": [
+        2025,
+        2026
+      ],
+      "enstru": "203024.790.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 7,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=030440003698 AND enstru=203024.790.000000",
+        "answer_text": "N = 7"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 608196.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=030440003698 AND enstru=203024.790.000000",
+        "answer_text": "608 196 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_030440003698_203024790000000_kk",
+    "language": "kk",
+    "question": "030440003698 БСН бойынша 203024.790.000000 ЕНС ТРУ 2025–2026 жылдардағы қорытындысын бер",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "030440003698"
+      ],
+      "years": [
+        2025,
+        2026
+      ],
+      "enstru": "203024.790.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 7,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=030440003698 AND enstru=203024.790.000000",
+        "answer_text": "N = 7"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 608196.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=030440003698 AND enstru=203024.790.000000",
+        "answer_text": "608 196 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_051040005150_201539900000000_ru",
+    "language": "ru",
+    "question": "Подведи итог закупок ЕНС ТРУ 201539.900.000000 у БИН 051040005150 за 2024–2025 годы",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "051040005150"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "enstru": "201539.900.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 6,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=051040005150 AND enstru=201539.900.000000",
+        "answer_text": "N = 6"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 118575.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=051040005150 AND enstru=201539.900.000000",
+        "answer_text": "118 575 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_051040005150_201539900000000_kk",
+    "language": "kk",
+    "question": "051040005150 БСН және 201539.900.000000 коды бойынша 2024–2025 жылдардағы жиынтықты көрсет",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "051040005150"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "enstru": "201539.900.000000",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 6,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=051040005150 AND enstru=201539.900.000000",
+        "answer_text": "N = 6"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 118575.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=051040005150 AND enstru=201539.900.000000",
+        "answer_text": "118 575 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_231040023028_222129700000371_ru",
+    "language": "ru",
+    "question": "Какая общая сумма и количество по ЕНС ТРУ 222129.700.000371 у БИН 231040023028 за 2025 год?",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "231040023028"
+      ],
+      "years": [
+        2025
+      ],
+      "enstru": "222129.700.000371",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=231040023028 AND enstru=222129.700.000371",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 369000.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=231040023028 AND enstru=222129.700.000371",
+        "answer_text": "369 000 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_231040023028_222129700000371_kk",
+    "language": "kk",
+    "question": "231040023028 БСН бойынша 222129.700.000371 ЕНС ТРУ 2025 жылғы қорытындысын бер",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "231040023028"
+      ],
+      "years": [
+        2025
+      ],
+      "enstru": "222129.700.000371",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 3,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=231040023028 AND enstru=222129.700.000371",
+        "answer_text": "N = 3"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 369000.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=231040023028 AND enstru=222129.700.000371",
+        "answer_text": "369 000 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_030440003698_262040000000140_ru",
+    "language": "ru",
+    "question": "Сводка по БИН 030440003698 и коду 262040.000.000140 за 2024–2026 годы",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "030440003698"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "262040.000.000140",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 5,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=030440003698 AND enstru=262040.000.000140",
+        "answer_text": "N = 5"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 280342.8,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=030440003698 AND enstru=262040.000.000140",
+        "answer_text": "280 342.80 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_030440003698_262040000000140_kk",
+    "language": "kk",
+    "question": "030440003698 БСН және 262040.000.000140 коды бойынша 2024–2026 жылдардағы жиынтықты көрсет",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "030440003698"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "262040.000.000140",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 5,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=030440003698 AND enstru=262040.000.000140",
+        "answer_text": "N = 5"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 280342.8,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=030440003698 AND enstru=262040.000.000140",
+        "answer_text": "280 342.80 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_940940000384_262040000000171_ru",
+    "language": "ru",
+    "question": "Подведи итог закупок ЕНС ТРУ 262040.000.000171 у БИН 940940000384 за 2024–2025 годы",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "940940000384"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "enstru": "262040.000.000171",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=940940000384 AND enstru=262040.000.000171",
+        "answer_text": "N = 2"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 44371.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=940940000384 AND enstru=262040.000.000171",
+        "answer_text": "44 371 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_940940000384_262040000000171_kk",
+    "language": "kk",
+    "question": "940940000384 БСН бойынша 262040.000.000171 ЕНС ТРУ 2024–2025 жылдардағы қорытындысын бер",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "940940000384"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "enstru": "262040.000.000171",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=940940000384 AND enstru=262040.000.000171",
+        "answer_text": "N = 2"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 44371.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=940940000384 AND enstru=262040.000.000171",
+        "answer_text": "44 371 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_030440003698_172313100000003_ru",
+    "language": "ru",
+    "question": "Какая общая сумма и количество по ЕНС ТРУ 172313.100.000003 у БИН 030440003698 за 2024–2026 годы?",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "030440003698"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "172313.100.000003",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 6,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=030440003698 AND enstru=172313.100.000003",
+        "answer_text": "N = 6"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 86750.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=030440003698 AND enstru=172313.100.000003",
+        "answer_text": "86 750 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_030440003698_172313100000003_kk",
+    "language": "kk",
+    "question": "030440003698 БСН және 172313.100.000003 коды бойынша 2024–2026 жылдардағы жиынтықты көрсет",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "030440003698"
+      ],
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "enstru": "172313.100.000003",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 6,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=030440003698 AND enstru=172313.100.000003",
+        "answer_text": "N = 6"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 86750.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=030440003698 AND enstru=172313.100.000003",
+        "answer_text": "86 750 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_990740002243_263030900000015_ru",
+    "language": "ru",
+    "question": "Сводка по БИН 990740002243 и коду 263030.900.000015 за 2025 год",
+    "request": {
+      "intent": "summary",
+      "language": "ru",
+      "bins": [
+        "990740002243"
+      ],
+      "years": [
+        2025
+      ],
+      "enstru": "263030.900.000015",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=990740002243 AND enstru=263030.900.000015",
+        "answer_text": "N = 2"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 339682.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=990740002243 AND enstru=263030.900.000015",
+        "answer_text": "339 682 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  },
+  {
+    "id": "rand_summary_990740002243_263030900000015_kk",
+    "language": "kk",
+    "question": "990740002243 БСН бойынша 263030.900.000015 ЕНС ТРУ 2025 жылғы қорытындысын бер",
+    "request": {
+      "intent": "summary",
+      "language": "kk",
+      "bins": [
+        "990740002243"
+      ],
+      "years": [
+        2025
+      ],
+      "enstru": "263030.900.000015",
+      "top_k": 10
+    },
+    "facts": [
+      {
+        "path": "result.n_selected",
+        "value": 2,
+        "source": "Independent SQL COUNT(*) v_contract_prices WHERE customer_bin=990740002243 AND enstru=263030.900.000015",
+        "answer_text": "N = 2"
+      },
+      {
+        "path": "result.amount_net",
+        "value": 339682.0,
+        "source": "Independent SQL SUM(price*quantity) v_contract_prices WHERE customer_bin=990740002243 AND enstru=263030.900.000015",
+        "answer_text": "339 682 KZT"
+      }
+    ],
+    "expected_outcome": "numeric"
+  }
+]

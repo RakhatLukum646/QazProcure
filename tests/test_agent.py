@@ -1,6 +1,54 @@
 import pytest
+import json
+
+def gemini_response(payload):
+    return {"candidates":[{"content":{"parts":[{"text":json.dumps(payload)}]}}]}
+
 from app.agent import rule_plan,Clarification,render
 from app.schemas import AnalysisRequest
+
+
+def test_llm_omissions_do_not_drop_explicit_identifiers(monkeypatch):
+    import json
+    from app.agent import llm_plan
+    class Response:
+        def raise_for_status(self):pass
+        def json(self):return gemini_response({'request':{'intent':'fair_price'},'clarification':None})
+    monkeypatch.setattr('app.agent.httpx.post',lambda *args,**kwargs:Response())
+    request=llm_plan('Оцени лот 22906306-ОЛ-ОК1 ЕНС ТРУ 105111.410.000000 КАТО 750000000',provider='gemini')
+    assert request.lot_number=='22906306-ОЛ-ОК1'
+    assert request.enstru=='105111.410.000000' and request.kato=='750000000'
+    request=llm_plan('2026 жылы 38693950 лоты бойынша 105111.410.000000 сүт ЕНС ТРУ 750000000 КАТО көрсет',provider='gemini')
+    assert request.lot_id==38693950 and request.enstru=='105111.410.000000' and request.kato=='750000000'
+    request=llm_plan('2025 жылғы 33439794 лотының бағасы мен санын көрсет',provider='gemini')
+    assert request.lot_id==33439794
+
+
+def test_explicit_year_range_repairs_invalid_model_years_before_validation(monkeypatch):
+    import json
+    from pydantic import ValidationError
+    from app.agent import llm_plan
+    class Response:
+        def raise_for_status(self):pass
+        def json(self):return gemini_response({'request':{'intent':'summary','years':[2024,2]}})
+    monkeypatch.setattr('app.agent.httpx.post',lambda *a,**k:Response())
+    request=llm_plan('051040005150 БСН және 201539.900.000000 коды бойынша 2024–2025 жылдардағы жиынтықты көрсет')
+    assert request.years==[2024,2025] and request.bins==['051040005150']
+    assert request.intent=='summary' and request.enstru=='201539.900.000000'
+    with pytest.raises(ValidationError):
+        llm_plan('Покажи сводку закупок')
+
+
+def test_unavailable_model_is_not_silently_replaced_with_rules(monkeypatch):
+    import httpx
+    from app import agent
+    monkeypatch.setattr(agent.settings,'LLM_PROVIDER','gemini')
+    monkeypatch.setattr(agent.settings,'ALLOW_RULES_FALLBACK',False)
+    def unavailable(*args,**kwargs):raise httpx.ConnectError('unavailable')
+    monkeypatch.setattr(agent,'llm_plan',unavailable)
+    monkeypatch.setattr(agent,'rule_plan',lambda *a,**k:pytest.fail('Silent fallback'))
+    with pytest.raises(Clarification,match='модель недоступна'):
+        agent.answer('Покажи закупки за 2026 год')
 
 
 @pytest.mark.parametrize('text,expected',[
@@ -57,11 +105,10 @@ def test_llm_fabricated_identifier_is_rejected(monkeypatch):
     from app.agent import llm_plan
     import app.agent as agent
     import httpx,json
-    monkeypatch.setattr(agent.settings,'OLLAMA_URL','http://local-model')
-    monkeypatch.setattr(agent.settings,'OLLAMA_MODEL','test')
+    monkeypatch.setattr(agent.settings,'GEMINI_MODEL','test')
     def post(url,**kw):
-        assert kw['json']['format']['properties']['request']
-        return httpx.Response(200,request=httpx.Request('POST',url),json={'message':{'content':json.dumps({'request':{'bins':['000740001307']}})}})
+        assert kw['json']['generationConfig']['responseJsonSchema']['properties']['request']
+        return httpx.Response(200,request=httpx.Request('POST',url),json=gemini_response({'request':{'bins':['000740001307']}}))
     monkeypatch.setattr(agent.httpx,'post',post)
     with pytest.raises(Clarification):llm_plan('Покажи закупки министерства')
 
@@ -70,10 +117,9 @@ def test_llm_explicit_parameters_are_validated(monkeypatch):
     from app.agent import llm_plan
     import app.agent as agent
     import httpx,json
-    monkeypatch.setattr(agent.settings,'OLLAMA_URL','http://local-model')
-    monkeypatch.setattr(agent.settings,'OLLAMA_MODEL','test')
+    monkeypatch.setattr(agent.settings,'GEMINI_MODEL','test')
     def post(url,**kw):
-        return httpx.Response(200,request=httpx.Request('POST',url),json={'message':{'content':json.dumps({'request':{'bins':['000740001307'],'years':[2025]}})}})
+        return httpx.Response(200,request=httpx.Request('POST',url),json=gemini_response({'request':{'bins':['000740001307'],'years':[2025]}}))
     monkeypatch.setattr(agent.httpx,'post',post)
     result=llm_plan('Покажи закупки БИН 000740001307 за 2025')
     assert result.bins==['000740001307'] and result.years==[2025]
@@ -83,14 +129,13 @@ def test_llm_explicit_parameters_are_validated(monkeypatch):
 def quantity_model(monkeypatch):
     import app.agent as agent
     import httpx,json
-    monkeypatch.setattr(agent.settings,'planner_name',lambda:'ollama')
-    monkeypatch.setattr(agent.settings,'OLLAMA_URL','http://local-model')
-    monkeypatch.setattr(agent.settings,'OLLAMA_MODEL','test')
+    monkeypatch.setattr(agent.settings,'planner_name',lambda:'gemini')
+    monkeypatch.setattr(agent.settings,'GEMINI_MODEL','test')
     def post(url,**kwargs):
-        assert 'quantity_anomaly means' in kwargs['json']['messages'][0]['content']
-        return httpx.Response(200,request=httpx.Request('POST',url),json={'message':{'content':json.dumps({
+        assert 'quantity_anomaly' in kwargs['json']['systemInstruction']['parts'][0]['text']
+        return httpx.Response(200,request=httpx.Request('POST',url),json=gemini_response({
             'request':{'intent':'quantity_anomaly','language':'kk','years':[2025],'direction':'above'}
-        })}})
+        }))
     monkeypatch.setattr(agent.httpx,'post',post)
 
 
@@ -124,7 +169,7 @@ def test_answer_renders_current_quantity_question_in_russian(quantity_model,capt
     assert actual_question==question
     assert request.intent=='quantity_anomaly'
     assert request.language=='ru' and request.years==[2024,2025,2026]
-    assert result['planner']=='ollama' and result['warnings']==[]
+    assert result['planner']=='gemini' and result['warnings']==[]
     assert 'Краткий вывод' in result['answer']
     assert 'Годы: 2024, 2025, 2026' in result['answer']
     assert 'Рост количества относительно медианы' in result['answer']

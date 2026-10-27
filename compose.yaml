@@ -25,15 +25,16 @@ services:
       db:
         condition: service_healthy
     environment:
-      LLM_PROVIDER: ${ONPREM_LLM_PROVIDER:-rules}
-      OLLAMA_URL: ${ONPREM_OLLAMA_URL:-}
-      OLLAMA_MODEL: ${ONPREM_OLLAMA_MODEL:-}
+      LLM_PROVIDER: gemini
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.8-flash}
+      OWS_PUBLICATION_UTC_OFFSET_MINUTES: ${OWS_PUBLICATION_UTC_OFFSET_MINUTES:-300}
     secrets:
       - postgres_password
+      - google_api_key
     ports:
       - "127.0.0.1:${API_PORT:-8765}:8765"
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/api/health', timeout=5)"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/api/ready', timeout=5)"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -51,11 +52,14 @@ services:
       SYNC_INTERVAL_HOURS: ${SYNC_INTERVAL_HOURS:-6}
       PAGE_SIZE: ${PAGE_SIZE:-50}
       REQUEST_INTERVAL: ${REQUEST_INTERVAL:-0.3}
+      OWS_PUBLICATION_UTC_OFFSET_MINUTES: ${OWS_PUBLICATION_UTC_OFFSET_MINUTES:-300}
     secrets:
       - postgres_password
       - ows_token
 
 secrets:
+  google_api_key:
+    file: ./secrets/google_api_key
   postgres_password:
     file: ./secrets/postgres_password
   ows_token:
